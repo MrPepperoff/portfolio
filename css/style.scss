@@ -1,50 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap');
 :root{
-    --orange: #EF6817;
-    --black: #21201F;
-    --l-gray: #727271;
-    --gray: #5F605D;
+     --black: #21201F;
     --d-gray: #383838;
+      --gray: #5F605D;
+    --l-gray: #727271;
 
-    --d-blue:#1b4965;
-    --blue:#62b6cb;
-    --l-blue: #bee9e8;
+    --d-blue1:#2A698F;
+    --d-blue2:#336A8A;
+       --blue:#62B6CB;
+    --l-blue1:#B5DFF8;
+    --l-blue2:#BBE3F8;
+
+    --d-yellow1:#E0B339;
+    --d-yellow2:#D8B249;
+       --yellow:#FFD76B;
+    --l-yellow1:#FFEDBC;
+    --l-yellow2:#FFEBB6;
+
+    --d-orange1:#E06139;
+    --d-orange2:#D86B49;
+       --orange:#FF8F6B;
+    --l-orange1:#FFC8B6;
+    --l-orange2:#FFCCBC;   
+    
 }
 
 body{
-    background: var(--blue);
-    color: var(--y-green);
+    background: var(--l-blue1);
+    color: var(--d-orange1);
     font-family: 'Tektur', cursive;
 }
 .header{
     
     &__top{
         min-height: 100px;
-        background: linear-gradient(200deg, var(--d-blue) 0%, transparent 100%);
+        background: linear-gradient(200deg, transparent 0%, var(--black) 100%), url(../images/fon.jpg) center center/cover no-repeat;
         & .img__wrap{
             text-align: center;
             & img{
-                
+                box-shadow: 0 0 10px var(--black), 0 0 10px var(--black), 0 0 10px var(--black);
                 margin: 10px 0;
                 width: 300px;
                 height: auto;
-                background: linear-gradient(110deg, #fff 0%, var(--l-blue) 100%);
+                background: linear-gradient(110deg, var(--l-orange1) 0%, var(--l-blue1) 100%);
                 border-radius: 50%;
-                border: 2px solid var(--l-blue);
+                border: 2px solid var(--orange);
             }    
         }
-        
+        .ligh_dark{
+            // color: var(--black);
+            text-shadow: none;
+            // animation: 2s cubic-bezier(0, 1.58, 1, 1.44) ligh_dark infinite;
+        }
         & h1{
             display: inline-block;
-            filter: drop-shadow(0px 0px 0px var(--yellow));
-        }
-        & span{
-            color: var(--yellow);
-            
+            text-shadow: 0px 0px 2px var(--black);
         }
     }
     &__center{
-        background: var(--d-blue);
+        background: var(--d-blue1);
     }
 }
 .navbar{
@@ -53,4 +67,17 @@ body{
 .navbar-default {
     background-color: #FF0000;
     border-color: #E7E7E7;
+}
+
+@keyframes ligh_dark{
+    0%,20%{
+        text-shadow: 0px 0px 3px var(--d-yellow2);
+        color: var(--d-yellow2);
+    }
+    10%,100%{
+        color: var(--d-orange2);
+    }
+    99%{
+        color: var(--black); 
+    }
 }
