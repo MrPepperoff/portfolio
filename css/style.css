@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap");
+:root {
+  --orange: #EF6817;
+  --black: #21201F;
+  --l-gray: #727271;
+  --gray: #5F605D;
+  --d-gray: #383838;
+  --d-blue:#1b4965;
+  --blue:#62b6cb;
+  --l-blue: #bee9e8;
+}
+
+body {
+  background: var(--blue);
+  color: var(--y-green);
+  font-family: "Tektur", cursive;
+}
+
+.header__top {
+  min-height: 100px;
+  background: linear-gradient(200deg, var(--d-blue) 0%, transparent 100%);
+}
+.header__top .img__wrap {
+  text-align: center;
+}
+.header__top .img__wrap img {
+  margin: 10px 0;
+  width: 300px;
+  height: auto;
+  background: linear-gradient(110deg, #fff 0%, var(--l-blue) 100%);
+  border-radius: 50%;
+  border: 2px solid var(--l-blue);
+}
+.header__top h1 {
+  display: inline-block;
+  filter: drop-shadow(0px 0px 0px var(--yellow));
+}
+.header__top span {
+  color: var(--yellow);
+}
+.header__center {
+  background: var(--d-blue);
+}
+
+.navbar-default {
+  background-color: #FF0000;
+  border-color: #E7E7E7;
+}/*# sourceMappingURL=style.css.map */
