@@ -74,6 +74,59 @@ body{
     flex-grow: 1;
     color: #000;
     font-size: 1.6rem;
+    & .skills{
+        &__item{
+            margin:30px 0;
+            border-left: 2px solid var(--orange);
+            &:first-child{
+                border: none;
+            }
+        }
+        & h2{
+            
+            text-align: center;
+        }
+        & li{
+            font-size: 2rem;
+            & .submenu{
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    content: '\f105';
+                    position: absolute;
+                    top: 50%;
+                    right: -15px;
+                    margin-top: -0.7rem;
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    font-size: 1.4rem;
+                    transition: 0.5s ease;
+                }
+                &.show::after,
+                &.show:hover::after,{
+                    transform: translate(10px) rotate(90deg);
+                    transition: 0.5s ease;
+                }
+                &:hover::after{
+                    transform:translate(10px);
+                    transition: 0.5s ease;
+                }
+                & + ul{
+                    display: none;
+                    background: #fff;
+                    & li{
+                        border-bottom: var(--l-orange1);
+                    }
+                }
+                &.show + ul{
+                    position: absolute;
+                    display: block;
+                }
+
+            }
+        }
+        
+    }
 }
 .footer{
     height: 100px;

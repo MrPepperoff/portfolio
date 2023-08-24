@@ -7,6 +7,7 @@
     <!-- Стили -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Инфо -->
@@ -63,12 +64,73 @@
             <div class="row">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eum dolorum corrupti eligendi repellendus incidunt mollitia praesentium blanditiis consectetur. Excepturi sunt tempore iusto necessitatibus asperiores delectus reiciendis minus beatae optio?
+                        <h2>Меня зовут Максим,</h2>
+                        <p>Я специализируюсь на создании пользовательских интерфейсов и веб-сайтов с использованием HTML, CSS, JavaScript, PHP и других технологий.</p>
+                        <p>В моем портфолио вы можете найти примеры моих работ</p>
+                        <p>Я также имею опыт работы с CMS, такими как Joomla. Я всегда стараюсь создавать удобные и красивые интерфейсы, которые помогают пользователям достигать своих целей.</p>
                     </div>
                     <div class="tab-pane fade" id="resume-tab-pane" role="tabpanel" aria-labelledby="resume-tab" tabindex="0">resume</div>
-                    <div class="tab-pane fade show active" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">skills</div>
+                    <div class="tab-pane fade show active skills" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col skills__item">
+                                <h2>Языки</h2>
+                                <ul>
+                                    <li><i class="fa-brands fa-html5"></i> HTML</li>
+                                    <li><i class="fa-brands fa-css3-alt"></i> <span class="submenu" data-bs-toggle="dropdown">CSS</span> 
+                                        <ul class="dropdown-menu">
+                                            <li><i class="fa-brands fa-sass"></i> SCSS</li>
+                                            <li><i class="fa-brands fa-sass"></i> SASS</li>
+                                            <li><i class="fa-brands fa-less"></i> LESS</li>
+                                        </ul>
+                                    </li>
+
+                                    <li><i class="fa-brands fa-square-js"></i> JS</li>
+                                    <li><i class="fa-brands fa-php"></i> PHP</li>
+                                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>    
+                            </div>
+                            <div class="col skills__item">
+                                <h2>Фреймворки</h2>
+                                <ul>
+                                    <li><i class="fa-brands fa-css3-alt"></i> <span class="submenu" data-bs-toggle="dropdown">CSS</span> 
+                                        <ul class="dropdown-menu">
+                                           <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
+                                        <ul>
+                                           <li><i class="fa-brands fa-laravel"></i> Laravel</li> 
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col skills__item">
+                                <h2>CMS</h2>
+                                <ul>
+                                    <li><i class="fa-brands fa-joomla"></i> Joomla</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
                     <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">portfolio</div>
-                    <div class="tab-pane fade" id="contacts-tab-pane" role="tabpanel" aria-labelledby="contacts-tab" tabindex="0">contacts</div>
+                    <div class="tab-pane fade" id="contacts-tab-pane" role="tabpanel" aria-labelledby="contacts-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><a href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                                    <li><a href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i> Телеграмм</a></li>
+                                    <li><a href="https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
+                                    <li><a href="tel:+79191017603"><i class="fa-solid fa-phone"></i> +7(919)101-76-03</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>         
             </div>
         </div>
@@ -85,8 +147,8 @@
                 <div class="col">
                     <address class="footer__address">
                         <ul>
-                            <li class="tel"><a href="tel:+79191017603">+7(919)101-76-03</a></li>
-                            <li class="mail"><a href="https://maxim4597@gmail.com" target="_blank">maxim040597@gmail.com</a></li>    
+                            <li class="mail"><a href="https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li> 
+                            <li class="tel"><a href="tel:+79191017603"><i class="fa-solid fa-phone"></i> +7(919)101-76-03</a></li>
                         </ul>
                         
                     </address>
@@ -94,6 +156,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

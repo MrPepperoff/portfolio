@@ -71,6 +71,53 @@ body {
   color: #000;
   font-size: 1.6rem;
 }
+.main .skills__item {
+  margin: 30px 0;
+  border-left: 2px solid var(--orange);
+}
+.main .skills__item:first-child {
+  border: none;
+}
+.main .skills h2 {
+  text-align: center;
+}
+.main .skills li {
+  font-size: 2rem;
+}
+.main .skills li .submenu {
+  position: relative;
+  cursor: pointer;
+}
+.main .skills li .submenu::after {
+  content: "\f105";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  margin-top: -0.7rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.4rem;
+  transition: 0.5s ease;
+}
+.main .skills li .submenu.show::after, .main .skills li .submenu.show:hover::after {
+  transform: translate(10px) rotate(90deg);
+  transition: 0.5s ease;
+}
+.main .skills li .submenu:hover::after {
+  transform: translate(10px);
+  transition: 0.5s ease;
+}
+.main .skills li .submenu + ul {
+  display: none;
+  background: #fff;
+}
+.main .skills li .submenu + ul li {
+  border-bottom: var(--l-orange1);
+}
+.main .skills li .submenu.show + ul {
+  position: absolute;
+  display: block;
+}
 
 .footer {
   height: 100px;
