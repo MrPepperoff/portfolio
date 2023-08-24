@@ -35,42 +35,64 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <nav class="navbar navbar-expand-lg navbar-dark">
-                            <div class="container-fluid">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-                                    <ul class="navbar-nav mb-2 mb-lg-0">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Обо мне</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" aria-current="page" href="#">Резюме</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Навыки</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Портфолио</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Контакты</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
+                        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">Обо мне</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="resume-tab" data-bs-toggle="tab" data-bs-target="#resume-tab-pane" type="button" role="tab" aria-controls="resume-tab-pane" aria-selected="false">Резюме</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-tab-pane" type="button" role="tab" aria-controls="skills-tab-pane" aria-selected="false">Навыки</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Портфолио</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" type="button" role="tab" aria-controls="contacts-tab-pane" aria-selected="false">Контакты</button>
+                            </li>
+                          </ul>
+                          
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <main class="main">
-
+        <div class="container">
+            <div class="row">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eum dolorum corrupti eligendi repellendus incidunt mollitia praesentium blanditiis consectetur. Excepturi sunt tempore iusto necessitatibus asperiores delectus reiciendis minus beatae optio?
+                    </div>
+                    <div class="tab-pane fade" id="resume-tab-pane" role="tabpanel" aria-labelledby="resume-tab" tabindex="0">resume</div>
+                    <div class="tab-pane fade show active" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">skills</div>
+                    <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">portfolio</div>
+                    <div class="tab-pane fade" id="contacts-tab-pane" role="tabpanel" aria-labelledby="contacts-tab" tabindex="0">contacts</div>
+                </div>         
+            </div>
+        </div>
+           
     </main>
     <footer class="footer">
-
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer__logo">
+                        АМ
+                    </div>
+                </div>
+                <div class="col">
+                    <address class="footer__address">
+                        <ul>
+                            <li class="tel"><a href="tel:+79191017603">+7(919)101-76-03</a></li>
+                            <li class="mail"><a href="https://maxim4597@gmail.com" target="_blank">maxim040597@gmail.com</a></li>    
+                        </ul>
+                        
+                    </address>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="js/bootstrap.min.js"></script>
 </body>

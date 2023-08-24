@@ -24,15 +24,22 @@
     --l-orange2:#FFCCBC;   
     
 }
-
+html{
+    font-size: 10px;
+    height: 100%;
+}
 body{
     background: var(--l-blue1);
-    color: var(--d-orange1);
+    color: #fff;
     font-family: 'Tektur', cursive;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 .header{
     
     &__top{
+        
         min-height: 100px;
         background: linear-gradient(200deg, transparent 0%, var(--black) 100%), url(../images/fon.jpg) center center/cover no-repeat;
         & .img__wrap{
@@ -47,37 +54,75 @@ body{
                 border: 2px solid var(--orange);
             }    
         }
-        .ligh_dark{
-            // color: var(--black);
-            text-shadow: none;
-            // animation: 2s cubic-bezier(0, 1.58, 1, 1.44) ligh_dark infinite;
+        & p{
+            font-size: 2rem;
         }
         & h1{
+            font-size: 4rem;
             display: inline-block;
             text-shadow: 0px 0px 2px var(--black);
         }
     }
     &__center{
         background: var(--d-blue1);
+        & a{
+            font-size: 1.6rem;
+        }
     }
 }
-.navbar{
-
+.main{
+    flex-grow: 1;
+    color: #000;
+    font-size: 1.6rem;
 }
-.navbar-default {
-    background-color: #FF0000;
-    border-color: #E7E7E7;
+.footer{
+    height: 100px;
+    background: var(--d-blue1);
+    display: flex;
+    align-items: center;
+    &__logo{
+        padding: 10px;
+        color: var(--black);
+        border-radius: 50%;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 2rem;
+        border: 2px solid var(--orange);
+        background: linear-gradient(110deg, var(--l-orange1) 0%, var(--l-blue1) 100%);
+    }
+    &__address{
+        text-align: end;
+        & a{
+            color: #fff;  
+            font-size: 1.6rem;
+        }
+        
+    }
 }
-
-@keyframes ligh_dark{
-    0%,20%{
-        text-shadow: 0px 0px 3px var(--d-yellow2);
-        color: var(--d-yellow2);
+.nav{
+    font-size: 1.6rem;
+    border: none;
+    &-tabs{
+        height: 100%;
+        & .nav-link{
+            color: rgba($color: #fff, $alpha: .5);
+            border-radius: 5px;
+            &.active{
+                background-color: var(--d-orange2);
+                color: #fff;
+                border: none;
+                transform: scale(1.1);
+                &:hover{
+                    color: #fff;
+                }
+            }
+            &:hover,
+            &:focus{
+                border-color: transparent;
+                color: rgba($color: #fff, $alpha: .8);
+            }
+            
+        }    
     }
-    10%,100%{
-        color: var(--d-orange2);
-    }
-    99%{
-        color: var(--black); 
-    }
+    
 }
