@@ -72,7 +72,7 @@
                     <div class="tab-pane fade" id="resume-tab-pane" role="tabpanel" aria-labelledby="resume-tab" tabindex="0">resume</div>
                     <div class="tab-pane fade show active skills" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">
                         <div class="row">
-                            <div class="col skills__item">
+                            <div class="col-md-4 skills__item">
                                 <h2>Языки</h2>
                                 <ul>
                                     <li><i class="fa-brands fa-html5"></i> HTML</li>
@@ -87,14 +87,9 @@
                                     <li><i class="fa-brands fa-square-js"></i> JS</li>
                                     <li><i class="fa-brands fa-php"></i> PHP</li>
                                     <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
                                 </ul>    
                             </div>
-                            <div class="col skills__item">
+                            <div class="col-md-4 skills__item">
                                 <h2>Фреймворки</h2>
                                 <ul>
                                     <li><i class="fa-brands fa-css3-alt"></i> <span class="submenu" data-bs-toggle="dropdown">CSS</span> 
@@ -102,14 +97,14 @@
                                            <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
                                         </ul>
                                     </li>
-                                    <li><i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
-                                        <ul>
+                                    <li><i class="fa-brands fa-php"></i> <span class="submenu"  data-bs-toggle="dropdown">PHP</span>
+                                        <ul class="dropdown-menu">
                                            <li><i class="fa-brands fa-laravel"></i> Laravel</li> 
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col skills__item">
+                            <div class="col-md-4 skills__item">
                                 <h2>CMS</h2>
                                 <ul>
                                     <li><i class="fa-brands fa-joomla"></i> Joomla</li>
@@ -118,7 +113,44 @@
                         </div>
                         
                     </div>
-                    <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">portfolio</div>
+                    <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">
+                        <div class="row my-5">
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card__img">
+                                        <!-- Сделать один размер по высоте -->
+                                        <img src="images/site1.jpg" class="card-img-top" alt="site1">
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">1. Портфолио для дизайнера</h5>
+                                      <p></p>
+                                      <a href="https://mrpepperoff.github.io/patent_Web/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="images/site2.jpg" class="card-img-top" alt="site1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">2. Магазин женской одежды</h5>
+                                      <p></p>
+                                      <a href="https://mrpepperoff.github.io/Divisima/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="images/site3.jpg" class="card-img-top" alt="site1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">3. Магазин спортивной - одежды</h5>
+                                      <p></p>
+                                      <a href="https://mrpepperoff.github.io/bicycle/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                     <div class="tab-pane fade" id="contacts-tab-pane" role="tabpanel" aria-labelledby="contacts-tab" tabindex="0">
                         <div class="row">
                             <div class="col">
@@ -126,7 +158,6 @@
                                     <li><a href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
                                     <li><a href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i> Телеграмм</a></li>
                                     <li><a href="https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
-                                    <li><a href="tel:+79191017603"><i class="fa-solid fa-phone"></i> +7(919)101-76-03</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -148,7 +179,6 @@
                     <address class="footer__address">
                         <ul>
                             <li class="mail"><a href="https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li> 
-                            <li class="tel"><a href="tel:+79191017603"><i class="fa-solid fa-phone"></i> +7(919)101-76-03</a></li>
                         </ul>
                         
                     </address>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap');
+@import "mixin.scss";
 :root{
      --black: #21201F;
     --d-gray: #383838;
@@ -27,6 +28,13 @@
 html{
     font-size: 10px;
     height: 100%;
+    @include xs{
+        font-size: 8px;
+    }
+    @include xxs{
+        font-size: 6px;
+    }
+    
 }
 body{
     background: var(--l-blue1);
@@ -81,21 +89,36 @@ body{
             &:first-child{
                 border: none;
             }
+            @include sm{
+                border: none;
+            }
         }
         & h2{
-            
             text-align: center;
         }
         & li{
+            position: relative;
             font-size: 2rem;
+            padding-left: 3rem;
+            // border-bottom: 1px solid rgba($color: #000, $alpha: .5);
+            & i{
+                position: absolute;
+                top: 50%;
+                left: 0rem;
+                // background: #a00;
+                width: 25px;
+                height: 25px;
+                margin-top: -1rem;
+                text-align: center;
+            }
             & .submenu{
-                position: relative;
+                // position: relative;
                 cursor: pointer;
                 &::after{
                     content: '\f105';
                     position: absolute;
                     top: 50%;
-                    right: -15px;
+                    right: 200px;
                     margin-top: -0.7rem;
                     font-family: "Font Awesome 6 Free";
                     font-weight: 900;
@@ -103,15 +126,19 @@ body{
                     transition: 0.5s ease;
                 }
                 &.show::after,
-                &.show:hover::after,{
-                    transform: translate(10px) rotate(90deg);
+                &.show:hover::after{
+                    left: auto;
+                    right: 10px;
+                    transform: rotate(90deg);
                     transition: 0.5s ease;
                 }
                 &:hover::after{
-                    transform:translate(10px);
+                    transform:translate(20px);
                     transition: 0.5s ease;
                 }
                 & + ul{
+                    position: absolute;
+                    right: 0%;
                     display: none;
                     background: #fff;
                     & li{
@@ -155,6 +182,9 @@ body{
 .nav{
     font-size: 1.6rem;
     border: none;
+    // @include xs{
+    //     font-size: 1.2rem;
+    // }
     &-tabs{
         height: 100%;
         & .nav-link{

@@ -25,6 +25,16 @@ html {
   font-size: 10px;
   height: 100%;
 }
+@media (max-width: 575px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 390px) {
+  html {
+    font-size: 6px;
+  }
+}
 
 body {
   background: var(--l-blue1);
@@ -78,21 +88,36 @@ body {
 .main .skills__item:first-child {
   border: none;
 }
+@media (max-width: 767px) {
+  .main .skills__item {
+    border: none;
+  }
+}
 .main .skills h2 {
   text-align: center;
 }
 .main .skills li {
+  position: relative;
   font-size: 2rem;
+  padding-left: 3rem;
+}
+.main .skills li i {
+  position: absolute;
+  top: 50%;
+  left: 0rem;
+  width: 25px;
+  height: 25px;
+  margin-top: -1rem;
+  text-align: center;
 }
 .main .skills li .submenu {
-  position: relative;
   cursor: pointer;
 }
 .main .skills li .submenu::after {
   content: "\f105";
   position: absolute;
   top: 50%;
-  right: -15px;
+  right: 200px;
   margin-top: -0.7rem;
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -100,14 +125,18 @@ body {
   transition: 0.5s ease;
 }
 .main .skills li .submenu.show::after, .main .skills li .submenu.show:hover::after {
-  transform: translate(10px) rotate(90deg);
+  left: auto;
+  right: 10px;
+  transform: rotate(90deg);
   transition: 0.5s ease;
 }
 .main .skills li .submenu:hover::after {
-  transform: translate(10px);
+  transform: translate(20px);
   transition: 0.5s ease;
 }
 .main .skills li .submenu + ul {
+  position: absolute;
+  right: 0%;
   display: none;
   background: #fff;
 }
