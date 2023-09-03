@@ -6,10 +6,10 @@
       --gray: #5F605D;
     --l-gray: #727271;
 
-    --d-blue1:#2A698F;
-    --d-blue2:#336A8A;
+    --d-blue1: #21201F; // #2A698F
+    --d-blue2:#336A8A; // 
        --blue:#62B6CB;
-    --l-blue1:#B5DFF8;
+    --l-blue1:#999; //#B5DFF8
     --l-blue2:#BBE3F8;
 
     --d-yellow1:#E0B339;
@@ -18,8 +18,8 @@
     --l-yellow1:#FFEDBC;
     --l-yellow2:#FFEBB6;
 
-    --d-orange1:#E06139;
-    --d-orange2:#D86B49;
+    --d-orange1:#ff3c00; // #E06139;
+    --d-orange2:#e44800;// #D86B49;
        --orange:#FF8F6B;
     --l-orange1:#FFC8B6;
     --l-orange2:#FFCCBC;   
@@ -45,11 +45,18 @@ body{
     min-height: 100%;
 }
 .header{
-    
     &__top{
-        
         min-height: 100px;
-        background: linear-gradient(200deg, transparent 0%, var(--black) 100%), url(../images/fon.jpg) center center/cover no-repeat;
+        position: relative;
+
+        &__background{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(200deg, transparent 0%, var(--black) 100%), url(../images/fon.jpg) center center/cover no-repeat;
+            filter: grayscale(100%) invert(10%) brightness(50%);
+        }
         & .img__wrap{
             text-align: center;
             & img{
@@ -57,9 +64,9 @@ body{
                 margin: 10px 0;
                 width: 300px;
                 height: auto;
-                background: linear-gradient(110deg, var(--l-orange1) 0%, var(--l-blue1) 100%);
+                background: linear-gradient(110deg, var(--d-orange2) 0%, var(--d-blue1) 100%);
                 border-radius: 50%;
-                border: 2px solid var(--orange);
+                border: 2px solid var(--d-orange1);
             }    
         }
         & p{
@@ -71,8 +78,20 @@ body{
             text-shadow: 0px 0px 2px var(--black);
         }
     }
+    &__nav{
+        & .bar{
+            color: #fff;
+            font-size: 1.6rem;
+        }
+    }
     &__center{
+        display: flex;
+        align-items: center;
         background: var(--d-blue1);
+        min-height: 35px;
+        &__container{
+            height: 100%;
+        }
         & a{
             font-size: 1.6rem;
         }
@@ -113,18 +132,18 @@ body{
             }
             & .submenu{
                 // position: relative;
-                cursor: pointer;
-                &::after{
-                    content: '\f105';
-                    position: absolute;
-                    top: 50%;
-                    right: 200px;
-                    margin-top: -0.7rem;
-                    font-family: "Font Awesome 6 Free";
-                    font-weight: 900;
-                    font-size: 1.4rem;
-                    transition: 0.5s ease;
-                }
+                // cursor: pointer;
+                // &::after{
+                //     content: '\f105';
+                //     position: absolute;
+                //     top: 50%;
+                //     right: 200px;
+                //     margin-top: -0.7rem;
+                //     font-family: "Font Awesome 6 Free";
+                //     font-weight: 900;
+                //     font-size: 1.4rem;
+                //     transition: 0.5s ease;
+                // }
                 &.show::after,
                 &.show:hover::after{
                     left: auto;
@@ -156,19 +175,47 @@ body{
     }
 }
 .footer{
+    overflow-x: hidden;
     height: 100px;
     background: var(--d-blue1);
     display: flex;
     align-items: center;
+    padding-top: 4px;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        border-radius: 0 2px 2px 0;
+        background: linear-gradient(to right, transparent 0%, var(--d-orange2) 100%);
+        animation: 10s linear runline infinite;
+        z-index: 1;
+    }
+    @keyframes runline {
+        0%,25%{
+            left: -100%;
+        }
+        50%,75%{
+            left: 200%; 
+        }
+        100%{
+            background: linear-gradient(to left, transparent 0%, var(--d-orange2) 100%);
+            left: -100%;
+        }
+    }
+
     &__logo{
         padding: 10px;
-        color: var(--black);
+        color: #fff;
         border-radius: 50%;
         font-weight: bold;
         display: inline-block;
         font-size: 2rem;
         border: 2px solid var(--orange);
-        background: linear-gradient(110deg, var(--l-orange1) 0%, var(--l-blue1) 100%);
+        background: linear-gradient(110deg, var(--d-orange2) 0%, var(--d-blue1) 100%);
     }
     &__address{
         text-align: end;
@@ -178,6 +225,9 @@ body{
         }
         
     }
+}
+.navbar{
+    padding: 0;
 }
 .nav{
     font-size: 1.6rem;
@@ -199,13 +249,57 @@ body{
                     color: #fff;
                 }
             }
-            &:hover,
-            &:focus{
+            &:focus,
+            &.show,
+            &:hover{
                 border-color: transparent;
-                color: rgba($color: #fff, $alpha: .8);
+                color: #fff;
             }
-            
         }    
     }
     
+}
+
+
+.dark{
+    box-sizing: border-box;
+    padding: 0 10px 0 0;
+    height: 25px;
+    width: 50px;
+    & .slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        transition: 0.3s;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 25px;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 10px -5px 0px -2px #fff;
+            background-color:var(--l-blue1);
+            transition: 0.5s;
+        }
+    }
+    &__wrap{
+        position: relative;
+        width: 50px;
+        height: 100%;
+        background-color: var(--l-blue1);
+        border-radius: 25px;
+        cursor: pointer; 
+    }  
+    & input {
+        position: absolute;
+        display: none;
+        &:checked ~ .slider::before {
+            transform: translateX(25px);
+            background-color: #fff;
+            box-shadow: none;
+        }
+    }
 }
