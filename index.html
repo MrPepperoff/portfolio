@@ -15,9 +15,6 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <div class="fixed">
-
-    </div>
     <header class="header">
         <div class="header__top">
         <div class="header__top__background"></div>
@@ -45,19 +42,10 @@
                                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">Обо мне</button>
+                                        <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">Резюме</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="resume-tab" data-bs-toggle="tab" data-bs-target="#resume-tab-pane" type="button" role="tab" aria-controls="resume-tab-pane" aria-selected="false">Резюме</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-tab-pane" type="button" role="tab" aria-controls="skills-tab-pane" aria-selected="false">Навыки</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Портфолио</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts-tab-pane" type="button" role="tab" aria-controls="contacts-tab-pane" aria-selected="false">Контакты</button>
+                                        <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Портфолио</button>
                                     </li>
                                 </ul> 
                                 </div>
@@ -65,10 +53,10 @@
                         </nav>  
                     </div>
                     <div class="col-lg-1 col-3 dark">
-                        <label class="dark__wrap">
+                        <!-- <label class="dark__wrap">
                             <input type = 'checkbox'>
                             <span class = 'slider'></span>
-                        </label>
+                        </label> -->
                     </div>
                 </div>
             </div>
@@ -76,66 +64,89 @@
     </header>
     <main class="main">
         <div class="container">
-            <div class="row">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
-                        <h2>Меня зовут Максим,</h2>
-                        <p>Я специализируюсь на создании пользовательских интерфейсов и веб-сайтов с использованием HTML, CSS, JavaScript, PHP и других технологий.</p>
-                        <p>В моем портфолио вы можете найти примеры моих работ</p>
-                        <p>Я также имею опыт работы с CMS, такими как Joomla. Я всегда стараюсь создавать удобные и красивые интерфейсы, которые помогают пользователям достигать своих целей.</p>
-                    </div>
-                    <div class="tab-pane fade" id="resume-tab-pane" role="tabpanel" aria-labelledby="resume-tab" tabindex="0">resume</div>
-                    <div class="tab-pane fade show active skills" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">
-                        <div class="row">
-                            <div class="col-md-4 skills__item">
-                                <h2>Языки</h2>
-                                <ul>
-                                    <li><i class="fa-brands fa-html5"></i> HTML</li>
-                                    <li class=" dropend">
-                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><i class="fa-brands fa-sass"></i> SCSS</li>
-                                            <li><i class="fa-brands fa-sass"></i> SASS</li>
-                                            <li><i class="fa-brands fa-less"></i> LESS</li>
-                                        </ul>
-                                    </li>
-                                    <li><i class="fa-brands fa-square-js"></i> JS</li>
-                                    <li><i class="fa-brands fa-php"></i> PHP</li>
-                                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                                </ul>    
+            <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                        <div class="row main__row"> 
+                            <div class="col-9 main__left">
+                                <p></p>
+                                <p>Я специализируюсь на создании пользовательских интерфейсов и веб-сайтов с использованием HTML, CSS, JavaScript, PHP и других технологий.</p>
+                                <p>В моем портфолио вы можете найти примеры моих работ</p>
+                                <p>Я также имею опыт работы с CMS, такими как Joomla. Я всегда стараюсь создавать удобные и красивые интерфейсы, которые помогают пользователям достигать своих целей.</p>
                             </div>
-                            <div class="col-md-4 skills__item">
-                                <h2>Фреймворки</h2>
-                                <ul>
-                                    <li class=" dropend">
-                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
+                            <div class="col-3 main__rigth">
+                                <div class="row flex-column">
+                                    <div class="col contacts">
+                                        <h3><i class="fa-solid fa-address-card"></i> Контакты</h3>
+                                        <ul>
+                                            <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                                            <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i> Телеграмм</a></li>
+                                            <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
                                         </ul>
-                                    </li>
-                                    <li class=" dropend">
-                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-laravel"></i> Laravel</a></li>
+                                    </div>
+                                    <!-- <div class="col">
+                                        <h3><i class="fa-solid fa-book"></i> Пройденные Курсы</h3>
+                                        <ul>
+                                            <li></li>
                                         </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 skills__item">
-                                <h2>CMS</h2>
-                                    <ul>
-                                        <li><i class="fa-brands fa-joomla"></i> Joomla</li>
-                                    </ul>
+                                    </div> -->
+                                    <div class="col">
+                                        <h3><i class="fa-solid fa-gears"></i> Навыки</h3>
+                                        <ul>
+                                            <li>
+                                                <h4>Языки</h4>
+                                                <ul>
+                                                    <li><i class="fa-brands fa-html5"></i> HTML</li>
+                                                    <li class=" dropend">
+                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><i class="fa-brands fa-sass"></i> SCSS</li>
+                                                            <li><i class="fa-brands fa-sass"></i> SASS</li>
+                                                            <li><i class="fa-brands fa-less"></i> LESS</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><i class="fa-brands fa-square-js"></i> JS</li>
+                                                    <li><i class="fa-brands fa-php"></i> PHP</li>
+                                                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h4>Фреймворки</h4>
+                                                <ul>
+                                                    <li class=" dropend">
+                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
+                                                        </ul>
+                                                    </li>
+                                                    <li class=" dropend">
+                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-laravel"></i> Laravel</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h4>CMS</h4>
+                                                <ul>
+                                                    <li><i class="fa-brands fa-joomla"></i> Joomla</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                
+
                             </div>
                         </div>
                     </div>
-
                     <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">
                         <div class="row my-5">
                             <div class="col-4">
@@ -174,19 +185,7 @@
                         </div>
                         
                     </div>
-                    <div class="tab-pane fade" id="contacts-tab-pane" role="tabpanel" aria-labelledby="contacts-tab" tabindex="0">
-                        <div class="row">
-                            <div class="col">
-                                <ul>
-                                    <li><a href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-                                    <li><a href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i> Телеграмм</a></li>
-                                    <li><a href="https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>         
-            </div>
+            </div>         
         </div>
            
     </main>
@@ -201,7 +200,7 @@
                 <div class="col">
                     <address class="footer__address">
                         <ul>
-                            <li class="mail"><a href="mailto:(https://maxim040597@gmail.com)" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
+                            <li class="mail"><a class="link link_white" href="mailto:(https://maxim040597@gmail.com)" target="_blank"><i class="fa-solid fa-envelope"></i> maxim040597@gmail.com</a></li>
                         </ul>
                     </address>
                 </div>
