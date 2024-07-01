@@ -143,6 +143,8 @@ body {
   margin: 0;
   color: #fff;
   background-color: var(--d-orange2);
+  font-size: clamp(0.1rem, 100%, 2rem);
+  text-align: center;
 }
 .main__head .line {
   margin: 0;
@@ -315,4 +317,22 @@ body {
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--d-gray);
+}
+
+.breackpoint {
+  position: fixed;
+  opacity: 0.3;
+  width: 40px;
+  height: 40px;
+}
+.breackpoint div {
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
+  background: #ccc;
+  color: #a00;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

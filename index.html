@@ -15,8 +15,18 @@
     <title>Portfolio</title>
 </head>
 <body>
+    <div class="breackpoint">
+        <div class='d-block d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none'>xs</div>
+        <div class='d-none d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none'>sm</div>
+        <div class='d-none d-sm-none d-md-block d-lg-none d-xl-none d-xxl-none'>md</div>
+        <div class='d-none d-sm-none d-md-none d-lg-block d-xl-none d-xxl-none'>lg</div>
+        <div class='d-none d-sm-none d-md-none d-lg-none d-xl-block d-xxl-none'>xl</div>
+        <div class='d-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-block'>xxl</div>
+    </div>
     <header class="header">
+        
         <div class="header__top">
+            
         <div class="header__top__background"></div>
         <div class="container">
             <div class="row align-items-center">
@@ -67,11 +77,11 @@
             <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active show" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
                         <div class="row main__row"> 
-                            <div class="col-9 main__left">
+                            <div class="col-12 col-md-9 main__left">
                                 <div class="row flex-column">
                                     <div class="col">
                                         <div class="row main__head align-items-center">
-                                            <h2 class="title col-1">Курсы</h2>
+                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Курсы</h2>
                                             <p class="line col flex-grow-1"></p>
                                             <p class="icon col-1">
                                                 <i class="fa-solid fa-book"></i>
@@ -94,7 +104,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="row main__head align-items-center">
-                                            <h2 class="title col-1">О себе</h2>
+                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">О себе</h2>
                                             <p class="line col flex-grow-1"></p>
                                             <p class="icon col-1">
                                                 <i class="fa-solid fa-person-falling"></i>
@@ -115,7 +125,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="row main__head align-items-center">
-                                            <h2 class="title col-1">Хобби</h2>
+                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Хобби</h2>
                                             <p class="line col flex-grow-1"></p>
                                             <p class="icon col-1">
                                                 <i class="fa-solid fa-bicycle"></i>
@@ -135,14 +145,14 @@
                                 
                                 
                             </div>
-                            <div class="col-3 main__rigth">
+                            <div class="col-3 d-none d-md-block main__rigth">
                                 <div class="row flex-column">
                                     <div class="col contacts">
                                         <h3><i class="fa-solid fa-address-card"></i> Контакты</h3>
                                         <ul>
-                                            <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i><span class="d-sm-none d-xl-block ">GitHub</span> </a></li>
-                                            <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i><span class="d-sm-none d-xl-block ">Телеграмм</span></a></li>
-                                            <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="d-sm-none d-xl-block ">maxim040597@gmail.com</span></a></li>
+                                            <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i><span class="d-none d-xl-block ">GitHub</span> </a></li>
+                                            <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank" title="Телеграмм"><i class="fa-solid fa-paper-plane"></i><span class="d-none d-xl-block ">Телеграмм</span></a></li>
+                                            <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="d-none d-xl-block ">maxim040597@gmail.com</span></a></li>
                                         </ul>
                                     </div>
                                     <div class="col main__programming-language">
@@ -154,7 +164,7 @@
                                                     <li><i class="fa-brands fa-html5"></i> HTML</li>
                                                     <li class="dropend">
                                                         <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
+                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu"> CSS</span> 
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><i class="fa-brands fa-sass"></i> SCSS</li>
@@ -163,6 +173,7 @@
                                                         </ul>
                                                     </li>
                                                     <li><i class="fa-brands fa-square-js"></i> JS</li>
+                                                    <li><i class="fa-brands fa-square-js"></i> TS</li>
                                                     <li><i class="fa-brands fa-php"></i> PHP</li>
                                                     <li><i class="fa-brands fa-git-alt"></i> Git</li>
                                                 </ul>
@@ -209,7 +220,7 @@
                             <div class="col-4">
                                 <div class="card">
                                     <div class="card__img">
-                                        <!-- Сделать один размер по высоте -->
+                                        <!--TODO Сделать один размер по высоте -->
                                         <img src="images/site1.jpg" class="card-img-top" alt="site1">
                                     </div>
                                     <div class="card-body">
@@ -231,11 +242,21 @@
                             </div>
                             <div class="col-4">
                                 <div class="card">
-                                    <img src="images/site3.jpg" class="card-img-top" alt="site1">
+                                    <img src="images/site3.jpg" class="card-img-top" alt="site3">
                                     <div class="card-body">
                                       <h5 class="card-title">3. Магазин спортивной - одежды</h5>
                                       <p></p>
                                       <a href="https://mrpepperoff.github.io/bicycle/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="https://fakeimg.pl/640x360" class="card-img-top" alt="site4">
+                                    <div class="card-body">
+                                      <h5 class="card-title">4. Магазин декора. (decor-elegant)</h5>
+                                      <p></p>
+                                      <a href="https://decor-elegant.netlify.app/" target="_blank" class="btn btn-primary">Посмотреть</a>
                                     </div>
                                   </div>
                             </div>
