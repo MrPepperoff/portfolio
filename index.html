@@ -14,7 +14,10 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Portfolio</title>
     <script>
-        localStorage.setItem('screen', 'dark')
+        if(localStorage.getItem('screen')){
+            localStorage.setItem('screen', 'dark');
+        }
+        
     </script>
 </head>
 <body>
@@ -94,11 +97,36 @@
                                             <ul>
                                                 <li>
                                                     <div class="item">
-                                                        <h4 class="item__title">Разработка и продвижение WEB-проектов</h4>
+                                                        
                                                         <div class="item__content">
-                                                            <p>Компьютерная академия "Top"</p>
-                                                            <span>Год окончания: 2024 </span>
-                                                                
+                                                            <div class="row">
+                                                                <div class="col-8">
+                                                                    <h4 class="item__title">Разработка и продвижение WEB-проектов</h4>
+                                                                    <p>Компьютерная академия "Top"</p>
+                                                                    <span>Год окончания: 2024 </span> 
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                        
+                                                                        <img src="https://fakeimg.pl/1200x800" alt="Диплом">
+                                                                      </button>
+                                                                      
+                                                                      <!-- Модальное окно -->
+                                                                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-xl">
+                                                                          <div class="modal-content">
+                                                                            <div>
+                                                                              <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1> -->
+                                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <img src="https://fakeimg.pl/1200x800" style="width: 100%;" alt="Диплом">
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                </div>
+                                                            </div>
                                                         </div> 
                                                     </div>
                                                 </li>
