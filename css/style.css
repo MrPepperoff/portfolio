@@ -335,4 +335,23 @@ body {
   border-radius: 50%;
   font-size: 20px;
   text-align: center;
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 5px -5px 10px #888888, -5px 5px 10px #aaaaaa;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  border: none;
+  transform: scale(1.01);
+  box-shadow: 7px -7px 14px #636363, -7px 7px 14px #cfcfcf;
+}
+.btn-close {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
 }/*# sourceMappingURL=style.css.map */

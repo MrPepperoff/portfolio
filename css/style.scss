@@ -351,3 +351,23 @@ body{
         text-align:center;
     }
 }
+.btn{
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    box-shadow:  5px -5px 10px #888888 ,-5px 5px 10px #aaaaaa;
+    transition: 0.5s ease;
+    &:hover{
+        border: none;
+        transform: scale(1.01);
+        box-shadow:  7px -7px 14px #636363 ,-7px 7px 14px #cfcfcf;
+    }
+    &-close{
+        position: absolute; 
+        z-index: 2; 
+        top: 10px; 
+        right: 10px;
+    }
+}
+
+    
