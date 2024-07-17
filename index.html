@@ -1,319 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Стили -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_portfolio.css">
 
     <!-- Инфо -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Portfolio</title>
-    <script>
-        if(localStorage.getItem('screen')){
-            localStorage.setItem('screen', 'dark');
-        }
-        
-    </script>
 </head>
 <body>
     <div class="breackpoint">
-        <div class='d-block d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none'>xs</div>
-        <div class='d-none d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none'>sm</div>
-        <div class='d-none d-sm-none d-md-block d-lg-none d-xl-none d-xxl-none'>md</div>
-        <div class='d-none d-sm-none d-md-none d-lg-block d-xl-none d-xxl-none'>lg</div>
-        <div class='d-none d-sm-none d-md-none d-lg-none d-xl-block d-xxl-none'>xl</div>
-        <div class='d-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-block'>xxl</div>
+        <div class='breackpoint__xxs'>xxs</div>
+        <div class='breackpoint__xs'>xs</div>
+        <div class='breackpoint__sm'>sm</div>
+        <div class='breackpoint__md'>md</div>
+        <div class='breackpoint__lg'>lg</div>
+        <div class='breackpoint__xl'>xl</div>
+        <div class='breackpoint__xxl'>xxl</div>
     </div>
     <header class="header">
-        
         <div class="header__top">
-            
-        <div class="header__top__background"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <p>Привет, меня зовут</p>
-                    <h1>Алексеев Максим</h1>
+            <div class="content header__top__wrap">    
+                <div class="logo__wrap">
+                    <h1>РЕЗЮМЕ</h1> 
                 </div>
-                <div class="col img__wrap">
-                    <img src="images/avatar3.png" alt="avatar">
+                
+                <div class="avatar__wrap">
+                    <img src="images/avatar.png" class='avatar' alt="avatar">
                 </div>
+                
+                <nav>
+                    <ul>
+                        <li><button type="button" onClick='onDark()' title="Dark Mode"><i class="fa-solid fa-sun"></i></button></li>
+                        <li><a href="#skills">Навыки</a></li>
+                        <li><a href="#">Образование</a></li>
+                        <li><a href="#">Портфолио</a></li>
+                        <li><a href="#">О себе</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Требования</a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>    
         </div>
-        <div class="header__center">
-            <div class="container header__center__container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-11 col-3">
-                        <nav class="navbar navbar-expand-lg">
-                            <div class="container-fluid header__nav">
-                                <button class="navbar-toggler bar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="fa-solid fa-bars"></i>
-                                </button>
-                                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                                <ul class="navbar-nav nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">Резюме</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Портфолио</button>
-                                    </li>
-                                </ul> 
-                                </div>
-                            </div>
-                        </nav>  
-                    </div>
-                    <div class="col-lg-1 col-3 dark">
-                        <!-- <label class="dark__wrap">
-                            <input type = 'checkbox'>
-                            <span class = 'slider'></span>
-                        </label> -->
-                    </div>
-                </div>
-            </div>
+        
+        <div class="header__bottom">
+
         </div>
     </header>
     <main class="main">
-        <div class="container">
-            <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade active show" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
-                        <div class="row main__row"> 
-                            <div class="col-12 col-md-9 main__left">
-                                <div class="row flex-column">
-                                    <div class="col">
-                                        <div class="row main__head align-items-center">
-                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Курсы</h2>
-                                            <p class="line col flex-grow-1"></p>
-                                            <p class="icon col-1">
-                                                <i class="fa-solid fa-book"></i>
-                                            </p>
-                                        </div>
-                                        <div class="text">
-                                            <ul>
-                                                <li>
-                                                    <div class="item">
-                                                        
-                                                        <div class="item__content">
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <h4 class="item__title">Разработка и продвижение WEB-проектов</h4>
-                                                                    <p>Компьютерная академия "Top"</p>
-                                                                    <span>Год окончания: 2024 </span> 
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#diplomTop">
-                                                                        <img src="https://fakeimg.pl/1200x800" alt="Диплом">
-                                                                      </button>
-                                                                      
-                                                                      <!-- Модальное окно -->
-                                                                      <div class="modal fade" id="diplomTop" tabindex="-1" aria-labelledby="diplomTopLabel" aria-hidden="true">
-                                                                        <div class="modal-dialog modal-xl">
-                                                                          <div class="modal-content">
-                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                                                                            <img src="https://fakeimg.pl/1200x800" style="width: 100hv;" alt="Диплом">
+        <section class="content">
+            <h2><a name="skills">Навыки</a></h2>
+        </section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- <div>
+        <header class="header">
+        
+            <div class="header__top">
+                
+            <div class="header__top__background"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <p>Привет, меня зовут</p>
+                        <h1>Алексеев Максим</h1>
+                    </div>
+                    <div class="col img__wrap">
+                        <img src="images/avatar3.png" alt="avatar">
+                    </div>
+                </div>
+            </div>    
+            </div>
+            <div class="header__center">
+                <div class="container header__center__container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-11 col-3">
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="container-fluid header__nav">
+                                    <button class="navbar-toggler bar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fa-solid fa-bars"></i>
+                                    </button>
+                                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                                    <ul class="navbar-nav nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">Резюме</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Портфолио</button>
+                                        </li>
+                                    </ul> 
+                                    </div>
+                                </div>
+                            </nav>  
+                        </div>
+                        <div class="col-lg-1 col-3 dark">
+                            <label class="dark__wrap">
+                                <input type = 'checkbox'>
+                                <span class = 'slider'></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                            <div class="row main__row"> 
+                                <div class="col-12 col-md-9 main__left">
+                                    <div class="row flex-column">
+                                        <div class="col">
+                                            <div class="row main__head align-items-center">
+                                                <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Курсы</h2>
+                                                <p class="line col flex-grow-1"></p>
+                                                <p class="icon col-1">
+                                                    <i class="fa-solid fa-book"></i>
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                <ul>
+                                                    <li>
+                                                        <div class="item">
+                                                            
+                                                            <div class="item__content">
+                                                                <div class="row">
+                                                                    <div class="col-8">
+                                                                        <h4 class="item__title">Разработка и продвижение WEB-проектов</h4>
+                                                                        <p>Компьютерная академия "Top"</p>
+                                                                        <span>Год окончания: 2024 </span> 
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#diplomTop">
+                                                                            <img src="https://fakeimg.pl/1200x800" alt="Диплом">
+                                                                          </button>
+                                                                          
+                                                                          
+                                                                          <div class="modal fade" id="diplomTop" tabindex="-1" aria-labelledby="diplomTopLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-xl">
+                                                                              <div class="modal-content">
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                                                                <img src="https://fakeimg.pl/1200x800" style="width: 100hv;" alt="Диплом">
+                                                                              </div>
+                                                                            </div>
                                                                           </div>
-                                                                        </div>
-                                                                      </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </li>
-                                            </ul>    
+                                                            </div> 
+                                                        </div>
+                                                    </li>
+                                                </ul>    
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row main__head align-items-center">
+                                                <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">О себе</h2>
+                                                <p class="line col flex-grow-1"></p>
+                                                <p class="icon col-1">
+                                                    <i class="fa-solid fa-person-falling"></i>
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                <ul>
+                                                    <li>
+                                                        <p>
+                                                            Я начинающий веб-программист с большим желанием изучать новые технологии и создавать качественные сайты и приложения. 
+                                                            Я увлечен программированием и постоянно расширяю свои знания в этой области. Мне нравится работать над интерфейсом, 
+                                                            чтобы сделать его удобным и привлекательным для пользователей. 
+                                                        </p>    
+                                                    </li>
+                                                </ul>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row main__head align-items-center">
+                                                <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Хобби</h2>
+                                                <p class="line col flex-grow-1"></p>
+                                                <p class="icon col-1">
+                                                    <i class="fa-solid fa-bicycle"></i>
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                <ul>
+                                                    <li>
+                                                        <p>Я люблю создавать свои собственные проекты и экспериментировать с новыми идеями. 
+                                                            В свободное время я также занимаюсь путешествиями.
+                                                        </p>
+                                                    </li>
+                                                </ul>    
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="row main__head align-items-center">
-                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">О себе</h2>
-                                            <p class="line col flex-grow-1"></p>
-                                            <p class="icon col-1">
-                                                <i class="fa-solid fa-person-falling"></i>
-                                            </p>
+                                    
+                                    
+                                </div>
+                                <div class="col-3 d-none d-md-block main__rigth">
+                                    <div class="row flex-column">
+                                        <div class="col contacts">
+                                            <h3><i class="fa-solid fa-address-card"></i> Контакты</h3>
+                                            <ul>
+                                                <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i><span class="d-none d-xl-block ">GitHub</span> </a></li>
+                                                <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank" title="Телеграмм"><i class="fa-solid fa-paper-plane"></i><span class="d-none d-xl-block ">Телеграмм</span></a></li>
+                                                <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="d-none d-xl-block ">maxim040597@gmail.com</span></a></li>
+                                            </ul>
                                         </div>
-                                        <div class="text">
+                                        <div class="col main__programming-language">
+                                            <h3><i class="fa-solid fa-gears"></i> Навыки</h3>
                                             <ul>
                                                 <li>
-                                                    <p>
-                                                        Я начинающий веб-программист с большим желанием изучать новые технологии и создавать качественные сайты и приложения. 
-                                                        Я увлечен программированием и постоянно расширяю свои знания в этой области. Мне нравится работать над интерфейсом, 
-                                                        чтобы сделать его удобным и привлекательным для пользователей. 
-                                                    </p>    
+                                                    <h4>Языки</h4>
+                                                    <ul>
+                                                        <li><i class="fa-brands fa-html5"></i> HTML</li>
+                                                        <li class="dropend">
+                                                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-brands fa-css3-alt"></i> <span class="submenu"> CSS</span> 
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><i class="fa-brands fa-sass"></i> SCSS</li>
+                                                                <li><i class="fa-brands fa-sass"></i> SASS</li>
+                                                                <li><i class="fa-brands fa-less"></i> LESS</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><i class="fa-brands fa-square-js"></i> JS</li>
+                                                        <li><i class="fa-brands fa-square-js"></i> TS</li>
+                                                        <li><i class="fa-brands fa-php"></i> PHP</li>
+                                                        <li><i class="fa-brands fa-git-alt"></i> Git</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h4>Фреймворки</h4>
+                                                    <ul>
+                                                        <li class=" dropend">
+                                                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
+                                                            </ul>
+                                                        </li>
+                                                        <li class=" dropend">
+                                                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-laravel"></i> Laravel</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h4>CMS</h4>
+                                                    <ul>
+                                                        <li><i class="fa-brands fa-joomla"></i> Joomla</li>
+                                                    </ul>
                                                 </li>
                                             </ul>
                                             
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row main__head align-items-center">
-                                            <h2 class="title col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-2">Хобби</h2>
-                                            <p class="line col flex-grow-1"></p>
-                                            <p class="icon col-1">
-                                                <i class="fa-solid fa-bicycle"></i>
-                                            </p>
-                                        </div>
-                                        <div class="text">
-                                            <ul>
-                                                <li>
-                                                    <p>Я люблю создавать свои собственные проекты и экспериментировать с новыми идеями. 
-                                                        В свободное время я также занимаюсь путешествиями.
-                                                    </p>
-                                                </li>
-                                            </ul>    
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                            <div class="col-3 d-none d-md-block main__rigth">
-                                <div class="row flex-column">
-                                    <div class="col contacts">
-                                        <h3><i class="fa-solid fa-address-card"></i> Контакты</h3>
-                                        <ul>
-                                            <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i><span class="d-none d-xl-block ">GitHub</span> </a></li>
-                                            <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank" title="Телеграмм"><i class="fa-solid fa-paper-plane"></i><span class="d-none d-xl-block ">Телеграмм</span></a></li>
-                                            <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="d-none d-xl-block ">maxim040597@gmail.com</span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col main__programming-language">
-                                        <h3><i class="fa-solid fa-gears"></i> Навыки</h3>
-                                        <ul>
-                                            <li>
-                                                <h4>Языки</h4>
-                                                <ul>
-                                                    <li><i class="fa-brands fa-html5"></i> HTML</li>
-                                                    <li class="dropend">
-                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu"> CSS</span> 
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><i class="fa-brands fa-sass"></i> SCSS</li>
-                                                            <li><i class="fa-brands fa-sass"></i> SASS</li>
-                                                            <li><i class="fa-brands fa-less"></i> LESS</li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><i class="fa-brands fa-square-js"></i> JS</li>
-                                                    <li><i class="fa-brands fa-square-js"></i> TS</li>
-                                                    <li><i class="fa-brands fa-php"></i> PHP</li>
-                                                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>Фреймворки</h4>
-                                                <ul>
-                                                    <li class=" dropend">
-                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fa-brands fa-css3-alt"></i> <span class="submenu">CSS</span> 
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li> 
-                                                        </ul>
-                                                    </li>
-                                                    <li class=" dropend">
-                                                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fa-brands fa-php"></i> <span class="submenu">PHP</span>
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-laravel"></i> Laravel</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <h4>CMS</h4>
-                                                <ul>
-                                                    <li><i class="fa-brands fa-joomla"></i> Joomla</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
                                         
                                     </div>
                                     
+    
                                 </div>
-                                
-
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">
-                        <div class="row my-5">
-                            <div class="col-4">
-                                <div class="card">
-                                    <div class="card__img">
-                                        <!--TODO Сделать один размер по высоте -->
-                                        <img src="images/site1.jpg" class="card-img-top" alt="site1">
-                                    </div>
-                                    <div class="card-body">
-                                      <h5 class="card-title">1. Портфолио для дизайнера</h5>
-                                      <p></p>
-                                      <a href="https://mrpepperoff.github.io/patent_Web/" target="_blank" class="btn btn-primary">Посмотреть</a>
-                                    </div>
-                                  </div>
+                        <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">
+                            <div class="row my-5">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card__img">
+                                          <img src="images/site1.jpg" class="card-img-top" alt="site1">
+                                        </div>
+                                        <div class="card-body">
+                                          <h5 class="card-title">1. Портфолио для дизайнера</h5>
+                                          <p></p>
+                                          <a href="https://mrpepperoff.github.io/patent_Web/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img src="images/site2.jpg" class="card-img-top" alt="site1">
+                                        <div class="card-body">
+                                          <h5 class="card-title">2. Магазин женской одежды</h5>
+                                          <p></p>
+                                          <a href="https://mrpepperoff.github.io/Divisima/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img src="images/site3.jpg" class="card-img-top" alt="site3">
+                                        <div class="card-body">
+                                          <h5 class="card-title">3. Магазин спортивной - одежды</h5>
+                                          <p></p>
+                                          <a href="https://mrpepperoff.github.io/bicycle/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img src="https://fakeimg.pl/640x360" class="card-img-top" alt="site4">
+                                        <div class="card-body">
+                                          <h5 class="card-title">4. Магазин декора. (decor-elegant)</h5>
+                                          <p></p>
+                                          <a href="https://decor-elegant.netlify.app/" target="_blank" class="btn btn-primary">Посмотреть</a>
+                                        </div>
+                                      </div>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img src="images/site2.jpg" class="card-img-top" alt="site1">
-                                    <div class="card-body">
-                                      <h5 class="card-title">2. Магазин женской одежды</h5>
-                                      <p></p>
-                                      <a href="https://mrpepperoff.github.io/Divisima/" target="_blank" class="btn btn-primary">Посмотреть</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img src="images/site3.jpg" class="card-img-top" alt="site3">
-                                    <div class="card-body">
-                                      <h5 class="card-title">3. Магазин спортивной - одежды</h5>
-                                      <p></p>
-                                      <a href="https://mrpepperoff.github.io/bicycle/" target="_blank" class="btn btn-primary">Посмотреть</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img src="https://fakeimg.pl/640x360" class="card-img-top" alt="site4">
-                                    <div class="card-body">
-                                      <h5 class="card-title">4. Магазин декора. (decor-elegant)</h5>
-                                      <p></p>
-                                      <a href="https://decor-elegant.netlify.app/" target="_blank" class="btn btn-primary">Посмотреть</a>
-                                    </div>
-                                  </div>
-                            </div>
+                            
                         </div>
-                        
+                </div>         
+            </div>
+               
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-1">
+                        <div class="footer__logo">
+                            АМ
+                        </div>
                     </div>
-            </div>         
-        </div>
-           
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-1">
-                    <div class="footer__logo">
-                        АМ
+                    <div class="col-2">
+                        <address class="footer__address">
+                            <ul>
+                                <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i></a></li>
+                                <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+                            </ul>
+                        </address>
                     </div>
-                </div>
-                <div class="col-2">
-                    <address class="footer__address">
-                        <ul>
-                            <li><a class="link" href="https://github.com/MrPepperoff/" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                            <li><a class="link" href="https://t.me/MaximA1exeev" target="_blank"><i class="fa-solid fa-paper-plane"></i></a></li>
-                            <li><a class="link" href="mailto:https://maxim040597@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
-                        </ul>
-                    </address>
                 </div>
             </div>
-        </div>
-    </footer>
-    <script src="js/script.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+        </footer>
+</div> -->
