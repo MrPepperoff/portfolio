@@ -30,37 +30,100 @@
                     <h1>РЕЗЮМЕ</h1> 
                 </div>
                 
-                <div class="avatar__wrap">
-                    <img src="images/avatar.png" class='avatar' alt="avatar">
-                </div>
+
                 
                 <nav>
                     <ul>
-                        <li><button type="button" onClick='onDark()' title="Dark Mode"><i class="fa-solid fa-sun"></i></button></li>
                         <li><a href="#skills">Навыки</a></li>
                         <li><a href="#">Образование</a></li>
-                        <li><a href="#">Портфолио</a></li>
-                        <li><a href="#">О себе</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#about">О себе</a></li>
                         <li><a href="#">Контакты</a></li>
                         <li><a href="#">Требования</a></li>
+                        <li>
+                            <button class="darkMode" aria-label="Toggle color mode" title="Toggle color mode"  onClick='onDark()'>
+                                <div class="sun visible"></div>
+                                <div class="moon">
+                                    <div class="star"></div>
+                                    <div class="star small"></div>
+                                </div>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
         
         <div class="header__bottom">
-
+            <div class="avatar__wrap">
+                <img src="images/avatar.png" class='avatar' alt="avatar">
+            </div>
         </div>
     </header>
-    <main class="main">
-        <section class="content">
-            <h2><a name="skills">Навыки</a></h2>
+    <main class="main content">
+        <section class="about">
+            <h2 class="title"><a name="about">О себе</a></h2>
+            <p>
+                Я начинающий веб-программист с большим желанием изучать новые технологии и создавать качественные сайты и приложения. 
+                Я увлечен программированием и постоянно расширяю свои знания в этой области. Мне нравится работать над интерфейсом, 
+                чтобы сделать его удобным и привлекательным для пользователей.
+            </p>
+        </section>
+        <section class="contacts">
+            <h2 class="title"><a name="skills">Контакты</a></h2>
+            <ul>
+                <li><i class="fa-regular fa-envelope"></i> почта</li>
+                <li><i class="fa-brands fa-github"></i> github</li>
+                <li><i class="fa-brands fa-telegram"></i> Телеграмм</li>
+                <li><i class="fa-solid fa-phone"></i> телефон</li>
+                <li><i class="fa-brands fa-whatsapp"></i> ватцап</li>
+            </ul>
+        </section>
+        <section class="skills">
+            <h2 class="title"><a name="skills">Навыки</a></h2>
+            <ul>
+                <li>
+                    <h4><i class="fa-brands fa-html5"></i> html</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                </li>
+                <li>
+                    <h4><i class="fa-brands fa-css3-alt"></i> css</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                    <ul>
+                        <li>scss</li>
+                        <li>sass</li>
+                        <li>less</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4><i class="fa-brands fa-square-js"></i> js</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                    <ul>
+                        <li>ts</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4><i class="fa-brands fa-php"></i> php</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                </li>
+                <li>
+                    <h4><i class="fa-brands fa-react"></i> react</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                </li>
+                <li>
+                    <h4><i class="fa-brands fa-laravel"></i> laravel</h4>
+                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
+                </li>
+            </ul>
         </section>
         <section>
-
+            <h2 class="title"><a name="skills">Образование</a></h2>
         </section>
         <section>
-
+            <h2 class="title"><a name="skills">Требования</a></h2>
+        </section>
+        <section class="portfolio">
+            <h2 class="title"><a name="portfolio">Портфолио</a></h2>
         </section>
     </main>
     <script src="js/script.js"></script>
