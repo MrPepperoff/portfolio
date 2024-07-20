@@ -315,6 +315,36 @@ body {
   }
 }
 
+@media (min-width: 1400px) {
+  .header__nav {
+    display: block;
+  }
+}
+@media (max-width: 1199px) {
+  .header__nav {
+    display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .header__nav {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .header__nav {
+    display: none;
+  }
+}
 @media (max-width: 320px) {
   .header__nav {
     display: none;
@@ -510,6 +540,36 @@ section {
   box-shadow: 7px -7px 14px rgba(var(--bg), 1), -7px 7px 14px rgba(var(--text), 0.3);
   transition: 0.2s ease;
 }
+@media (min-width: 1400px) {
+  section {
+    width: 48%;
+  }
+}
+@media (max-width: 1199px) {
+  section {
+    width: 48%;
+  }
+}
+@media (max-width: 1024px) {
+  section {
+    width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    width: 96%;
+  }
+}
+@media (max-width: 425px) {
+  section {
+    width: 96%;
+  }
+}
+@media (max-width: 375px) {
+  section {
+    width: 96%;
+  }
+}
 @media (max-width: 320px) {
   section {
     width: 96%;
@@ -585,5 +645,40 @@ section .title {
   width: 48%;
   margin: 0;
   padding: 1px;
-  width: 96%;
+  transition: 0.2s ease;
+}
+@media (min-width: 1400px) {
+  .section__wrap {
+    width: 48%;
+  }
+}
+@media (max-width: 1199px) {
+  .section__wrap {
+    width: 48%;
+  }
+}
+@media (max-width: 1024px) {
+  .section__wrap {
+    width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  .section__wrap {
+    width: 96%;
+  }
+}
+@media (max-width: 425px) {
+  .section__wrap {
+    width: 96%;
+  }
+}
+@media (max-width: 375px) {
+  .section__wrap {
+    width: 96%;
+  }
+}
+@media (max-width: 320px) {
+  .section__wrap {
+    width: 96%;
+  }
 }/*# sourceMappingURL=style_portfolio.css.map */

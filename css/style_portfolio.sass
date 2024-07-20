@@ -153,6 +153,18 @@ body
         width: 720px
 .header
     &__nav
+        @include xxl
+            display: block
+        @include xl
+            display: block
+        @include lg
+            display: block
+        @include md
+            display: none
+        @include sm
+            display: none
+        @include xs
+            display: none
         @include xxs
             display: none
     &__top
@@ -330,6 +342,18 @@ section
     min-height: 100px 
     box-shadow: 7px -7px 14px rgba(var(--bg), 1), -7px 7px 14px rgba(var(--text), .3)
     transition: 0.2s ease
+    @include xxl
+        width: 48%
+    @include xl
+        width: 48%
+    @include lg
+        width: 48%
+    @include md
+        width: 96%
+    @include sm
+        width: 96%
+    @include xs
+        width: 96%
     @include xxs
         width: 96%
     &:hover
@@ -389,5 +413,18 @@ section
     width: 48%
     margin: 0
     padding: 1px
+    transition: 0.2s ease
+    @include xxl
+        width: 48%
+    @include xl
+        width: 48%
+    @include lg
+        width: 48%
+    @include md
+        width: 96%
+    @include sm
+        width: 96%
+    @include xs
+        width: 96%
     @include xxs
-    width: 96%
+        width: 96%
