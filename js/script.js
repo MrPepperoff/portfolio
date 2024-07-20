@@ -32,3 +32,14 @@ button.addEventListener("click", () => {
   sun.classList.toggle("visible")
   moon.classList.toggle("visible")
 })
+
+// линяя прогресса
+
+let lines = document.querySelectorAll('.line');
+let progress = document.createElement('div')
+progress.classList.add('line__progress1')
+lines.forEach(line => {
+    line.innerHTML = `<div class="line__progress"  style="width: ${line.getAttribute('data-skill')}%;"></div>`;
+    
+    // line.attributes('data-skill')
+});

@@ -29,10 +29,7 @@
                 <div class="logo__wrap">
                     <h1>РЕЗЮМЕ</h1> 
                 </div>
-                
-
-                
-                <nav>
+                <nav class="header__nav">
                     <ul>
                         <li><a href="#skills">Навыки</a></li>
                         <li><a href="#">Образование</a></li>
@@ -63,67 +60,103 @@
     <main class="main content">
         <section class="about">
             <h2 class="title"><a name="about">О себе</a></h2>
-            <p>
+            <!-- <p>
                 Я начинающий веб-программист с большим желанием изучать новые технологии и создавать качественные сайты и приложения. 
                 Я увлечен программированием и постоянно расширяю свои знания в этой области. Мне нравится работать над интерфейсом, 
                 чтобы сделать его удобным и привлекательным для пользователей.
+            </p> -->
+            <p>
+                Меня зовут [Имя Фамилия], и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Хотя у меня пока нет профессионального опыта, я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.
+            </p>
+            <br>
+            <p>
+                Мои ключевые навыки:
+                <ul>
+                    <li>- Базовое понимание HTML, CSS и основ построения веб-страниц</li>
+                    <li>- Основы программирования на JavaScript, включая работу с DOM</li>
+                    <li>- Базовые знания о принципах и подходах в web-разработке</li>
+                    <li>- Способность быстро осваивать новые технологии и инструменты</li>
+                    <li>- Аналитический склад ума, внимание к деталям</li>
+                    <li>- Готовность активно учиться и применять полученные знания на практике</li>
+                    <li>- Умение работать в команде, слушать и принимать обратную связь</li>
+                </ul>
+            </p>
+            <br>
+            <p>
+                Хотя у меня нет профессионального опыта, я обладаю сильной мотивацией, энтузиазмом и большим желанием развиваться в сфере web-разработки. Я готов внести свежие идеи, инициативность и работоспособность в решение ваших бизнес-задач. Уверен, что при поддержке более опытных коллег я смогу быстро усовершенствовать свои навыки и стать ценным членом вашей команды.
             </p>
         </section>
-        <section class="contacts">
-            <h2 class="title"><a name="skills">Контакты</a></h2>
-            <ul>
-                <li><i class="fa-regular fa-envelope"></i> почта</li>
-                <li><i class="fa-brands fa-github"></i> github</li>
-                <li><i class="fa-brands fa-telegram"></i> Телеграмм</li>
-                <li><i class="fa-solid fa-phone"></i> телефон</li>
-                <li><i class="fa-brands fa-whatsapp"></i> ватцап</li>
-            </ul>
-        </section>
-        <section class="skills">
-            <h2 class="title"><a name="skills">Навыки</a></h2>
-            <ul>
-                <li>
-                    <h4><i class="fa-brands fa-html5"></i> html</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                </li>
-                <li>
-                    <h4><i class="fa-brands fa-css3-alt"></i> css</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                    <ul>
-                        <li>scss</li>
-                        <li>sass</li>
-                        <li>less</li>
-                    </ul>
-                </li>
-                <li>
-                    <h4><i class="fa-brands fa-square-js"></i> js</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                    <ul>
-                        <li>ts</li>
-                    </ul>
-                </li>
-                <li>
-                    <h4><i class="fa-brands fa-php"></i> php</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                </li>
-                <li>
-                    <h4><i class="fa-brands fa-react"></i> react</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                </li>
-                <li>
-                    <h4><i class="fa-brands fa-laravel"></i> laravel</h4>
-                    <div class="line" data-skill="80"><div class="line__progress"></div></div>
-                </li>
-            </ul>
-        </section>
-        <section>
+        <div class="section__wrap">
+            <section class="contacts">
+                <h2 class="title"><a name="skills">Контакты</a></h2>
+                <ul>
+                    <li><a href="mailo:alekseev.projects@gmail.com"><i class="fa-regular fa-envelope"></i> alekseev.projects@gmail.com</a><button><i class="fa-regular fa-clipboard"></i></button></li>
+                    <li><a href="https://github.com/MrPepperoff"><i class="fa-brands fa-github"></i> github.com/MrPepperoff</a></li>
+                    <li><a href="https://t.me/MaximA1exeev"><i class="fa-brands fa-telegram"></i> t.me/MaximA1exeev</a></li>
+                    <li><i class="fa-solid fa-phone"></i> +7(919)101-76-03</li>
+                    <li><i class="fa-brands fa-whatsapp"></i> ватцап</li>
+                </ul>
+            </section>
+            <section class="skills">
+                <h2 class="title"><a name="skills">Навыки</a></h2>
+                <ul>
+                    <li>
+                        <h4><i class="fa-brands fa-html5"></i> html</h4>
+                        <div class="line" data-skill="90"></div>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-css3-alt"></i> css</h4>
+                        <div class="line" data-skill="90"></div>
+                        <ul>
+                            <li>scss</li>
+                            <li>sass</li>
+                            <li>less</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-square-js"></i> js</h4>
+                        <div class="line" data-skill="80"></div>
+                        <ul>
+                            <li>ts</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-php"></i> php</h4>
+                        <div class="line" data-skill="0"></div>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-react"></i> react</h4>
+                        <div class="line" data-skill="0"></div>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-laravel"></i> laravel</h4>
+                        <div class="line" data-skill="0"></div>
+                    </li>
+                    <li>
+                        <h4><i class="fa-brands fa-git-alt"></i> git</h4>
+                        <div class="line" data-skill="50"></div>
+                    </li>
+                </ul>
+            </section>    
+        </div>
+        
+        <section class="education">
             <h2 class="title"><a name="skills">Образование</a></h2>
+            <p><img src="images/top_logo.svg" alt="top logo" style="width: 40px; filter: drop-shadow(0 0 1px #fff);"> Академия топ</p>
+            <p>обучение 2023-2024</p>
         </section>
         <section>
             <h2 class="title"><a name="skills">Требования</a></h2>
         </section>
         <section class="portfolio">
             <h2 class="title"><a name="portfolio">Портфолио</a></h2>
+            <div class="portfolio__wrap">
+                <div class="card">1</div>
+                <div class="card">2</div>
+                <div class="card">3</div>
+                <div class="card">4</div>
+                <div class="card">5</div>
+            </div>
         </section>
     </main>
     <script src="js/script.js"></script>
