@@ -1,9 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tektur:wght@400..900&display=swap");
 :root {
   --transition-duration: 0.3s // Длительность перехода;
   --transition-timing-function: ease // Функция перехода;
   --bg: 33,32,31;
+  --c-two: 4,139,194;
   --bg-r: 200, 200, 200;
   --text: 255, 255, 255;
 }
@@ -576,12 +578,13 @@ section {
   }
 }
 section:hover {
-  transform: scale(1.05);
+  box-shadow: 8px -8px 14px rgba(var(--bg), 1), -8px 8px 14px rgba(var(--text), 0.3);
 }
 section .title {
   font-size: 2rem;
   padding: 0 0 5px 3%;
-  border-bottom: 2px solid #a00;
+  border-bottom: 2px solid rgb(var(--c-two));
+  font-family: Tektur;
   margin-bottom: 1rem;
 }
 
@@ -599,7 +602,7 @@ section .title {
   overflow: hidden;
 }
 .skills .line__progress {
-  background: #e65f5f;
+  background: rgba(var(--c-two), 0.7);
   height: 100%;
   width: 5%;
 }
@@ -617,15 +620,76 @@ section .title {
 }
 
 .portfolio {
+  font-family: "Roboto", sans-serif;
   width: 98%;
+}
+.portfolio__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 31%;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 1% 2%;
+  border: 1px solid rgb(var(--text));
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card__img {
+  height: 100%;
+  width: 100%;
+}
+.card__img__wrap {
+  background: rgb(var(--bg-r));
+  border: 1px solid rgb(var(--text));
+  border-radius: 3px;
+  overflow: hidden;
+  height: 190px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__link {
+  display: inline-block;
+  color: rgb(var(--text));
+  background: rgb(var(--c-two));
+  padding: 1px 5px;
+  border: 1px solid rgb(var(--text));
+  border-radius: 3px;
+  margin: 5px 0;
+}
+
+.about {
+  font-family: "Roboto", sans-serif;
 }
 
 .contacts {
+  font-family: "Roboto", sans-serif;
   width: 100%;
 }
 .contacts li {
   margin: 5px 0;
   width: 100%;
+}
+.contacts li > button {
+  display: none;
+  transition: 0.1s ease;
+  background: transparent;
+}
+.contacts li a {
+  color: rgb(var(--text));
+  transition: 0.1s ease;
+}
+.contacts li a > i {
+  margin-right: 5px;
+}
+.contacts li:hover {
+  color: rgba(var(--text), 0.7);
+}
+.contacts li:hover > button {
+  display: inline-block;
 }
 .contacts i {
   text-align: center;
@@ -638,6 +702,30 @@ section .title {
   height: 2.4rem;
   line-height: 2rem;
   border-radius: 50%;
+}
+
+.education {
+  font-family: "Roboto", sans-serif;
+}
+.education__item {
+  margin-top: 1%;
+}
+.education__title {
+  border-bottom: 1px solid rgb(var(--c-two));
+  padding: 0;
+  margin: 0;
+}
+.education__context {
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+.education__text {
+  width: 70%;
+  box-sizing: border-box;
+}
+.education__document {
+  width: 30%;
 }
 
 .section__wrap {

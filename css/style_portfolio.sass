@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tektur:wght@400..900&display=swap')
 @import "mixin.scss"
 
 :root // Светлая тема
@@ -6,6 +7,7 @@
     --transition-timing-function: ease // Функция перехода
 
     --bg: 33,32,31
+    --c-two: 4,139,194
     --bg-r: 200, 200, 200
     --text: 255, 255, 255
 :root.dark
@@ -357,11 +359,12 @@ section
     @include xxs
         width: 96%
     &:hover
-        transform: scale(1.05)
+        box-shadow: 8px -8px 14px rgba(var(--bg), 1), -8px 8px 14px rgba(var(--text), .3)
     & .title
         font-size: 2rem
         padding: 0 0 5px 3% 
-        border-bottom: 2px solid #a00
+        border-bottom: 2px solid rgb(var(--c-two))
+        font-family: Tektur
         margin-bottom: 1rem
 .skills
     width: 100%
@@ -374,7 +377,7 @@ section
         border-radius: 5px
         overflow: hidden
         &__progress
-            background: #e65f5f
+            background: rgba(var(--c-two), .7)
             height: 100%
             width: 5%
     & i
@@ -389,14 +392,73 @@ section
         line-height: 2rem
         border-radius: 50%
 .portfolio
+    font-family: "Roboto", sans-serif
     width: 98%
+    &__wrap
+        display: flex
+        flex-wrap: wrap
+.card
+    width: 31%
+    padding: 5px
+    box-sizing: border-box
+    margin: 0 1% 2%
+    border: 1px solid rgb(var(--text))
+    border-radius: 5px
+    overflow: hidden
+        // @include xxl
+        //     width: 48%
+        // @include xl
+        //     width: 48%
+        // @include lg
+        //     width: 48%
+        // @include md
+        //     width: 96%
+        // @include sm
+        //     width: 96%
+        // @include xs
+        //     width: 96%
+        // @include xxs
+        //     width: 96%
+    &__img
+        height: 100%
+        width: 100%
+        &__wrap
+            background: rgb(var(--bg-r))
+            border: 1px solid rgb(var(--text))
+            border-radius: 3px
+            overflow: hidden
+            height: 190px
+            width: 100%
+            object-fit: cover
+    &__link
+        display: inline-block
+        color: rgb(var(--text))
+        background: rgb(var(--c-two))
+        padding: 1px 5px
+        border: 1px solid rgb(var(--text))
+        border-radius: 3px
+        margin: 5px 0
 .about
-    
+    font-family: "Roboto", sans-serif
 .contacts
+    font-family: "Roboto", sans-serif
     width: 100%
     & li
         margin: 5px 0
         width: 100%
+        & > button
+            display: none
+            transition: 0.1s ease
+            background: transparent
+        & a
+            color: rgb(var(--text))
+            transition: 0.1s ease
+            & > i
+                margin-right: 5px
+        &:hover
+            color: rgba(var(--text), .7)
+            & > button
+                display: inline-block
     & i
         text-align: center
         color: rgb(var(--bg))
@@ -408,6 +470,25 @@ section
         height: 2.4rem
         line-height: 2rem
         border-radius: 50%
+
+.education
+    font-family: "Roboto", sans-serif
+    &__item
+        margin-top: 1%
+        // border: 1px solid #a00
+    &__title
+        border-bottom: 1px solid rgb(var(--c-two))
+        padding: 0
+        margin: 0
+    &__context
+        padding: 1%
+        display: flex 
+        justify-content: space-between
+    &__text
+        width: 70%
+        box-sizing: border-box
+    &__document
+        width: 30%
 .section__wrap
     box-sizing: border-box
     width: 48%
@@ -428,3 +509,6 @@ section
         width: 96%
     @include xxs
         width: 96%
+
+
+

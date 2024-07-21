@@ -32,11 +32,11 @@
                 <nav class="header__nav">
                     <ul>
                         <li><a href="#skills">Навыки</a></li>
-                        <li><a href="#">Образование</a></li>
+                        <li><a href="#education">Образование</a></li>
                         <li><a href="#portfolio">Портфолио</a></li>
                         <li><a href="#about">О себе</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Требования</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#conditions">Условия</a></li>
                         <li>
                             <button class="darkMode" aria-label="Toggle color mode" title="Toggle color mode"  onClick='onDark()'>
                                 <div class="sun visible"></div>
@@ -66,7 +66,7 @@
                 чтобы сделать его удобным и привлекательным для пользователей.
             </p> -->
             <p>
-                Меня зовут [Имя Фамилия], и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Хотя у меня пока нет профессионального опыта, я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.
+                Меня зовут Алексеев Максим, <br> и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Хотя у меня пока нет профессионального опыта, я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.
             </p>
             <br>
             <p>
@@ -88,7 +88,7 @@
         </section>
         <div class="section__wrap">
             <section class="contacts">
-                <h2 class="title"><a name="skills">Контакты</a></h2>
+                <h2 class="title"><a name="contacts">Контакты</a></h2>
                 <ul>
                     <li><a href="mailo:alekseev.projects@gmail.com"><i class="fa-regular fa-envelope"></i> alekseev.projects@gmail.com</a><button><i class="fa-regular fa-clipboard"></i></button></li>
                     <li><a href="https://github.com/MrPepperoff"><i class="fa-brands fa-github"></i> github.com/MrPepperoff</a></li>
@@ -141,21 +141,62 @@
         </div>
         
         <section class="education">
-            <h2 class="title"><a name="skills">Образование</a></h2>
-            <p><img src="images/top_logo.svg" alt="top logo" style="width: 40px; filter: drop-shadow(0 0 1px #fff);"> Академия топ</p>
-            <p>обучение 2023-2024</p>
+            <h2 class="title"><a name="education">Образование</a></h2>
+            <div class="education__item">
+                <div class="education__context">
+                    <div class="education__text">
+                        <h4 class="education__title"><img src="images/top_logo.svg" alt="top logo" style="width: 40px; filter: drop-shadow(0 0 1px #fff);"> Академия топ</h4>
+                        <p>Разработка и продвижение WEB-проектов</p>
+                        <p>13.12.2022 - 30.11.2023</p>
+                    </div>
+                    <div class="education__document"><img src="images/diplom_top_1.jpg" alt="Diplom"></div>    
+                </div>
+            </div>
+
         </section>
-        <section>
-            <h2 class="title"><a name="skills">Требования</a></h2>
+        <section class="conditions">
+            <h2 class="title"><a name="conditions">Условия</a></h2>
+            Ожидаемая плата: 45'000 
         </section>
         <section class="portfolio">
             <h2 class="title"><a name="portfolio">Портфолио</a></h2>
             <div class="portfolio__wrap">
-                <div class="card">1</div>
-                <div class="card">2</div>
-                <div class="card">3</div>
-                <div class="card">4</div>
-                <div class="card">5</div>
+                <div class="card">
+                    <div class="card__img__wrap">
+                        <img src="images/site1.jpg" alt="site_1" class="card__img">
+                    </div>
+                    <h4>Портфолио дизайнера</h4>
+                    <a href="https://mrpepperoff.github.io/patent_Web/" class="card__link">Перейти</a>
+                    <a href="#" class="card__link">Подробнее</a>
+                </div>
+                <div class="card">
+                    <div class="card__img__wrap">
+                        <img src="images/site2.jpg" alt="site_2" class="card__img">
+                    </div>
+                    <h4>Магазин женской одежды</h4>
+                    <a href="https://mrpepperoff.github.io/Divisima/" class="card__link">Перейти</a>
+                </div>
+                <div class="card">
+                    <div class="card__img__wrap">
+                        <img src="images/site3.jpg" alt="site_3" class="card__img">
+                    </div>
+                    <h4>Магазин спорт товаров</h4>
+                    <a href="https://mrpepperoff.github.io/bicycle/" class="card__link">Перейти</a>
+                </div>
+                <div class="card">
+                    <div class="card__img__wrap">
+                        <img src="https://fakeimg.pl/270x150/000,128/000,255/?text=No%20photo" alt="site_4" class="card__img">
+                    </div>
+                    <h4>React and laravel "decor-elegant" / в разработке</h4>
+                    <a href="https://decor-elegant.netlify.app/" class="card__link">Перейти</a>
+                </div>
+                <div class="card">
+                    <div class="card__img__wrap">
+                        <img src="https://fakeimg.pl/270x150/000,128/000,255/?text=No%20photo" alt="site_5" class="card__img">
+                    </div>
+                    <h4>test</h4>
+                    <a href="#" class="card__link">Перейти</a>
+                </div>
             </div>
         </section>
     </main>
