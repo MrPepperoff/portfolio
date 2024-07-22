@@ -231,8 +231,15 @@ body
                         justify-content: space-around
                         height: 100%
                         & li a
+                            border: 1px solid rgb(var(--bg))
+                            border-radius: 3px
+                            padding: 10px 5px
                             font-size: 1rem
                             color: rgb(var(--bg))
+                            &:hover
+                                color: rgb(var(--text))
+                                background: rgb(var(--bg))
+
                     & .sun
                         background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--text)) 50%, rgb(var(--bg)) 50%)
                         &::before
