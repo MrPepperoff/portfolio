@@ -385,7 +385,7 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     width: 100%;
     background: rgb(var(--text));
-    height: 80px;
+    height: 100px;
   }
   .header__top__wrap nav ul {
     justify-content: space-around;
