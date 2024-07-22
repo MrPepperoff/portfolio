@@ -13,6 +13,12 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Portfolio</title>
 </head>
+<!-- TODO 
+    создать модельное окно в портфолио "подробнее", 
+    добавить описание "обо мне", "условия (придумать другое название)" 
+    создать модельное окно для диплома и активировать вторую часть диплома
+    добавить БЭМ 
+-->
 <body>
     <div class="breackpoint">
         <div class='breackpoint__xxs'>xxs</div>
@@ -51,7 +57,12 @@
             </div>
         </div>
         
-        <div class="header__bottom">
+        <div class="header__bottom content">
+            <div class="">
+                <h1 class="title">Web-разработчик</h1>
+                <p>"Junior"</p>
+                <p class="price"> 45'000 &#8381;</p>
+            </div>
             <div class="avatar__wrap">
                 <img src="images/avatar.png" class='avatar' alt="avatar">
             </div>
@@ -66,7 +77,7 @@
                 чтобы сделать его удобным и привлекательным для пользователей.
             </p> -->
             <p>
-                Меня зовут Алексеев Максим, <br> и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Хотя у меня пока нет профессионального опыта, я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.
+                Меня зовут Алексеев Максим мне 27 лет, <br> и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Хотя у меня пока нет профессионального опыта, я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.
             </p>
             <br>
             <p>
@@ -143,6 +154,14 @@
         <section class="education">
             <h2 class="title"><a name="education">Образование</a></h2>
             <div class="education__item">
+                <div class="education__text">
+                    <h4 class="education__title"><i class="fa-solid fa-book-open-reader"></i> Образование</h4>
+                    <p>Cредее-специальное</p>
+                        
+                </div>
+                
+            </div>
+            <div class="education__item">
                 <div class="education__context">
                     <div class="education__text">
                         <h4 class="education__title"><img src="images/top_logo.svg" alt="top logo" style="width: 40px; filter: drop-shadow(0 0 1px #fff);"> Академия топ</h4>
@@ -155,8 +174,24 @@
 
         </section>
         <section class="conditions">
-            <h2 class="title"><a name="conditions">Условия</a></h2>
-            Ожидаемая плата: 45'000 
+            <h2 class="title"><a name="conditions">Дополнительно</a></h2>
+            <ul>
+                <li>Гражданство - Россия</li>
+                <li>Разрешение на работу - Россия</li>
+                <br>
+                <li>Стана - Россия</li>
+                <li>Город - Нижний Новгород</li>
+                <br>
+                <li>Специализация - web-разработчик</li>
+                <li>Занятость - полная занятость</li>
+                <li>График работы - полная занятость</li>
+                <li>Переезд -  не готов к переезду</li>
+                <li>Камандировки - не готов к камандировкам</li>
+                <li>Опыт - без опыта работы</li>
+                <br>
+                <li>Ожидаемая плата: 45'000 </li>
+            </ul>
+            
         </section>
         <section class="portfolio">
             <h2 class="title"><a name="portfolio">Портфолио</a></h2>

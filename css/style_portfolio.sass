@@ -135,9 +135,21 @@
             display: none  
 html
     font-size: 10px
-    
 body
     font-family: 'Tektur', cursive
+
+    &::-webkit-scrollbar 
+        width: 5px               
+
+    &::-webkit-scrollbar-track // дорожка
+        background: rgba(var(--bg-r), .2)
+
+    &::-webkit-scrollbar-thumb // полоска
+        background-color: rgba(var(--bg-r), 1)   
+        border-radius: 20px      
+        border: 3px solid transparent 
+
+
 
     color: rgb(var(--text))
     background: rgb(var(--bg)) 
@@ -155,20 +167,20 @@ body
         width: 720px
 .header
     &__nav
-        @include xxl
-            display: block
-        @include xl
-            display: block
-        @include lg
-            display: block
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: none
-        @include xxs
-            display: none
+        // @include xxl
+        //     display: block
+        // @include xl
+        //     display: block
+        // @include lg
+        //     display: block
+        // @include md
+        //     display: none
+        // @include sm
+        //     display: none
+        // @include xs
+        //     display: none
+        // @include xxs
+        //     display: none
     &__top
         background: rgb(var(--bg))
         color: rgb(var(--text))
@@ -189,11 +201,13 @@ body
             
             & nav
                 width: 45%
+
                 & button
                     font-size: 1.4rem 
                 & ul
                     display: flex
                     align-items: center
+                    justify-content: center
                     & li
                         padding: 0 1%
                         & a
@@ -204,11 +218,29 @@ body
                             &:hover
                                color: rgba(var(--text), .8) 
                                text-shadow: 0 0 1px rgb(var(--text))
+                @include md  
+                    position: fixed
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    background: rgb(var(--text))
+                    & ul li a
+                        color: rgb(var(--bg))
+    &__bottom
+        display: flex
+        font-size: 2rem
+        & .title
+            font-size: 2.5rem
+            &__sub
+
+        & .price
+            font-size: 1.5rem
+            color: rgba(var(--text), .5)
 .avatar
     height: 100%
 
     &__wrap
-        height: 50px
+        height: 100px
 
 .darkMode
     width: 30px
