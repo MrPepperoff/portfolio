@@ -136,7 +136,7 @@
 html
     font-size: 10px
     @include md
-        font-size: 20px
+        font-size: 16px
 body
     font-family: 'Tektur', cursive
 
@@ -226,8 +226,26 @@ body
                     left: 0
                     width: 100%
                     background: rgb(var(--text))
-                    & ul li a
-                        color: rgb(var(--bg))
+                    height: 50px
+                    & ul 
+                        justify-content: space-around
+                        height: 100%
+                        & li a
+                            font-size: 1rem
+                            color: rgb(var(--bg))
+                    & .sun
+                        background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--text)) 50%, rgb(var(--bg)) 50%)
+                        &::before
+                            background: radial-gradient(circle, rgb(var(--bg)) 30%, rgb(var(--text)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--bg)) 50%)
+                    & .moon
+                        background-color: rgb(var(--text))
+                        box-shadow: 6px 3px 0px 0px rgb(var(--bg))
+                    & .star
+                        border-bottom: 5px solid rgb(var(--bg))
+                        &::before
+                            border-bottom: 5px solid  rgb(var(--bg))
+                        &::after
+                            border-bottom: 5px solid rgb(var(--bg))
     &__bottom
         display: flex
         font-size: 2rem
@@ -439,20 +457,6 @@ section
     border: 1px solid rgb(var(--text))
     border-radius: 5px
     overflow: hidden
-        // @include xxl
-        //     width: 48%
-        // @include xl
-        //     width: 48%
-        // @include lg
-        //     width: 48%
-        // @include md
-        //     width: 96%
-        // @include sm
-        //     width: 96%
-        // @include xs
-        //     width: 96%
-        // @include xxs
-        //     width: 96%
     &__img
         height: 100%
         width: 100%
@@ -472,6 +476,21 @@ section
         border: 1px solid rgb(var(--text))
         border-radius: 3px
         margin: 5px 0
+    @include xxl
+        width: 31%
+    @include xl
+        width: 31%
+    @include lg
+        width: 31%
+    @include md
+        width: 48%
+    @include sm
+        width: 48%
+    @include xs
+        width: 98%
+        &__img__wrap
+            height: 300px
+    
 .about
     font-family: "Roboto", sans-serif
 .contacts
