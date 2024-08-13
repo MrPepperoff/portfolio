@@ -4,11 +4,9 @@
 @mixin xs{
     @media (max-width: 375px) { @content }
 }
-
 @mixin sm{
     @media (max-width: 425px){ @content }
 }
-
 @mixin md{
     @media (max-width: 768px) { @content }
 }
@@ -18,26 +16,6 @@
 @mixin xl{
     @media (max-width: 1199px) { @content }
 }
-
 @mixin xxl{
-    @media (min-width: 1400px) { @content }
-}
-
-
-
-
-@media (min-width: 576px) and (max-width: 767px){
-
-}
-@media (min-width: 768px) and (max-width: 991px){
-
-}
-@media (min-width: 992px) and (max-width: 1199px){
-
-}
-@media (min-width: 1200px) and (max-width: 1399px){
-
-}
-@media (min-width: 1400px){
-
+    @media (min-width: 1200px) { @content }
 }

@@ -93,6 +93,9 @@ body {
 .header__center a {
   font-size: 1.6rem;
 }
+.header__bottom {
+  background-color: #a00;
+}
 
 .link {
   color: rgba(255, 255, 255, 0.5);

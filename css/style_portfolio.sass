@@ -5,7 +5,10 @@
 :root // Светлая тема
     --transition-duration: 0.3s // Длительность перехода
     --transition-timing-function: ease // Функция перехода
-
+    --Tektur: 'Tektur', cursive
+    --Roboto: 'Roboto', sans-serif
+    // --Tektur: Arial
+    // --Roboto: Roman
     --bg: 33,32,31
     --c-two: 4,139,194
     --bg-r: 200, 200, 200
@@ -138,7 +141,7 @@ html
     @include md
         font-size: 16px
 body
-    font-family: 'Tektur', cursive
+    font-family: var(--Tektur)
 
     &::-webkit-scrollbar 
         width: 5px               
@@ -159,35 +162,29 @@ body
     transition: background 1s ease, color  1s ease
 .content
     margin: 0 auto
+
     @include xxl
-        width: 1300px
+        width: 1199px
     @include xl
-        width: 1100px
+        width: 1023px   
     @include lg
-        width: 980px
+        width: 767px
     @include md
-        width: 720px
+        width: 100%
+    @include sm
+        width: 100%
+    @include xs
+        width: 100%
+    @include xxs
+        width: 100%
 .header
-    &__nav
-        // @include xxl
-        //     display: block
-        // @include xl
-        //     display: block
-        // @include lg
-        //     display: block
-        // @include md
-        //     display: none
-        // @include sm
-        //     display: none
-        // @include xs
-        //     display: none
-        // @include xxs
-        //     display: none
+    border-bottom: 1px solid rgb(var(--bg-r))
     &__top
         background: rgb(var(--bg))
         color: rgb(var(--text))
-        border-bottom: 1px solid rgb(var(--bg-r))
         height: 50px
+        &__scroll
+            height: 50px
         &__wrap
             display: flex
             height: 100%
@@ -197,9 +194,20 @@ body
                 box-sizing: border-box
                 padding: 0 1%
                 width: 45%
+                display: flex
+                align-items: center
                 & h1
                     margin: 0
                     font-size: 2rem
+                    display: inline-block
+                & .word-wrap
+                    display: inline-block
+                    height: 2rem
+                    width: 3rem
+                    & .word
+                        font-size: 2rem
+                        text-align: center
+                        width: 100%
             
             & nav
                 width: 45%
@@ -256,18 +264,24 @@ body
     &__bottom
         display: flex
         font-size: 2rem
+        justify-content: space-around
+        margin-top: 10px
+        box-sizing: border-box
+        overflow: hidden
         & .title
             font-size: 2.5rem
-            &__sub
+            &.name
+                font-size: 3rem
+                color: rgb(var(--c-two))
 
         & .price
             font-size: 1.5rem
             color: rgba(var(--text), .5)
 .avatar
     height: 100%
-
+    filter: drop-shadow(0 0 1px rgb(var(--text)))
     &__wrap
-        height: 100px
+        height: 170px
 
 .darkMode
     width: 30px
@@ -439,7 +453,8 @@ section
             background: rgba(var(--c-two), .7)
             height: 100%
             width: 5%
-    & i
+    & i,
+    & .icon
         text-align: center
         color: rgb(var(--bg))
         background: rgb(var(--text))
@@ -450,8 +465,30 @@ section
         height: 2.4rem
         line-height: 2rem
         border-radius: 50%
+        margin-right: 5px
+    & .icon
+        fill: rgb(var(--bg))
+        width: 2.4rem
+        height: 2.4rem
+        box-shadow: none
+        overflow: auto
+    &__langs
+        display: flex
+        justify-content: space-between
+        margin: 10px 0 5px
+        & ul
+            & li
+                display: inline-flex
+                align-items: center
+                &::after
+                    content: '/'
+                    padding: 0 2px
+                &:last-child
+                    &::after
+                        content: ''
+
 .portfolio
-    font-family: "Roboto", sans-serif
+    font-family: var(--Roboto)
     width: 98%
     &__wrap
         display: flex
@@ -467,6 +504,25 @@ section
     &__img
         height: 100%
         width: 100%
+        object-fit: cover
+        &::after
+            content: '\f030'
+            font-family: 'Font Awesome 6 Free'
+            font-weight: 900
+            position: absolute
+            inset: 0
+            color: rgba(var(--bg), .7)
+            background: rgb(var(--bg-r))
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 7rem
+        &::before
+            content: '2'
+            position: absolute
+            top: 0
+            right: 0
+            color: #a00
         &__wrap
             background: rgb(var(--bg-r))
             border: 1px solid rgb(var(--text))
@@ -475,6 +531,7 @@ section
             height: 190px
             width: 100%
             object-fit: cover
+            position: relative
     &__link
         display: inline-block
         color: rgb(var(--text))
@@ -488,20 +545,30 @@ section
     @include xl
         width: 31%
     @include lg
-        width: 31%
+        width: 48%
     @include md
-        width: 48%
+        width: 98%
     @include sm
-        width: 48%
+        width: 98%
     @include xs
         width: 98%
         &__img__wrap
             height: 300px
     
 .about
-    font-family: "Roboto", sans-serif
+    font-family: var(--Roboto)
+    & li
+        &::before
+            content: '\25C8'
+            padding: 0 5px 0 10px
+            color: rgba(var(--c-two) , .5)
+    & h3
+        color: rgb(var(--c-two))
+        text-shadow:0px 0px 5px rgb(var(--bg)), 1px 1px 2px rgba(var(--text), .5) 
+        text-transform: capitalize
+        font-weight: bold
 .contacts
-    font-family: "Roboto", sans-serif
+    font-family: var(--Roboto)
     width: 100%
     & li
         margin: 5px 0
@@ -532,7 +599,7 @@ section
         border-radius: 50%
 
 .education
-    font-family: "Roboto", sans-serif
+    font-family: var(--Roboto)
     &__item
         margin-top: 1%
         // border: 1px solid #a00
@@ -570,5 +637,90 @@ section
     @include xxs
         width: 96%
 
+.modal
+    background: rgba(var(--bg-r), .3)
+    position: fixed
+    inset: 0
+    z-index: 120
+    display: none
+    &_active
+        display: block
+    &__close
+        position: absolute
+        top: 10px
+        right: 10px
+        font-size: 2rem
+        z-index: 101
+    &__content
+        position: absolute
+        inset: 2rem
+        background: rgb(var(--bg))
+    &__row
+        display: flex
+        flex-wrap: nowrap
+        height: 100%
+        align-items: center
+        padding: 3rem
+        box-sizing: border-box
+        @include 
+    &__col
+        flex-grow: 1
 
 
+    &__img
+        display: flex
+        flex-direction: column
+        width: 100%
+        padding: 10px 
+        box-sizing: border-box
+        width: 40%
+    &__text
+        &__left
+            flex-grow: 1
+            padding: 10px
+            box-sizing: border-box
+        &__right
+            width: 50%
+            height: 100%
+            padding: 10px
+            box-sizing: border-box
+
+
+
+.word-wrap
+    position: relative
+
+.word
+    position: absolute
+    opacity: 0
+    font-weight: 100
+    &.active
+        opacity: 1
+        animation-timing-function: ease
+        animation-fill-mode: forwards
+        animation-name: anim
+
+@keyframes anim 
+    0%
+        opacity: 0
+    20%
+        opacity: 1
+    80%
+        opacity: 1
+    100%
+        opacity: 0
+
+.header-fixed
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    z-index: 100
+    border-bottom: 1px solid rgb(var(--text))
+    animation: 0.5s header forwards
+    transition: 1s ease
+@keyframes header
+    0%
+        top: -100%
+    100%
+        top: 0
