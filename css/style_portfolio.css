@@ -1009,6 +1009,7 @@ section .title {
   text-transform: uppercase;
   font-weight: bold;
   font-family: var(--Tektur);
+  flex-grow: 1;
 }
 .modal__left {
   display: flex;
@@ -1029,6 +1030,22 @@ section .title {
   height: 100%;
   width: 40%;
   padding: 10px;
+  overflow: auto;
+}
+.modal__right::-webkit-scrollbar {
+  width: 5px;
+}
+.modal__right::-webkit-scrollbar-track {
+  background: rgba(var(--bg-r), 0.2);
+}
+.modal__right::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--bg-r), 1);
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
+.modal__right-header {
+  display: flex;
+  align-items: center;
 }
 .modal__link {
   background: rgb(var(--c-two));
@@ -1040,9 +1057,28 @@ section .title {
   border: 1px solid rgb(var(--text));
   overflow: hidden;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .modal__link:hover {
   background: rgba(var(--c-two), 0.6);
+}
+.modal__link_disabled {
+  background: rgba(var(--text), 0.3);
+}
+.modal__link_disabled:hover {
+  background: rgba(var(--text), 0.5);
+  color: rgba(var(--bg), 0.5);
+  cursor: not-allowed;
+}
+.modal__text {
+  flex-grow: 4;
+  margin: 10px 0;
+}
+.modal__skill {
+  flex-grow: 1;
+  margin: 10px 0;
 }
 
 .word-wrap {

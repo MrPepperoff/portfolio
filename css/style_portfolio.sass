@@ -694,6 +694,7 @@ section
         text-transform: uppercase
         font-weight: bold
         font-family: var(--Tektur)
+        flex-grow: 1
     &__left
         display: flex
         flex-direction: column
@@ -712,6 +713,19 @@ section
         height: 100%
         width: 40%
         padding: 10px
+        overflow: auto
+        &::-webkit-scrollbar 
+            width: 5px
+        &::-webkit-scrollbar-track // дорожка
+            background: rgba(var(--bg-r), .2)
+
+        &::-webkit-scrollbar-thumb // полоска
+            background-color: rgba(var(--bg-r), 1)   
+            border-radius: 20px      
+            border: 3px solid transparent 
+        &-header
+            display: flex
+            align-items: center
     &__link
         background: rgb(var(--c-two))
         color: rgb(var(--text))
@@ -722,9 +736,21 @@ section
         border: 1px solid rgb(var(--text))
         overflow: hidden
         text-align: center
+        user-select: none
         &:hover
             background: rgba(var(--c-two) , .6)
-
+        &_disabled
+            background: rgba(var(--text), .3)
+            &:hover
+                background: rgba(var(--text), .5)
+                color: rgba(var(--bg), .5)
+                cursor: not-allowed
+    &__text
+        flex-grow: 4
+        margin: 10px 0
+    &__skill
+        flex-grow: 1
+        margin: 10px 0
 
 .word-wrap
     position: relative

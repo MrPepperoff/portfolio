@@ -50,34 +50,34 @@
             imgSmall:'site1.jpg',
             title:'Портфолио дизайнера',
             link: 'https://mrpepperoff.github.io/patent_Web/',
-            skill: '<p>HTML, CSS, Scss, JS </p><p> также прочие Библиотеки</p>',
-            text: 'Это проект был создан, в рамках обучения в "Академии TOP". Тут я использовал библиотеку "Bootstrap 5", '
+            skill: '<ul><li><i class="fa-brands fa-html5"></i> HTML</li><li><i class="fa-brands fa-css3-alt"></i> Css</li><li><i class="fa-brands fa-sass"></i> Scss</li><li><i class="fa-brands fa-square-js"></i> JS</li></ul><p> также прочие Библиотеки</p>',
+            text: '<p>Это проект был создан, в рамках обучения в "Академии TOP".</p><p>Тут я использовал библиотеку "Bootstrap 5", "JQuery", так же использовал БЭМ-методологию</p> <p>Следует отметить, что базовый вектор развития создаёт предпосылки для соответствующих условий активизации. В своём стремлении улучшить пользовательский опыт мы упускаем, что интерактивные прототипы являются только методом политического участия и преданы социально-демократической анафеме. Современные технологии достигли такого уровня, что реализация намеченных плановых заданий позволяет оценить значение существующих финансовых и административных условий. Но глубокий уровень погружения играет определяющее значение для первоочередных требований. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности требует анализа распределения внутренних резервов и ресурсов. Следует отметить, что укрепление и развитие внутренней структуры требует от нас анализа форм воздействия. Разнообразный и богатый опыт говорит нам, что существующая теория однозначно фиксирует необходимость существующих финансовых и административных условий. Противоположная точка зрения подразумевает, что сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий позволяет оценить значение своевременного выполнения сверхзадачи. Как уже неоднократно упомянуто, некоторые особенности внутренней политики освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, своевременно верифицированы. Повседневная практика показывает, что понимание сути ресурсосберегающих технологий предполагает независимые способы реализации прогресса профессионального сообщества. Таким образом, современная методология разработки прекрасно подходит для реализации как самодостаточных, так и внешне зависимых концептуальных решений. Картельные сговоры не допускают ситуации, при которой ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут функционально разнесены на независимые элементы. Банальные, но неопровержимые выводы, а также явные признаки победы институционализации, превозмогая сложившуюся непростую экономическую ситуацию, преданы социально-демократической анафеме. В частности, постоянный количественный рост и сфера нашей активности в значительной степени обусловливает важность благоприятных перспектив.</p>'
         },
         {
             imgSmall:'site2.jpg',
-            title: null,
+            title: "Магазин женской одежды",
             link: 'https://mrpepperoff.github.io/Divisima/',
-            skill:null,
+            skill: null,
             text: null
         },
         {
             imgSmall:'site3.jpg',
-            title: null,
+            title: 'Магазин спорт товаров',
             link: 'https://mrpepperoff.github.io/bicycle/',
             skill: null,
             text: null
         },
         {
             imgSmall:'site4.jpg',
-            title: null,
+            title: 'Decor Elegant',
             link: 'https://decor-elegant.netlify.app/',
-            skill: null,
-            text: null
+            skill: '<ul><li><i class="fa-brands fa-react"></i> React 18</li><li><i class="fa-brands fa-laravel"></i> Laravel 10</li></ul>',
+            text: 'Этот сайт реализуется как свой пет-проект. Возможно в будущем будет работать. <br> К сожелению я не нашел хост для Back-end. <br> В этом проекте используются фреймворки: <br><br> front-end - "React 18" <br> back-end - "Laravel 10" <br><br> Конект осуществляется через Axios <br>В стадии реализации Админка на Laravel через ".blade" <br> Присутствует тема (light/dark), и мультиязычность (русский/англиский)'
         },
         {
             imgSmall:'site5.jpg',
-            title: null,
-            link: null,
+            title: 'Test test test test test test test test test test test tezt test ets test test',
+            link: 'https://mrpepperoff.github.io/portfolio/',
             skill: null,
             text: null
         },
@@ -91,10 +91,12 @@
         modalRight.innerHTML = '';
 
 
-        modalRight.innerHTML += `<h4 class='modal__title'>${contents[i].title}</h4>`;
-        modalRight.innerHTML += `<div class='modal__'><h5 class='modal__title-sub'>Использовались:</h5><p> ${contents[i].skill}</p></div>`;
-        modalRight.innerHTML += `<div><h5 class='modal__title-sub'>Описание:</h5><p> ${contents[i].text}</p></div>`;
-        modalRight.innerHTML += `<a href="${contents[i].link}" class="modal__link">Перейти на сайт</a>`;
+        modalRight.innerHTML += `<div class='modal__right-header'>${(contents[i].link == null)?`<button type='button' class="modal__link modal__link_disabled" disabled>Перейти на сайт</button>`:`<a href="${contents[i].link}" class="modal__link" >Перейти на сайт</a>`}<h4 class='modal__title'>${contents[i].title}</h4></div>`;
+        // modalRight.innerHTML += (contents[i].link == null)?`<button type='button' class="modal__link modal__link_disabled" disabled>Перейти на сайт</button>`:`<a href="${contents[i].link}" class="modal__link" >Перейти на сайт</a>`;
+
+        modalRight.innerHTML += `<div class='modal__skill'><h5 class='modal__title-sub'>Использовались:</h5><p> ${contents[i].skill}</p></div>`;
+        modalRight.innerHTML += `<div class='modal__text'><h5 class='modal__title-sub'>Описание:</h5><p> ${contents[i].text}</p></div>`;
+        
         if(contents[i].link != null){
             modalLeft.innerHTML = `<iframe src="${contents[i].link}" frameborder="0"></iframe>`
         }
