@@ -47,27 +47,37 @@
     const contents = 
     [
         {
-            img:'site1.jpg',
-            skill: null,
-            text: null
+            imgSmall:'site1.jpg',
+            title:'Портфолио дизайнера',
+            link: 'https://mrpepperoff.github.io/patent_Web/',
+            skill: '<p>HTML, CSS, Scss, JS </p><p> также прочие Библиотеки</p>',
+            text: 'Это проект был создан, в рамках обучения в "Академии TOP". Тут я использовал библиотеку "Bootstrap 5", '
         },
         {
-            img:'site2.jpg',
+            imgSmall:'site2.jpg',
+            title: null,
+            link: 'https://mrpepperoff.github.io/Divisima/',
             skill:null,
             text: null
         },
         {
-            img:'site3.jpg',
+            imgSmall:'site3.jpg',
+            title: null,
+            link: 'https://mrpepperoff.github.io/bicycle/',
             skill: null,
             text: null
         },
         {
-            img:'site4.jpg',
+            imgSmall:'site4.jpg',
+            title: null,
+            link: 'https://decor-elegant.netlify.app/',
             skill: null,
             text: null
         },
         {
-            img:'site5.jpg',
+            imgSmall:'site5.jpg',
+            title: null,
+            link: null,
             skill: null,
             text: null
         },
@@ -75,9 +85,23 @@
 
     function onModal(i){
         modal.classList.add('modal_active');
-        let modalImg = modal.querySelector('.modal__img');
-        modalImg.innerHTML = `<img src="images/${contents[i].img}" alt="site_${i}"></img>`;
-        console.log(contents[i].img+' '+i);
+        const modalLeft = modal.querySelector('.modal__left');
+        const modalRight = modal.querySelector('.modal__right');
+        modalLeft.innerHTML = '';
+        modalRight.innerHTML = '';
+
+
+        modalRight.innerHTML += `<h4 class='modal__title'>${contents[i].title}</h4>`;
+        modalRight.innerHTML += `<div><h5 class='modal__title-sub'>Использовались:</h5><p> ${contents[i].skill}</p></div>`;
+        modalRight.innerHTML += `<div><h5 class='modal__title-sub'>Описание:</h5><p> ${contents[i].text}</p></div>`;
+        modalRight.innerHTML += `<a href="${contents[i].link}" class="modal__link">Перейти на сайт</a>`;
+        if(contents[i].link != null){
+            modalLeft.innerHTML = `<iframe src="${contents[i].link}" frameborder="0"></iframe>`
+        }
+        else{
+            modalLeft.innerHTML = `<img src="images/${contents[i].imgSmall}" alt="site ${i}" class="modal__img">`
+        }
+        console.log(contents[i].modalLeft+' '+i);
     }
     function onModalClose(){
         modal.classList.remove('modal_active')
