@@ -92,7 +92,7 @@
 
 
         modalRight.innerHTML += `<h4 class='modal__title'>${contents[i].title}</h4>`;
-        modalRight.innerHTML += `<div><h5 class='modal__title-sub'>Использовались:</h5><p> ${contents[i].skill}</p></div>`;
+        modalRight.innerHTML += `<div class='modal__'><h5 class='modal__title-sub'>Использовались:</h5><p> ${contents[i].skill}</p></div>`;
         modalRight.innerHTML += `<div><h5 class='modal__title-sub'>Описание:</h5><p> ${contents[i].text}</p></div>`;
         modalRight.innerHTML += `<a href="${contents[i].link}" class="modal__link">Перейти на сайт</a>`;
         if(contents[i].link != null){
