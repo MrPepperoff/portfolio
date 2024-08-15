@@ -42,7 +42,7 @@
         line.innerHTML = `<div class="line__progress"  style="width: ${line.getAttribute('data-skill')}%;"></div>`;
     });
 
-// модельное окно
+// модельное окно и портфолио 
     const modal = document.querySelector('.modal')
     const contents = 
     [
@@ -51,7 +51,6 @@
             imgSmall:'site1.jpg',
             title:'Портфолио дизайнера',
             link: 'https://mrpepperoff.github.io/patent_Web/',
-            // skill: '<li><i class=""></i> HTML</li><li><i class="fa-brands fa-css3-alt"></i> Css</li><li><i class="fa-brands fa-sass"></i> Scss</li><li><i class="fa-brands fa-square-js"></i> JS</li></ul><p> также прочие Библиотеки</p>',
             skills: [{awesome: 'fa-brands fa-html5', name: 'html'},{awesome: 'fa-brands fa-css3-alt', name: 'css'}],
             text: '<p>Это проект был создан, в рамках обучения в "Академии TOP".</p><p>Тут я использовал библиотеку "Bootstrap 5", "JQuery", так же использовал БЭМ-методологию</p> <p>Следует отметить, что базовый вектор развития создаёт предпосылки для соответствующих условий активизации. В своём стремлении улучшить пользовательский опыт мы упускаем, что интерактивные прототипы являются только методом политического участия и преданы социально-демократической анафеме. Современные технологии достигли такого уровня, что реализация намеченных плановых заданий позволяет оценить значение существующих финансовых и административных условий. Но глубокий уровень погружения играет определяющее значение для первоочередных требований. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности требует анализа распределения внутренних резервов и ресурсов. Следует отметить, что укрепление и развитие внутренней структуры требует от нас анализа форм воздействия. Разнообразный и богатый опыт говорит нам, что существующая теория однозначно фиксирует необходимость существующих финансовых и административных условий. Противоположная точка зрения подразумевает, что сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий позволяет оценить значение своевременного выполнения сверхзадачи. Как уже неоднократно упомянуто, некоторые особенности внутренней политики освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, своевременно верифицированы. Повседневная практика показывает, что понимание сути ресурсосберегающих технологий предполагает независимые способы реализации прогресса профессионального сообщества. Таким образом, современная методология разработки прекрасно подходит для реализации как самодостаточных, так и внешне зависимых концептуальных решений. Картельные сговоры не допускают ситуации, при которой ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут функционально разнесены на независимые элементы. Банальные, но неопровержимые выводы, а также явные признаки победы институционализации, превозмогая сложившуюся непростую экономическую ситуацию, преданы социально-демократической анафеме. В частности, постоянный количественный рост и сфера нашей активности в значительной степени обусловливает важность благоприятных перспектив.</p>'
         },
@@ -60,7 +59,7 @@
             imgSmall:'site2.jpg',
             title: "Магазин женской одежды",
             link: 'https://mrpepperoff.github.io/Divisima/',
-            skills: null,
+            skills: [{awesome: 'fa-brands fa-html5', name: 'html'},{awesome: 'fa-brands fa-css3-alt', name: 'css'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'}],
             text: null
         },
         {
@@ -77,7 +76,6 @@
             title: 'Decor Elegant',
             link: 'https://decor-elegant.netlify.app/',
             skills: null,
-            // skills: '<ul><li><i class="fa-brands fa-react"></i> React 18</li><li><i class="fa-brands fa-laravel"></i> Laravel 10</li></ul>',
             text: 'Этот сайт реализуется как свой пет-проект. Возможно в будущем будет работать. <br> К сожелению я не нашел хост для Back-end. <br> В этом проекте используются фреймворки: <br><br> front-end - "React 18" <br> back-end - "Laravel 10" <br><br> Конект осуществляется через Axios <br>В стадии реализации Админка на Laravel через ".blade" <br> Присутствует тема (light/dark), и мультиязычность (русский/англиский)'
         },
         {
@@ -120,19 +118,19 @@
                 <h4 class='modal__title'>${contents[i].title}</h4>
             </div>
             <div class='modal__skill'>
+                
                 <h5 class='modal__title-sub'>Использовались:</h5>
-                <ul>${
-                    contents[i].skills.forEach(skill => {
-                        console.log(skill.name);
-                        `<li>${skill.name}</li>`
-                    })
-                }</ul>
+                <ul id='modal-list'></ul>
             </div>
             <div class='modal__text'>
                 <h5 class='modal__title-sub'>Описание:</h5>
                 <p> ${contents[i].text}</p>
-            </div>`;
-
+            </div>
+            `;
+        const list = modalRight.querySelector('#modal-list');
+        contents[i].skills.forEach(skill => {
+            list.innerHTML += `<li><i class='${skill.awesome}'></i> ${skill.name}</li>`
+        });
         
         if(contents[i].link != null){
             modalLeft.innerHTML = `<iframe src="${contents[i].link}" frameborder="0"></iframe>`
@@ -147,33 +145,6 @@
     function Portfolio(){
 
     }
-
-// Иконкопереключатель
-const wrap = document.querySelector('#words');
-        const words = wrap.querySelectorAll('.word');
-        const time = wrap.getAttribute('data-time');
-        let i = 0;
-
-        function Word(){
-            words.forEach(word => {
-                setTimeout(()=>{
-                    words.forEach(word2 => {
-                        word2.classList.remove('active');
-                    });
-                    word.classList.add('active');
-                    word.style.cssText = `animation-duration:${time}s;`;
-                }, time*1000*i)
-                i++
-
-                // запуск бесконечного цикла с легким костылем чтоб не выдовал ошибки 
-                if(i%words.length == 0){
-                    setTimeout(()=>{
-                        Word();
-                    }, 1)
-                }
-            });
-        }
-        Word();
 
 // header для пракрутки 
 
