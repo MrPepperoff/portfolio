@@ -728,7 +728,7 @@ section .title {
   font-family: var(--Roboto);
   width: 98%;
 }
-.portfolio__wrap {
+.portfolio__content {
   display: flex;
   flex-wrap: wrap;
 }
