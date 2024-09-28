@@ -25,7 +25,7 @@
     border-radius: 50%
     padding: 10px
     font-size: 1.6rem
-    opacity: 0.3
+    opacity: 0.1
     transition: 0.1s ease
     &:hover
         opacity: 1
@@ -42,9 +42,9 @@
         @include sm
             display: none
         @include xs
-            display: none 
+            display: none
         @include xxs
-            display: block 
+            display: block
     &__xs
         display: none
         @include xxl
@@ -190,16 +190,24 @@ body
             height: 100%
             align-items: center
             justify-content: space-between
-            & .logo__wrap
+            & .logo
                 box-sizing: border-box
                 padding: 0 1%
                 width: 45%
                 display: flex
                 align-items: center
-                & h1
+                &__title
                     margin: 0
                     font-size: 2rem
-                    display: inline-block
+                    @include xxs
+                        display: none
+                    @include lg
+                        display: block
+                &__icon
+                    // display: none
+                    height: 2rem
+                    & path
+                        fill: rgb(var(--text))
                 & .word-wrap
                     display: inline-block
                     height: 2rem
@@ -208,81 +216,115 @@ body
                         font-size: 2rem
                         text-align: center
                         width: 100%
-            
-            & nav
-                width: 45%
-
-                & button
-                    font-size: 1.4rem 
-                & ul
-                    display: flex
-                    align-items: center
-                    justify-content: center
-                    & li
-                        padding: 0 1%
-                        & a
-                            text-align: center
-                            color: rgb(var(--text))
-                            transition: 0.1s ease
-                            font-size: 1.4rem
-                            &:hover
-                               color: rgba(var(--text), .8) 
-                               text-shadow: 0 0 1px rgb(var(--text))
-                @include md  
-                    position: fixed
-                    bottom: 0
-                    left: 0
-                    width: 100%
-                    background: rgb(var(--text))
-                    height: 100px
-                    & ul 
-                        justify-content: space-around
-                        height: 100%
-                        & li a
-                            border: 1px solid rgb(var(--bg))
-                            border-radius: 3px
-                            padding: 10px 5px
-                            font-size: 1rem
-                            color: rgb(var(--bg))
-                            &:hover
-                                color: rgb(var(--text))
-                                background: rgb(var(--bg))
-
-                    & .sun
-                        background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--text)) 50%, rgb(var(--bg)) 50%)
-                        &::before
-                            background: radial-gradient(circle, rgb(var(--bg)) 30%, rgb(var(--text)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--bg)) 50%)
-                    & .moon
-                        background-color: rgb(var(--text))
-                        box-shadow: 6px 3px 0px 0px rgb(var(--bg))
-                    & .star
-                        border-bottom: 5px solid rgb(var(--bg))
-                        &::before
-                            border-bottom: 5px solid  rgb(var(--bg))
-                        &::after
-                            border-bottom: 5px solid rgb(var(--bg))
     &__bottom
         display: flex
         font-size: 2rem
         justify-content: space-around
+        align-items: end
         margin-top: 10px
+        padding: 0 5%
         box-sizing: border-box
         overflow: hidden
+    
+    &__info
+        align-self: center
         & .title
             font-size: 2.5rem
             &.name
-                font-size: 3rem
+                font-size: 4.5rem
                 color: rgb(var(--c-two))
-
+                @include md
+                    font-size: 1.6rem
+                @include xs
+                    font-size: 1.2rem
+                @include xxs
+                    font-size: 1rem
+            @include md
+                font-size: 1.2rem
+            @include xs
+                font-size: 0.8rem
+            @include xxs
+                font-size: 0.6rem
+            
+        & .lvl
+            font-size: 2.5rem
+            @include md
+                font-size: 1.2rem
+            @include sm
+                font-size: 1rem
+            @include xxs
+                font-size: 0.8rem            
         & .price
-            font-size: 1.5rem
             color: rgba(var(--text), .5)
+            font-size: 1.6rem
+            @include md
+                font-size: 1.2rem
+            @include sm
+                font-size: 1rem
+            @include xxs
+                font-size: 0.8rem
 .avatar
-    height: 100%
     filter: drop-shadow(0 0 1px rgb(var(--text)))
     &__wrap
-        height: 170px
+        width: 200px
+        height: auto
+        @include md
+            width: 150px
+        @include sm
+            width: 100px
+        @include xxs
+            width: 75px
+.nav
+    width: 45%
+    & button
+        font-size: 1.4rem 
+    & ul
+        display: flex
+        align-items: center
+        justify-content: center
+        & li
+            padding: 0 1%
+            & a
+                text-align: center
+                color: rgb(var(--text))
+                transition: 0.1s ease
+                font-size: 1.4rem
+                &:hover
+                    color: rgba(var(--text), .8) 
+                    text-shadow: 0 0 1px rgb(var(--text))
+    @include md  
+        position: fixed
+        bottom: 0
+        left: 0
+        width: 100%
+        background: rgb(var(--text))
+        height: 100px
+        & ul 
+            justify-content: space-around
+            height: 100%
+            & li a
+                border: 1px solid rgb(var(--bg))
+                border-radius: 3px
+                padding: 10px 5px
+                font-size: 1rem
+                color: rgb(var(--bg))
+                &:hover
+                    color: rgb(var(--text))
+                    background: rgb(var(--bg))
 
+        & .sun
+            background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--text)) 50%, rgb(var(--bg)) 50%)
+            &::before
+                background: radial-gradient(circle, rgb(var(--bg)) 30%, rgb(var(--text)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--bg)) 50%)
+        & .moon
+            background-color: rgb(var(--text))
+            box-shadow: 6px 3px 0px 0px rgb(var(--bg))
+        & .star
+            border-bottom: 5px solid rgb(var(--bg))
+            &::before
+                border-bottom: 5px solid  rgb(var(--bg))
+            &::after
+                border-bottom: 5px solid rgb(var(--bg))
 .darkMode
     width: 30px
     height: 30px
@@ -294,8 +336,6 @@ body
     justify-content: center
     align-items: center
     position: relative
-
-
 .sun 
     width: 50%
     height: 50%
@@ -324,8 +364,6 @@ body
         opacity: 1
         transform: scale(1) rotate(180deg)
         transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-
-
 .moon
     width: 50%
     height: 50%
@@ -351,7 +389,6 @@ body
         & .star.small
             opacity: 0.7
             transform: scale(0.45) rotate(35deg)
-
 .star
     position: absolute
     top: 0%
@@ -398,8 +435,6 @@ body
         border-left: 7px solid  rgba(0,0,0,0)
         transform: rotate(-70deg)
         content: ""
-
-
 .main
     display: flex
     flex-wrap: wrap
@@ -486,7 +521,6 @@ section
                 &:last-child
                     &::after
                         content: ''
-
 .portfolio
     font-family: var(--Roboto)
     width: 98%
