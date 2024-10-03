@@ -32,7 +32,14 @@
     <header class="header">
         <div class="header__top__scroll">
             <div class="header__top" id="header-scroll">
-                <div class="content header__top__wrap">    
+                <div class="content header__top__wrap">  
+                    <div class="header__social">
+                        <ul>
+                            <li><a href="https://github.com/MrPepperoff"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="alekseev.projects@gmail.com"><i class="fa-solid fa-at"></i></a></li>
+                            <li><a href="t.me/MaximA1exeev"><i class="fa-brands fa-telegram"></i></a></li>
+                        </ul>
+                    </div>  
                     <div class="logo">
                         <svg class="logo__icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                             <g>
@@ -57,27 +64,33 @@
                             </g>
                         </svg>
                         <p class="logo__title">РЕЗЮМЕ</p>
-                        
                     </div>
-                    <nav class="header__nav nav">
-                        <ul>
-                            <li><a href="#skills">Навыки</a></li>
-                            <li><a href="#education">Образование</a></li>
-                            <li><a href="#portfolio">Портфолио</a></li>
-                            <li><a href="#about">О себе</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
-                            <li><a href="#conditions">Условия</a></li>
-                            <li>
-                                <button class="darkMode" aria-label="Toggle color mode" title="Toggle color mode"  onClick='onDark()'>
-                                    <div class="sun visible"></div>
-                                    <div class="moon">
-                                        <div class="star"></div>
-                                        <div class="star small"></div>
-                                    </div>
-                                </button>
-                            </li>
-                            <li><a href="images/avatar.png" download title="Скачать Резюме"><i class="fa-solid fa-download"></i></a></li>
-                        </ul>
+                    <nav class="header__nav">
+                        <div class="nav">
+                            <div class="nav__burger" id="nav-burger">
+                                <div class="icon"></div>
+                            </div>
+                            <ul id="menu">
+                                <li class="list-info">
+                                    <button class="darkMode" aria-label="Toggle color mode" title="Toggle color mode"  onClick='onDark()'>
+                                        <div class="sun visible"></div>
+                                        <div class="moon">
+                                            <div class="star"></div>
+                                            <div class="star small"></div>
+                                        </div>
+                                    </button>
+                                    <a href="#images/avatar.png" download title="Скачать Резюме"><i class="fa-solid fa-download"></i></a>
+                                </li>
+                                <li><a href="#skills">Навыки</a></li>
+                                <li><a href="#education">Образование</a></li>
+                                <li><a href="#portfolio">Портфолио</a></li>
+                                <li><a href="#about">О себе</a></li>
+                                <li><a href="#contacts">Контакты</a></li>
+                                <li><a href="#conditions">Условия</a></li>
+                            </ul>
+
+                        </div>
+                        
                     </nav>
                 </div>
             </div>    

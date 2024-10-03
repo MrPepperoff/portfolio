@@ -19,3 +19,13 @@
 @mixin xxl{
     @media (min-width: 1200px) { @content }
 }
+
+@mixin btn($left, $top) {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: $top;
+    left: $left;
+    transition-duration: 0.5s;
+}
+

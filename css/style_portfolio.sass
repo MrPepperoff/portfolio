@@ -7,28 +7,29 @@
     --transition-timing-function: ease // Функция перехода
     --Tektur: 'Tektur', cursive
     --Roboto: 'Roboto', sans-serif
-    // --Tektur: Arial
-    // --Roboto: Roman
     --bg: 33,32,31
     --c-two: 4,139,194
-    --bg-r: 200, 200, 200
+    --bg-r: 150, 150, 150
     --text: 255, 255, 255
 :root.dark
         --bg: 200, 200, 200
         --bg-r: 33,32,31
         --text: 33,32,31
 .breackpoint
-    position: absolute
-    color: #a00
-    background: #aa0
-    border: 1px solid #a00
+    position: fixed
+    top: 50px
     border-radius: 50%
     padding: 10px
     font-size: 1.6rem
-    opacity: 0.1
+    opacity: 0.01
     transition: 0.1s ease
+    color: transparent
+    border: 1px solid #fff
     &:hover
         opacity: 1
+        color: #a00
+        background: #aa0
+        border: 1px solid #a00
     &__xxs
         display: none
         @include xxl
@@ -139,7 +140,7 @@
 html
     font-size: 10px
     @include md
-        font-size: 16px
+        font-size: 10px
 body
     font-family: var(--Tektur)
 
@@ -182,6 +183,7 @@ body
     &__top
         background: rgb(var(--bg))
         color: rgb(var(--text))
+        padding: 0 15px
         height: 50px
         &__scroll
             height: 50px
@@ -193,16 +195,22 @@ body
             & .logo
                 box-sizing: border-box
                 padding: 0 1%
-                width: 45%
+                // width: 45%
                 display: flex
                 align-items: center
+                justify-content: center
+
                 &__title
                     margin: 0
                     font-size: 2rem
-                    @include xxs
-                        display: none
+                    margin-left: 5px
+                    font-weight: bold
                     @include lg
                         display: block
+                    @include md
+                        display: none
+                    @include xxs
+                        display: none    
                 &__icon
                     // display: none
                     height: 2rem
@@ -216,6 +224,27 @@ body
                         font-size: 2rem
                         text-align: center
                         width: 100%
+
+            @include xxs
+                width: 100%
+    &__social
+        width: 40%
+        & ul
+            display: inline-block
+            & li
+                display: inline-block
+                margin: 0 5px
+                & a
+                    color: rgb(var(--text))
+        @include xxl
+            display: none     
+        @include xl
+            display: none
+        @include md
+            display: block
+    &__nav
+        // width: 40%
+        flex-grow: 1
     &__bottom
         display: flex
         font-size: 2rem
@@ -275,13 +304,15 @@ body
         @include xxs
             width: 75px
 .nav
-    width: 45%
+    // position: relative
+
+    width: 100%
+    display: flex
+    justify-content: end
     & button
         font-size: 1.4rem 
     & ul
-        display: flex
-        align-items: center
-        justify-content: center
+        transition: 0.5s ease
         & li
             padding: 0 1%
             & a
@@ -292,39 +323,137 @@ body
                 &:hover
                     color: rgba(var(--text), .8) 
                     text-shadow: 0 0 1px rgb(var(--text))
-    @include md  
-        position: fixed
-        bottom: 0
-        left: 0
-        width: 100%
-        background: rgb(var(--text))
-        height: 100px
-        & ul 
-            justify-content: space-around
-            height: 100%
-            & li a
-                border: 1px solid rgb(var(--bg))
-                border-radius: 3px
-                padding: 10px 5px
-                font-size: 1rem
-                color: rgb(var(--bg))
-                &:hover
-                    color: rgb(var(--text))
-                    background: rgb(var(--bg))
+            &.list-info
+                display: flex
+                align-items: center
+                padding: 0
+                & button,
+                & a
+                    margin: 0 10px
+                    font-size: 2.1rem
+            @include xxl
+                display: inline-block
+        @include xxl 
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: end
+        @include xl
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: end
+        @include lg
+            position: fixed
+            top: 0
+            right: 0
+            width: 150px
+            height: 100vh
+            transform: translate(150%, 0)
+            z-index: 100
+            padding: 0px 5px 10px
+            background: rgb(var(--bg-r))
+            border-left: 3px solid #fff
+            align-items: start
+            justify-content: start
+            & li
+                padding: 5px
+                & a
+                    font-size: 1.4rem
+                    color: rgb(var(--bg))
+                    &:hover
+                        color: rgba(var(--bg), .8)
+                        text-shadow: 0 0 1px rgb(var(--bg))
+                    
+                & .darkMode
+                    height: 10px
+                    width: 10px
+                    & .sun
+                        background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg-r)) 50%, rgb(var(--bg)) 50%)
+                        &::before
+                            background: radial-gradient(circle, rgb(var(--bg)) 30%, rgb(var(--bg-r)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--bg)) 50%)
+                    & .moon
+                        background-color: rgb(var(--text))
+                        box-shadow: 6px 3px 0px 0px rgb(var(--bg))
+                        & .star
+                            border-bottom: 5px solid rgb(var(--bg))
+                            &:before
+                                border-bottom: 5px solid  rgb(var(--bg))
+                            &:after
+                                border-bottom: 5px solid rgb(var(--bg))
+                &.list-info
+                    display: flex
+                    align-items: center
+                    height: 50px
+                
+                    & button,
+                    & a
+                        font-size: 1.4rem
 
-        & .sun
-            background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--text)) 50%, rgb(var(--bg)) 50%)
-            &::before
-                background: radial-gradient(circle, rgb(var(--bg)) 30%, rgb(var(--text)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--bg)) 50%)
-        & .moon
-            background-color: rgb(var(--text))
-            box-shadow: 6px 3px 0px 0px rgb(var(--bg))
-        & .star
-            border-bottom: 5px solid rgb(var(--bg))
-            &::before
-                border-bottom: 5px solid  rgb(var(--bg))
-            &::after
-                border-bottom: 5px solid rgb(var(--bg))
+    &__burger
+        width: 20px
+        height: 30px
+        position: relative
+        z-index: 101
+        & .icon
+            transition-duration: 0.5s
+            position: absolute
+            height: 3px
+            width: 20px
+            background: rgb(var(--text))
+            top: 14px
+            transition: 0.5s
+            &:before
+                transition-duration: 0.5s
+                position: absolute
+                width: 20px
+                height: 3px
+                background: rgb(var(--text))
+                content: ""
+                top: -7px
+            &:after
+                transition-duration: 0.5s
+                position: absolute
+                width: 20px
+                height: 3px
+                background-color: rgb(var(--text))
+                content: ""
+                top: 7px
+        &.open 
+            .icon
+                background: rgb(var(--bg))
+                &:before
+                    background: rgb(var(--bg))
+                    transform: rotateZ(-45deg) scaleX(0.6) translate(-12px,-2px)
+                &:after
+                    background: rgb(var(--bg))
+                    transform: rotateZ(45deg) scaleX(0.6) translate(-12px, 2px)
+            & + ul
+                display: flex
+                position: absolute
+                top: 0
+                right: 0
+                box-sizing: content-box
+                transform: translate(0%, 0px)
+                & li
+                    margin: 5px 2px
+                    &:first-child
+                        margin: 0 2px
+                @include xxl
+                    flex-direction: row
+                @include xl
+                    flex-direction: row
+                @include lg
+                    flex-direction: column
+        &:hover 
+            cursor: pointer
+       
+        @include xxl
+           display: none 
+        @include xl
+            display: none
+        @include lg
+            display: block 
 .darkMode
     width: 30px
     height: 30px
@@ -336,105 +465,105 @@ body
     justify-content: center
     align-items: center
     position: relative
-.sun 
-    width: 50%
-    height: 50%
-    position: absolute
-    pointer-events: none
-    opacity: 0
-    transform: scale(0.6) rotate(0deg)
-    transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-
-    /*  white transparent for Safari  */
-    background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg)) 50%, rgb(var(--text)) 50%)
-
-
-    &:before 
-        content: ""
+    & .sun 
+        width: 50%
+        height: 50%
         position: absolute
-        display: block
-        width: 100%
-        height: 100%
-        background: radial-gradient(circle, rgb(var(--text)) 30%, rgb(var(--bg)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--text)) 50%)
-        transform: rotate(45deg)
-
-
-    &.visible
-        pointer-events: auto
-        opacity: 1
-        transform: scale(1) rotate(180deg)
-        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-.moon
-    width: 50%
-    height: 50%
-    pointer-events: none
-    position: absolute
-    left: 0%
-    top: 18.75%
-    background-color: rgb(var(--bg))
-    border-radius: 50%
-    box-shadow: 6px 3px 0px 0px rgb(var(--text))
-    opacity: 0
-    transform: scale(0.3) rotate(65deg)
-    transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-
-
-    &.visible
-        pointer-events: auto
-        opacity: 1
-        transform: scale(1) rotate(0deg)
-        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-        & .star
-            opacity: 0.8
-        & .star.small
-            opacity: 0.7
-            transform: scale(0.45) rotate(35deg)
-.star
-    position: absolute
-    top: 0%
-    left: -15%
-    display: block
-    width: 0px
-    height: 0px
-    border-right: 7px solid rgba(0, 0, 0, 0)
-    border-bottom: 5px solid rgb(var(--text))
-    border-left: 7px solid rgba(0, 0, 0, 0)
-    transform: scale(0.55) rotate(35deg)
-    opacity: 0
-    transition: all 0.2s ease-in 0.4s
-    &.small 
-        transform: scale(0.35) rotate(35deg)
-        position: relative
-        top: 40%
-        left: 15%
+        pointer-events: none
         opacity: 0
-        transition: all 0.2s ease-in 0.45s
+        transform: scale(0.6) rotate(0deg)
+        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
 
-    &:before
-        border-bottom: 5px solid  rgb(var(--text))
-        border-left: 3px solid rgba(0,0,0,0)
-        border-right: 3px solid rgba(0,0,0,0)
+        /*  white transparent for Safari  */
+        background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg)) 50%, rgb(var(--text)) 50%)
+
+
+        &:before 
+            content: ""
+            position: absolute
+            display: block
+            width: 100%
+            height: 100%
+            background: radial-gradient(circle, rgb(var(--text)) 30%, rgb(var(--bg)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--text)) 50%)
+            transform: rotate(45deg)
+
+
+        &.visible
+            pointer-events: auto
+            opacity: 1
+            transform: scale(1) rotate(180deg)
+            transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+    & .moon
+        width: 50%
+        height: 50%
+        pointer-events: none
         position: absolute
-        height: 0
-        width: 0
-        top: -3px
-        left: -5px
-        display: block
-        content: ""
-        transform: rotate(-35deg)
-    &:after
+        left: 0%
+        top: 18.75%
+        background-color: rgb(var(--bg))
+        border-radius: 50%
+        box-shadow: 6px 3px 0px 0px rgb(var(--text))
+        opacity: 0
+        transform: scale(0.3) rotate(65deg)
+        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+
+
+        &.visible
+            pointer-events: auto
+            opacity: 1
+            transform: scale(1) rotate(0deg)
+            transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+            & .star
+                opacity: 0.8
+            & .star.small
+                opacity: 0.7
+                transform: scale(0.45) rotate(35deg)
+    & .star
         position: absolute
+        top: 0%
+        left: -15%
         display: block
-        color: red
-        top: 0px
-        left: -7px
         width: 0px
         height: 0px
-        border-right: 7px solid rgba(0,0,0,0)
+        border-right: 7px solid rgba(0, 0, 0, 0)
         border-bottom: 5px solid rgb(var(--text))
-        border-left: 7px solid  rgba(0,0,0,0)
-        transform: rotate(-70deg)
-        content: ""
+        border-left: 7px solid rgba(0, 0, 0, 0)
+        transform: scale(0.55) rotate(35deg)
+        opacity: 0
+        transition: all 0.2s ease-in 0.4s
+        &.small 
+            transform: scale(0.35) rotate(35deg)
+            position: relative
+            top: 40%
+            left: 15%
+            opacity: 0
+            transition: all 0.2s ease-in 0.45s
+
+        &:before
+            border-bottom: 5px solid  rgb(var(--text))
+            border-left: 3px solid rgba(0,0,0,0)
+            border-right: 3px solid rgba(0,0,0,0)
+            position: absolute
+            height: 0
+            width: 0
+            top: -3px
+            left: -5px
+            display: block
+            content: ""
+            transform: rotate(-35deg)
+        &:after
+            border-bottom: 5px solid rgb(var(--text))
+            border-right: 7px solid rgba(0,0,0,0)
+            border-left: 7px solid  rgba(0,0,0,0)
+            position: absolute
+            display: block
+            color: red
+            top: 0px
+            left: -7px
+            width: 0px
+            height: 0px
+            transform: rotate(-70deg)
+            content: ""
 .main
     display: flex
     flex-wrap: wrap
@@ -573,6 +702,8 @@ section
         border: 1px solid rgb(var(--text))
         border-radius: 3px
         margin: 5px 0
+        &_null
+            opacity: 0.3
     @include xxl
         width: 31%
     @include xl

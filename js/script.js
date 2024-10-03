@@ -27,6 +27,7 @@
                     break;
         }
     }
+    //  TODO вирнуть код обратно
 
     button.addEventListener("click", () => {
     sun.classList.toggle("visible")
@@ -80,9 +81,9 @@
         },
         {
             id: 5,
-            imgSmall:'site5.jpg',
-            title: 'Test',
-            link: 'https://mrpepperoff.github.io/portfolio/',
+            imgSmall: null,
+            title: 'В разработке',
+            link: null,
             skills: null,
             text: null
         },
@@ -92,10 +93,16 @@
         portfolio.innerHTML += 
                 `<div class="card">
                     <div class="card__img__wrap">
-                        <img src="images/${content.imgSmall}" alt="site ${content.id}" class="card__img">
+                    ${(content.imgSmall)?
+                        `<img src="images/${content.imgSmall}" alt="site ${content.id}" class="card__img">`
+                        :
+                        `<img src="images/no-photo.jpg" alt="site ${content.id}" class="card__img">`
+                    }
+                        
+                    
                     </div>
-                    <h4>${content.title}</h4>
-                    <a href="${content.link}" class="card__link">Перейти</a>
+                    <h4>${content.title}</h4>   
+                    <a href="${(content.link)? content.link :''}" class="card__link ${(content.link)? '' :'card__link_null'}">Перейти</a>
                     <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button>
                 </div>`
     });
@@ -156,4 +163,41 @@ window.addEventListener('scroll', function(){
     :
         header.classList.remove('header-fixed')
     ;
+});
+
+// Кнопка nav burger
+
+const burger = document.querySelector('#nav-burger');
+const menu = document.querySelector('#menu');
+const menuLinks = menu.querySelectorAll('a');
+
+function toggleMenu() {
+    burger.classList.toggle('open');
+};
+
+burger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+document.addEventListener('click', function (e) {
+    var target = e.target;
+    var its_menu = target == menu || menu.contains(target);
+    var its_burger = target == burger;
+    var its_menu_link = false;
+    menuLinks.forEach(link => {
+        var links = target == link || link.contains(target);
+        if(links == true){
+            its_menu_link = true;
+        }
+        
+    });
+        
+    var menu_is_open = burger.classList.contains('open');
+    // console.log(!its_burger+' && '+ menu_is_open+' ('+!its_menu+' || '+its_menu_link+')')
+    if (!its_burger && menu_is_open) {
+        if(!its_menu || its_menu_link){
+            toggleMenu();
+        } 
+    }
 });
