@@ -157,7 +157,7 @@
 
 const header = document.querySelector('#header-scroll');
 window.addEventListener('scroll', function(){
-    (window.scrollY >= 250)?
+    (window.scrollY >= 100)?
 
         header.classList.add('header-fixed')
     :
@@ -200,4 +200,25 @@ document.addEventListener('click', function (e) {
             toggleMenu();
         } 
     }
+});
+
+
+// плавный якорь
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const offset = 65; // отступ сверху
+
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
 });

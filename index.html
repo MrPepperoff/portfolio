@@ -81,14 +81,13 @@
                                     </button>
                                     <a href="#images/avatar.png" download title="Скачать Резюме"><i class="fa-solid fa-download"></i></a>
                                 </li>
-                                <li><a href="#skills">Навыки</a></li>
-                                <li><a href="#education">Образование</a></li>
-                                <li><a href="#portfolio">Портфолио</a></li>
                                 <li><a href="#about">О себе</a></li>
                                 <li><a href="#contacts">Контакты</a></li>
-                                <li><a href="#conditions">Условия</a></li>
+                                <li><a href="#skills">Навыки</a></li>
+                                <li><a href="#education">Образование</a></li>
+                                <li><a href="#conditions">Дополнительно</a></li>
+                                <li><a href="#portfolio">Портфолио</a></li>
                             </ul>
-
                         </div>
                         
                     </nav>
@@ -111,7 +110,7 @@
     </header>
     <main class="main content">
         <section class="about">
-            <h2 class="title"><a name="about">О себе</a></h2>
+            <h2 class="title"><a name="about" id="about">О себе</a></h2>
             <p>
                 Меня зовут Максим мне 27 лет, <br> и я целеустремленный и амбициозный начинающий web-разработчик, готовый применить свои навыки и энергию для решения ваших задач. Я обладаю базовыми знаниями в области HTML, CSS, JavaScript и стремлюсь постоянно развиваться в этом направлении. Я готов быстро обучаться, перенимать опыт у более опытных коллег и выполнять поставленные задачи.sa
             </p>
@@ -138,7 +137,7 @@
         </section>
         <div class="section__wrap">
             <section class="contacts">
-                <h2 class="title"><a name="contacts">Контакты</a></h2>
+                <h2 class="title"><a name="contacts" id="contacts">Контакты</a></h2>
                 <ul>
                     <li><a href="mailo:alekseev.projects@gmail.com"><i class="fa-regular fa-envelope"></i> alekseev.projects@gmail.com</a><button><i class="fa-regular fa-clipboard"></i></button></li>
                     <li><a href="https://github.com/MrPepperoff"><i class="fa-brands fa-github"></i> github.com/MrPepperoff</a></li>
@@ -147,7 +146,7 @@
                 </ul>
             </section>
             <section class="skills">
-                <h2 class="title"><a name="skills">Навыки</a></h2>
+                <h2 class="title"><a name="skills" id="skills">Навыки</a></h2>
                 <ul>
                     <li>
                         <div class="skills__langs">
@@ -186,19 +185,19 @@
                         <div class="skills__langs">
                             <h4><i class="fa-brands fa-php"></i> php</h4>
                         </div>
-                        <div class="line" data-skill="0"></div>
+                        <div class="line" data-skill="70"></div>
                     </li>
                     <li>
                         <div class="skills__langs">
                             <h4><i class="fa-brands fa-react"></i> react</h4>
                         </div>
-                        <div class="line" data-skill="0"></div>
+                        <div class="line" data-skill="70"></div>
                     </li>
                     <li>
                         <div class="skills__langs">
                             <h4><i class="fa-brands fa-laravel"></i> laravel</h4>    
                         </div>
-                        <div class="line" data-skill="0"></div>
+                        <div class="line" data-skill="50"></div>
                     </li>
                     <li>
                         <div class="skills__langs">
@@ -208,7 +207,7 @@
                                 <li><i class="fa-brands fa-gitlab"></i> GitLab</li>
                             </ul>
                         </div>
-                        <div class="line" data-skill="50"></div>
+                        <div class="line" data-skill="70"></div>
                     </li>
                     <li>
                         <div class="skills__langs">
@@ -234,20 +233,20 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="line" data-skill="0"></div>
+                        <div class="line" data-skill="60"></div>
                     </li>
-                    <li>
+                    <!-- <li>
                         <div class="skills__langs">
                             <h4><i class="fa-solid fa-file"></i> JSON</h4>
                         </div>
                         <div class="line" data-skill="0"></div>
-                    </li>
+                    </li> -->
                 </ul>
             </section>    
         </div>
         
         <section class="education">
-            <h2 class="title"><a name="education">Образование</a></h2>
+            <h2 class="title"><a name="education" id="education">Образование</a></h2>
             <div class="education__item">
                 <div class="education__text">
                     <h4 class="education__title"><i class="fa-solid fa-book-open-reader"></i> Образование</h4>
@@ -269,7 +268,7 @@
 
         </section>
         <section class="conditions">
-            <h2 class="title"><a name="conditions">Дополнительно</a></h2>
+            <h2 class="title"><a name="conditions" id="conditions">Дополнительно</a></h2>
             <ul>
                 <li>Гражданство - Россия</li>
                 <li>Разрешение на работу - Россия</li>
@@ -289,7 +288,7 @@
             
         </section>
         <section class="portfolio">
-            <h2 class="title"><a name="portfolio">Портфолио</a></h2>
+            <h2 class="title"><a name="portfolio" id="portfolio">Портфолио</a></h2>
             <div class="modal">
                 <div class="modal__content">
                     <button class="modal__close"  onclick="onModalClose()"><i class="fa-solid fa-xmark"></i></button>
@@ -304,7 +303,13 @@
             <div class="portfolio__content">
             </div>
         </section>
+        
     </main>
+    <footer class="footer">
+        <div class="footer__author content">
+            <p>Автор верстки и дизайна: <a href="https://t.me/MaximA1exeev"><i class="fa-brands fa-telegram"></i> Алексеев Максим</a></p>
+        </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>
