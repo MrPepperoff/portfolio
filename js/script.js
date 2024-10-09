@@ -79,14 +79,14 @@
             skills: null,
             text: 'Этот сайт реализуется как свой пет-проект. Возможно в будущем будет работать. <br> К сожелению я не нашел хост для Back-end. <br> В этом проекте используются фреймворки: <br><br> front-end - "React 18" <br> back-end - "Laravel 10" <br><br> Конект осуществляется через Axios <br>В стадии реализации Админка на Laravel через ".blade" <br> Присутствует тема (light/dark), и мультиязычность (русский/англиский)'
         },
-        {
-            id: 5,
-            imgSmall: null,
-            title: 'В разработке',
-            link: null,
-            skills: null,
-            text: null
-        },
+        // {
+        //     id: 5,
+        //     imgSmall: null,
+        //     title: 'В разработке',
+        //     link: null,
+        //     skills: null,
+        //     text: null
+        // },
     ]
     const portfolio = document.querySelector('.portfolio__content');
     contents.forEach(content => {
