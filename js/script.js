@@ -52,15 +52,23 @@
             imgSmall:'site1.jpg',
             title:'Портфолио дизайнера',
             link: 'https://mrpepperoff.github.io/patent_Web/',
-            skills: [{awesome: 'fa-brands fa-html5', name: 'html'},{awesome: 'fa-brands fa-css3-alt', name: 'css'}],
-            text: '<p>Это проект был создан, в рамках обучения в "Академии TOP".</p><p>Тут я использовал библиотеку "Bootstrap 5", "JQuery", так же использовал БЭМ-методологию</p> <p>Следует отметить, что базовый вектор развития создаёт предпосылки для соответствующих условий активизации. В своём стремлении улучшить пользовательский опыт мы упускаем, что интерактивные прототипы являются только методом политического участия и преданы социально-демократической анафеме. Современные технологии достигли такого уровня, что реализация намеченных плановых заданий позволяет оценить значение существующих финансовых и административных условий. Но глубокий уровень погружения играет определяющее значение для первоочередных требований. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности требует анализа распределения внутренних резервов и ресурсов. Следует отметить, что укрепление и развитие внутренней структуры требует от нас анализа форм воздействия. Разнообразный и богатый опыт говорит нам, что существующая теория однозначно фиксирует необходимость существующих финансовых и административных условий. Противоположная точка зрения подразумевает, что сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий позволяет оценить значение своевременного выполнения сверхзадачи. Как уже неоднократно упомянуто, некоторые особенности внутренней политики освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, своевременно верифицированы. Повседневная практика показывает, что понимание сути ресурсосберегающих технологий предполагает независимые способы реализации прогресса профессионального сообщества. Таким образом, современная методология разработки прекрасно подходит для реализации как самодостаточных, так и внешне зависимых концептуальных решений. Картельные сговоры не допускают ситуации, при которой ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут функционально разнесены на независимые элементы. Банальные, но неопровержимые выводы, а также явные признаки победы институционализации, превозмогая сложившуюся непростую экономическую ситуацию, преданы социально-демократической анафеме. В частности, постоянный количественный рост и сфера нашей активности в значительной степени обусловливает важность благоприятных перспектив.</p>'
+            skills: [
+                {awesome: 'fa-brands fa-html5', name: 'html'},
+                {awesome: 'fa-brands fa-css3-alt', name: 'css'}
+            ],
+            text: '<p>Это проект был создан, в рамках обучения в "Академии TOP".</p><p>Тут я использовал библиотеку "Bootstrap 5", "JQuery", так же использовал БЭМ-методологию</p>'
         },
         {
             id: 2,
             imgSmall:'site2.jpg',
             title: "Магазин женской одежды",
             link: 'https://mrpepperoff.github.io/Divisima/',
-            skills: [{awesome: 'fa-brands fa-html5', name: 'html'},{awesome: 'fa-brands fa-css3-alt', name: 'css'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'},{awesome: 'fa-brands fa-js', name: 'js'}],
+            skills: [
+                {awesome: 'fa-brands fa-html5', name: 'html'},
+                {awesome: 'fa-brands fa-css3-alt', name: 'css'},
+                {awesome: 'fa-brands fa-js', name: 'js'}
+
+            ],
             text: null
         },
         {
@@ -106,52 +114,56 @@
                     <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button>
                 </div>`
     });
-    function onModal(i){
+
+    function onModal(i) {
         modal.classList.add('modal_active');
         const modalLeft = modal.querySelector('.modal__left');
         const modalRight = modal.querySelector('.modal__right');
         i -= 1;
         modalLeft.innerHTML = '';
         modalRight.innerHTML = '';
-
-
+    
         modalRight.innerHTML += 
             `<div class='modal__right-header'>
-                ${(contents[i].link == null)?
-                    `<button type='button' class="modal__link modal__link_disabled" disabled>Перейти на сайт</button>`
+                ${(contents[i].link == null) ?
+                    `<button type='button' class="modal__link modal__link_disabled" disabled>Перейти на сайт</button>` 
                     :
-                    `<a href="${contents[i].link}" class="modal__link" >Перейти на сайт</a>`
+                    `<a href="${contents[i].link}" class="modal__link">Перейти на сайт</a>`
                 }
                 <h4 class='modal__title'>${contents[i].title}</h4>
             </div>
             <div class='modal__skill'>
-                
                 <h5 class='modal__title-sub'>Использовались:</h5>
                 <ul id='modal-list'></ul>
             </div>
             <div class='modal__text'>
                 <h5 class='modal__title-sub'>Описание:</h5>
-                <p> ${contents[i].text}</p>
+                <p>${(contents[i].text == null) ? 'Информация временно отсутствует :(' : contents[i].text}</p>
             </div>
             `;
+    
         const list = modalRight.querySelector('#modal-list');
-        contents[i].skills.forEach(skill => {
-            list.innerHTML += `<li><i class='${skill.awesome}'></i> ${skill.name}</li>`
-        });
-        
-        if(contents[i].link != null){
-            modalLeft.innerHTML = `<iframe src="${contents[i].link}" frameborder="0"></iframe>`
+        if (contents[i].skills && contents[i].skills.length > 0) {
+            contents[i].skills.forEach(skill => {
+                list.innerHTML += `<li><i class='${skill.awesome}'></i> ${skill.name}</li>`;
+            });
+        } else {
+            list.innerHTML = "<li> Информация временно отсутствует :( </li>";
         }
-        else{
-            modalLeft.innerHTML = `<img src="images/${contents[i].imgSmall}" alt="site ${i}" class="modal__img">`
+    
+        if (contents[i].link != null) {
+            modalLeft.innerHTML = `<iframe src="${contents[i].link}" frameborder="0"></iframe>`;
+        } else {
+            modalLeft.innerHTML = `<img src="images/${contents[i].imgSmall}" alt="site ${i}" class="modal__img">`;
         }
     }
-    function onModalClose(){
-        modal.classList.remove('modal_active')
+    
+    function onModalClose() {
+        modal.classList.remove('modal_active');
     }
-    function Portfolio(){
+    // function Portfolio(){
 
-    }
+    // }
 
 // header для пракрутки 
 
