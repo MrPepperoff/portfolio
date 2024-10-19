@@ -222,3 +222,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Копирование ссылки в буфер обмена
+
+
+function Copy(text){
+
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log('Успешно скопировано');
+        alert('Успешно скопированно');
+        
+    })
+    .catch(error => {
+        console.error(`Текст не скопирован ${error}`)
+  })
+}

@@ -323,14 +323,27 @@ body
                 &:hover
                     color: rgba(var(--text), .8) 
                     text-shadow: 0 0 1px rgb(var(--text))
+            &.site-resume
+
+                padding: 0
+                display: flex
+                width: 100px
+                height: 100%
+                align-items: center
+                justify-content: center
+                & a
+                    display: block
+                    width: 24px
+                    height: 24px
+                    margin: 0 5%
             &.list-info
                 display: flex
                 align-items: center
                 padding: 0
                 & button,
                 & a
-                    margin: 0 10px
-                    font-size: 2.1rem
+                    margin: 0 5px
+                    // font-size: 2.1rem
             @include xxl
                 display: inline-block
         @include xxl 
@@ -454,6 +467,7 @@ body
             display: none
         @include lg
             display: block 
+
 .darkMode
     width: 30px
     height: 30px
