@@ -1,0 +1,241 @@
+@import "mixin.scss"
+:root
+    --bg: 15, 15, 15
+    --bg-2: 32, 32, 32
+    --primary: 93,214,44
+    --primary-2: 51,116,24
+    --text: 248,248,248
+    --additional: 15, 15, 15
+    --accent: 139, 92, 246
+
+.container
+    margin: 0 auto
+    height: 100%
+    box-sizing: border-box
+    // border-left: 1px solid #a00
+    // border-right: 1px solid #a00
+    @include xxl
+        width: 1199px
+    @include xl
+        width: 1023px   
+    @include lg
+        width: 767px
+    @include md
+        width: 100%
+    @include sm
+        width: 100%
+    @include xs
+        width: 100%
+    @include xxs
+        width: 100%
+
+html
+    font-size: 10px
+    font-family: Arial
+body
+    background: rgb(var(--bg))
+    display: flex
+    flex-direction: column
+    & .wrap
+        flex-grow: 1
+        min-height: 100vh
+header
+    position: relative
+    z-index: 100
+    width: 100%
+    font-size: 1.6rem
+    background: rgb(var(--bg-2))
+    border-bottom: 2px solid rgb(var(--primary))
+    .row
+        display: flex
+        height: 100%
+    @include lg
+        height: 8rem
+    @include xs
+        height: 6rem
+        padding: 0 1%
+    & .logo
+        display: flex
+        align-items: center
+        color: rgb(var(--text))
+        font-weight: 600
+        --text-shadow: var(--primary-2)
+        text-shadow: 1px 0 1px rgb(var(--text-shadow)), 0 1px 1px  rgb(var(--text-shadow)), -1px 0 1px  rgb(var(--text-shadow)), 0 -1px 1px  rgb(var(--text-shadow))
+        & i
+            font-size: 3rem
+            padding: 0 5%
+    
+    & .nav
+        @include md
+            flex-grow: 0   
+            padding-right: 5%
+        &__btn
+            color: rgb(var(--primary))
+            font-size: 3rem
+            @include lg
+                display: none
+            @include md
+                display: block
+        &__list
+            display: flex
+            justify-content: end
+            @include md
+                display: none
+        &__item
+            margin: 0 0.5%
+        &__link
+            text-transform: uppercase
+            color: rgb(var(--bg))
+            transition: 0.1s ease
+            font-weight: 600
+            @include lg
+                font-size: 1.2rem
+            @include xs
+                font-size: 1.4rem
+
+            &:hover
+                color: rgb(var(--additional))
+                
+    & .row
+        display: flex
+        justify-content: space-between
+        align-items: center 
+.mouse
+    position: relative
+    top: 5px
+    fill: #fff
+    width: 50px
+    z-index: 1
+    animation: 4s mouse-down infinite
+    &__wrap
+        position: absolute
+        width: 50px
+        height: 120px
+        bottom: 0vh
+        right: 10%
+        z-index: 1
+    &__line
+        position: absolute
+        background: rgb(255,255,255, .4)
+        height: 100%
+        width: 4px
+        top: 0
+        left: 23px
+        z-index: -1
+        
+@keyframes mouse-down
+    0%,
+    100%
+        top: 15%
+    10%
+        top: 2%
+    50%
+        top: 50%
+
+.section
+    &__hero
+        background: rgb(var(--additional))
+        position: relative
+        box-sizing: border-box
+        @include lg
+            height: calc(100vh - 8rem)
+        @include xs
+            height: calc(100vh - 6rem)
+        & .welcome
+            font-size: 1.2rem
+            & i
+                color: rgb(var(--primary))
+        & .row
+            position: relative
+            display: flex
+            height: 100%
+            padding: 0 10px
+            & > div
+                width: 100%
+                // background: #a00
+                
+                @include xl
+                    position: relative
+                @include lg
+                    position: static
+                &:nth-child(1)
+                    display: flex
+                    flex-direction: column
+                    height: 100%
+                    justify-content: center
+                & img
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    object-fit: contain
+                    max-height: 70%
+                    width: 100%
+                    z-index: 0
+        & h1
+            position: relative
+            padding: 0vh 1% 5vh
+            font-size: 5rem
+            z-index: 1
+            font-weight: 700
+            color: rgb(var(--text))
+            text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff
+        & p
+            color: rgb(var(--text))
+            position: relative
+            z-index: 1
+            font-size: 2rem
+            padding: 0 1% 5vh
+            font-weight: 700
+            // text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff
+        & a
+            position: relative
+            z-index: 1
+            display: inline-block
+            width: 50%
+            color: rgb(var(--bg))
+            font-weight: 900
+            font-size: 1.4rem
+            border-radius: 30px
+            padding: 1rem 2rem
+            margin: 3vh 1% 0
+            background: rgb(var(--primary))
+            & span
+                @include xs
+                    display: none
+
+    &__about
+        padding: 5vh 0 0
+        & h2
+            font-size: 3rem
+.footer
+    border-top: 1px solid #a00
+    background: rgb(var(--primary))
+    & input
+
+    & input,
+    & textarea,
+    & button
+        font-size: 1.2rem
+        padding: 1rem
+        // border: 1px solid #a00
+        background: rgb(var(--bg))
+    & textarea
+        resize: none
+        height: 33%
+    &__wrap
+        display: flex
+        & div,
+        & .nav
+            width: 33%
+        & .nav
+            margin: 2rem 3rem
+            font-size: 1.4rem
+            text-transform: uppercase 
+            & li
+                margin: 1rem 0
+                & a
+                    color: rgb(var(--bg))
+                    transition: 0.1s ease
+                    &:hover
+                        color: rgb(var(--additional))
+        
