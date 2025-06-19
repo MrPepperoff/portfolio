@@ -1,8 +1,8 @@
 // возраст
-const dateHP = new Date(1997, 4, 4);
-const date = new Date();
-const age = document.querySelector('#age');
-age.innerHTML = date.getFullYear() - dateHP.getFullYear();
+// const dateHP = new Date(1997, 4, 4);
+// const date = new Date();
+// const age = document.querySelector('#age');
+// age.innerHTML = date.getFullYear() - dateHP.getFullYear();
 
 
 
@@ -133,7 +133,7 @@ age.innerHTML = date.getFullYear() - dateHP.getFullYear();
                         <p class="card__project ${(content.project == 'Учебный')? 'card__training' : ''}">${content.project}</p>
                         <div>
                             <a href="${(content.link)? content.link :''}" class="card__link ${(content.link)? '' :'card__link_null'}">Перейти</a>
-                            <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button>
+                            <!-- <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button> -->
                         </div>
                     </div>
                 </div>`

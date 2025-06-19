@@ -1,0 +1,420 @@
+@import "mixin.sass"
+:root
+    --bg: 15, 15, 15
+    --bg-2: 32, 32, 32
+    --primary: 93,214,44
+    --primary-2: 51,116,24
+    --text: 248,248,248
+    --additional: 15, 15, 15
+    --accent: 139, 92, 246
+
+.container
+    margin: 0 auto
+    height: 100%
+    width: 100%
+    box-sizing: border-box
+    @include xs
+        width: 100%
+    @include sm
+        width: 540px
+    @include md
+        width: 720px
+    @include lg
+        width: 960px
+    @include xl
+        width: 1140px
+    @include xl
+        width: 1320px    
+html
+    font-size: 10px
+    font-family: Arial
+body
+    background: rgb(var(--bg))
+    color: rgb(var(--text))
+    display: flex
+    flex-direction: column
+    & .wrap
+        flex-grow: 1
+        min-height: 100vh
+header
+    position: fixed
+    z-index: 100
+    width: 100%
+    font-size: 1.6rem
+    background: rgb(var(--bg-2))
+    border-bottom: 2px solid rgb(var(--primary))
+    .row
+        display: flex
+        height: 100%
+        & .col
+            width: 100%
+    @include xs
+        height: 6rem
+        padding: 0 1%     
+    @include lg
+        height: 8rem
+
+    & .logo
+        display: flex
+        width: 100%
+        align-items: center
+        color: rgb(var(--text))
+        font-weight: 600
+        --text-shadow: var(--primary-2)
+        & i
+            font-size: 3rem
+            padding: 0 0.6rem 0 0
+    
+    & .nav
+        z-index: 0
+        @include xs
+            text-align: end
+            flex-grow: 0
+            padding-right: 5%
+            width: 3rem !important
+        @include md
+            padding-right: 0
+            width: 100% !important
+        &__btn
+            color: rgb(var(--primary))
+            font-size: 3rem
+            transition: 0.2s ease
+            
+            &_active
+                color: rgb(var(--primary-2))
+            @include xs
+                display: block           
+            @include md
+                display: none
+
+        &__list
+            justify-content: end
+            transition: all 1s ease, background 0s ease, border 0s ease
+            z-index: -1
+            &_active
+                position: absolute
+                display: flex
+                transform: translateX(0%)
+                right: 0%
+                // z-index: 0
+            @include xs
+                background: rgb(var(--bg-2))
+                flex-direction: column
+                position: fixed
+                top: 6rem
+                border-left: 2px solid rgb(var(--primary))
+                border-bottom: 2px solid rgb(var(--primary))
+                border-radius: 0 0 0 1rem
+                right: 0%
+                transform: translateX(100%)
+            @include md
+                display: flex
+                transition: 0s
+                right: 0
+                transform: translateX(0%)
+                position: relative
+                top: 0
+                border: 0
+                border-radius: 0
+                background: transparent
+                flex-direction: row
+
+        &__item
+            // margin: 0 0.5%
+            @include xs
+                padding: 0.5rem 1rem
+            @include md 
+                padding: 0 0.5rem
+            
+        &__link
+            text-transform: uppercase
+            color: rgb(var(--text))
+            transition: 0.1s ease
+            font-weight: 600
+            @include xs
+                font-size: 1.4rem
+            @include md
+                font-size: 1.2rem
+            
+
+            &:hover
+                color: rgb(var(--additional))
+                
+    & .row
+        display: flex
+        justify-content: space-between
+        align-items: center 
+.mouse
+    position: relative
+    top: 5px
+    fill: #fff
+    width: 50px
+    // height: 100px
+    z-index: 1
+    animation: 4s mouse-down infinite
+    &__wrap
+        position: absolute
+        width: 50px
+        height: 120px
+        bottom: 0vh
+        right: 10%
+        z-index: 1
+    &__line
+        position: absolute
+        background: rgb(255,255,255, .2)
+        border-radius: 3rem 3rem 0 0
+        height: 100%
+        width: 4px
+        top: 0
+        left: 23px
+        z-index: -1
+        
+@keyframes mouse-down
+    0%,
+    100%
+        top: 15%
+    10%
+        top: 2%
+    50%
+        top: 50%
+.experience-card
+    display: flex
+    padding: 0.7rem
+    &__img
+        width: 100%
+        border-radius: 2rem
+        overflow: hidden
+        &__wrap
+            width: 20%
+            
+    &__context
+        width: 80%
+        padding-left: 1rem
+        & h4
+            font-size: 1.4rem
+            padding: 0 0 0.7rem 1rem
+
+            background: linear-gradient(184deg,rgba(0,0,0,0) 90%, rgb(var(--accent)))
+            border-bottom: 2px solid rgb(var(--accent))
+    &__row
+        display: flex
+        flex-wrap: wrap
+        font-size: 1.4rem
+        & > div
+            width: 50%
+            // background: #0a0
+            & li
+                padding-left: 1rem
+            &:nth-child(1)
+                width: 100%
+                // background: #a00
+            
+                
+.section
+    font-size: 1.4rem
+    color: rgb(var(--text))
+    padding-top: 1rem 
+    @include xs
+        padding-left: 1rem
+        padding-right: 1rem
+
+    & .title
+        padding-left: 1rem
+        text-transform: uppercase
+        font-weight: bold
+        border-bottom: 1px solid rgb(var(--primary))
+        // margin-bottom: 0.5rem
+        &::before
+            content: '\2022'
+            margin-right: 1rem
+            color: rgb(var(--primary))
+    & .context
+        @include xs
+            padding-top: 1rem
+            padding-left: 1rem
+            padding-right: 1rem
+            padding-bottom: 1rem
+        & p
+            padding-top: 1vh
+            padding-bottom: 1vh
+    &__hero
+        background: rgb(var(--additional))
+        position: relative
+        box-sizing: border-box
+        border-bottom: 2px solid rgb(var(--primary))
+        @include xs
+            margin-top: 6rem !important
+            height: calc(100vh - 6rem)
+        @include lg
+            margin-top: 8rem !important
+            height: calc(100vh - 8rem)
+        & .welcome
+            font-size: 1.2rem
+            & i
+                color: rgb(var(--primary))
+        & .row
+            position: relative
+            display: flex
+            height: 100%
+            padding: 0 10px
+            & > div
+                width: 100%
+                @include xs
+                    position: static
+                @include md
+                    position: relative
+                
+                &:nth-child(1)
+                    display: flex
+                    flex-direction: column
+                    height: 100%
+                    justify-content: center
+                & img
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    object-fit: contain
+                    width: 100%
+                    z-index: 0
+                    @include xs
+                        max-height: 70%
+                    @include md
+                        max-height: 100%
+                & p,
+                & h1
+                    & span
+                        @include xs
+                            display: block
+                        @include md
+                            display: inline-block
+        & h1
+            position: relative
+            padding: 0vh 1% 5vh
+            font-size: 5rem
+            z-index: 1
+            font-weight: 700
+            color: rgb(var(--text))
+            text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff
+            @include xs
+                font-size: 5rem
+            @include lg
+                font-size: 7rem
+        & p
+            color: rgb(var(--text))
+            position: relative
+            z-index: 1
+            font-size: 2rem
+            padding: 0 1% 5vh
+            font-weight: 700
+            // text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff
+        & a
+            position: relative
+            z-index: 1
+            display: inline-block
+            width: 50%
+            color: rgb(var(--bg))
+            font-weight: 900
+            font-size: 1.4rem
+            border-radius: 30px
+            padding: 1rem 2rem
+            margin: 3vh 1% 0
+            background: rgb(var(--primary))
+            & span
+                @include xs
+                    display: none
+
+    &__about
+        padding: 5vh 0 0
+        & h2
+            font-size: 3rem
+.footer
+    border-top: 2px solid rgb(var(--accent))
+    background: rgb(var(--bg-2))
+    & input,
+    & textarea,
+    & button
+        font-size: 1.2rem
+        padding: 1rem
+        // border: 1px solid #a00
+        background: rgb(var(--bg))
+    & textarea
+        resize: none
+        height: 33%
+    &__wrap
+        display: flex
+        & div,
+        & .nav
+            width: 33%
+        & .nav
+            margin: 2rem 3rem
+            font-size: 1.4rem
+            text-transform: uppercase 
+            & li
+                margin: 1rem 0
+                & a
+                    color: rgb(var(--bg))
+                    transition: 0.1s ease
+                    &:hover
+                        color: rgb(var(--bg-2))
+        
+.chart
+    display: flex
+    & canvas
+        width: 100%
+        max-width: 50%
+
+.pie
+    --p: 20
+    --b: 20px
+    --w: 170px
+    --c: #337AB7  
+    --f: #eee
+    
+    width: var(--w)
+    aspect-ratio: 1
+    position: relative
+    display: inline-grid
+    margin: 5px auto
+    place-content: center
+    font-size: 1rem
+    font-weight: bold
+    font-family: sans-serif
+    text-align: center
+    & i
+        padding-bottom: 1rem
+        font-size: 2.5rem
+.pie:before,
+.pie:after
+    content: ""
+    position: absolute
+    border-radius: 50%
+
+.pie:before 
+    inset: 0
+    background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat, conic-gradient(var(--c) calc(var(--p) * 1%), var(--f) 0)
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)))
+
+.pie:after
+    inset: calc(50% - var(--b) / 2)
+    background: var(--c)
+    transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w) / 2))
+
+.no-round:before 
+    background-size:0 0,auto
+
+.no-round:after 
+    content:none
+
+/* Анимация */
+@property --p
+    syntax: '<number>'
+    inherits: true
+    initial-value: 0
+
+.pieanimate 
+    animation: p 1s .5s both
+
+// @keyframes p 
+//     from{
+//         --p:0
+//     }

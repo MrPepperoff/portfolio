@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Merriweather:wght@400..900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap')
-@import "mixin.scss"
+@import "mixin.sass"
 
 :root // Светлая тема
     --transition-duration: 0.3s // Длительность перехода
@@ -19,128 +19,7 @@
         --bg-r: 33,32,31
         --text: 33,32,31
         --c-two: 4,139,194
-.breackpoint
-    position: fixed
-    top: 50px
-    border-radius: 50%
-    padding: 10px
-    font-size: 1.6rem
-    opacity: 0.01
-    transition: 0.1s ease
-    color: transparent
-    border: 1px solid #fff
-    &:hover
-        opacity: 1
-        color: #a00
-        background: #aa0
-        border: 1px solid #a00
-    &__xxs
-        display: none
-        @include xxl
-            display: none
-        @include xl
-            display: none
-        @include lg
-            display: none
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: none
-        @include xxs
-            display: block
-    &__xs
-        display: none
-        @include xxl
-            display: none
-        @include xl
-            display: none
-        @include lg
-            display: none
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: block 
-        @include xxs
-            display: none 
-    &__sm
-        @include xxl
-            display: none
-        @include xl
-            display: none
-        @include lg
-            display: none
-        @include md
-            display: none
-        @include sm
-            display: block
-        @include xs
-            display: none
-        @include xxs
-            display: none 
-    &__md
-        @include xxl
-            display: none
-        @include xl
-            display: none
-        @include lg
-            display: none
-        @include md
-            display: block
-        @include sm
-            display: none
-        @include xs
-            display: none
-        @include xxs
-            display: none 
-    &__lg
-        @include xxl
-            display: none
-        @include xl
-            display: none
-        @include lg
-            display: block
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: none 
-        @include xxs
-            display: none 
-    &__xl
-        @include xxl
-            display: none
-        @include xl
-            display: block
-        @include lg
-            display: none
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: none
-        @include xxs
-            display: none 
-    &__xxl
-        @include xxl
-            display: block
-        @include xl
-            display: none
-        @include lg
-            display: none
-        @include md
-            display: none
-        @include sm
-            display: none
-        @include xs
-            display: none
-        @include xxs
-            display: none  
+
 html
     font-size: 10px
     @include md
@@ -168,21 +47,19 @@ body
     transition: background 1s ease, color  1s ease
 .content
     margin: 0 auto
-
-    @include xxl
-        width: 1199px
-    @include xl
-        width: 1023px   
-    @include lg
-        width: 767px
-    @include md
+    @include xs
         width: 100%
     @include sm
         width: 100%
-    @include xs
+    @include md
         width: 100%
-    @include xxs
-        width: 100%
+    @include lg
+        width: 767px
+    @include xl
+        width: 1023px  
+    @include xxl
+        width: 1199px
+
 .header
     border-bottom: 1px solid rgb(var(--bg-r))
     position: relative
@@ -203,6 +80,7 @@ body
         &__wrap
             display: flex
             height: 100%
+            width: 100%
             align-items: center
             justify-content: space-between
             & .logo
@@ -218,12 +96,11 @@ body
                     font-size: 2rem
                     margin-left: 5px
                     font-weight: bold
-                    @include lg
-                        display: block
                     @include md
                         display: none
-                    @include xxs
-                        display: none    
+                    @include lg
+                        display: block
+                    
                 &__icon
                     // display: none
                     height: 2rem
@@ -237,9 +114,6 @@ body
                         font-size: 2rem
                         text-align: center
                         width: 100%
-
-            @include xxs
-                width: 100%
     &__social
         width: 40%
         & ul
@@ -249,12 +123,13 @@ body
                 margin: 0 5px
                 & a
                     color: rgb(var(--text))
-        @include xxl
-            display: none     
-        @include xl
-            display: none
         @include md
             display: block
+        @include xl
+            display: none
+        @include xxl
+            display: none     
+        
     &__nav
         // width: 40%
         flex-grow: 1
@@ -272,55 +147,58 @@ body
     &__info
         align-self: center
         & .title
-            font-size: 2.5rem
+            font-size: 0.6rem
             font-family: var(--Unbounded)
             &.name
-                font-size: 4.5rem
+                font-size: 1rem
                 color: rgb(var(--c-two))
-                @include md
-                    font-size: 1.6rem
                 @include xs
                     font-size: 1.2rem
-                @include xxs
-                    font-size: 1rem
-            @include md
-                font-size: 1.2rem
+                @include md
+                    font-size: 1.6rem
             @include xs
                 font-size: 0.8rem
-            @include xxs
-                font-size: 0.6rem
+            @include md
+                font-size: 1.2rem
+            @include lg
+                font-size: 2.5rem
+            
             
         & .lvl
-            font-size: 2.5rem
-            @include md
-                font-size: 1.2rem
+            font-size: 0.8rem
             @include sm
                 font-size: 1rem
-            @include xxs
-                font-size: 0.8rem            
+            @include md
+                font-size: 1.2rem
+            @include lg
+                font-size: 2.5rem
+                     
         & .price
             color: rgba(var(--text), .5)
-            font-size: 1.6rem
+            font-size: 0.8rem
+            @include sm
+                font-size: 1rem    
             @include md
                 font-size: 1.2rem
-            @include sm
-                font-size: 1rem
-            @include xxs
-                font-size: 0.8rem
+            @include lg
+                font-size: 1.6rem
+            
+
+            
 .avatar
     filter: drop-shadow(0 0 1px rgb(var(--text)))
     &__wrap
-        width: 200px
         height: auto
+        width: 75px
+
+        @include sm
+            width: 100px    
         @include md
             width: 150px
-        @include sm
-            width: 100px
-        @include xxs
-            width: 75px
+        @include lg
+            width: 200px
+        
 .nav
-    // position: relative
-
     width: 100%
     display: flex
     justify-content: end
@@ -328,6 +206,32 @@ body
         font-size: 1.4rem 
     & ul
         transition: 0.5s ease
+        @include lg
+            position: fixed
+            top: 0
+            right: 0
+            width: 150px
+            height: 100vh
+            transform: translate(150%, 0)
+            z-index: 100
+            padding: 0px 5px 10px
+            background: rgb(var(--bg-r))
+            border-left: 3px solid #fff
+            align-items: start
+            justify-content: start
+        @include xl
+            transform: translate(0, 0)
+            background: transparent
+            border: 0
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: end
+        @include xxl 
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: end
         & li
             padding: 0 1%
             & a
@@ -361,29 +265,9 @@ body
                     // font-size: 2.1rem
             @include xxl
                 display: inline-block
-        @include xxl 
-            width: 100%
-            display: flex
-            align-items: center
-            justify-content: end
-        @include xl
-            width: 100%
-            display: flex
-            align-items: center
-            justify-content: end
-        @include lg
-            position: fixed
-            top: 0
-            right: 0
-            width: 150px
-            height: 100vh
-            transform: translate(150%, 0)
-            z-index: 100
-            padding: 0px 5px 10px
-            background: rgb(var(--bg-r))
-            border-left: 3px solid #fff
-            align-items: start
-            justify-content: start
+        
+        
+        
             & li
                 padding: 5px
                 & a
@@ -467,21 +351,24 @@ body
                     margin: 5px 2px
                     &:first-child
                         margin: 0 2px
-                @include xxl
-                    flex-direction: row
-                @include xl
-                    flex-direction: row
                 @include lg
                     flex-direction: column
+                @include xl
+                    flex-direction: row
+                @include xxl
+                    flex-direction: row
+                
+                
         &:hover 
             cursor: pointer
-       
-        @include xxl
-           display: none 
-        @include xl
-            display: none
         @include lg
             display: block 
+        @include xl
+            display: none    
+        @include xxl
+           display: none 
+        
+        
 
 // .darkMode
     // width: 30px
@@ -611,20 +498,18 @@ section
     min-height: 100px 
     box-shadow: 7px -7px 14px rgba(var(--bg), 1), -7px 7px 14px rgba(var(--text), .3)
     transition: 0.2s ease
-    @include xxl
-        width: 48%
-    @include xl
-        width: 48%
-    @include lg
-        width: 48%
-    @include md
-        width: 96%
-    @include sm
-        width: 96%
     @include xs
         width: 96%
-    @include xxs
+    @include sm
+        width: 96%   
+    @include md
         width: 96%
+    @include lg
+        width: 48% 
+    @include xl
+        width: 48%
+    @include xxl
+        width: 48%
     &:hover
         box-shadow: 8px -8px 14px rgba(var(--bg), 1), -8px 8px 14px rgba(var(--text), .3)
     & .title
@@ -734,18 +619,18 @@ section
         margin: 5px 0
         &_null
             opacity: 0.3
-    @include xxl
-        width: 31%
-    @include xl
-        width: 31%
-    @include lg
-        width: 48%
-    @include md
+    @include xs
         width: 98%
     @include sm
         width: 98%
-    @include xs
+    @include md
         width: 98%
+    @include lg
+        width: 48%
+    @include xl
+        width: 31%
+    @include xxl
+        width: 31%
         &__img__wrap
             height: 300px
     
@@ -816,20 +701,22 @@ section
     margin: 0
     padding: 1px
     transition: 0.2s ease
-    @include xxl
-        width: 48%
-    @include xl
-        width: 48%
-    @include lg
-        width: 48%
-    @include md
+    @include xs
         width: 96%
     @include sm
         width: 96%
-    @include xs
+    @include md
         width: 96%
-    @include xxs
-        width: 96%
+    @include lg
+        width: 48%
+    @include xl
+        width: 48%
+    @include xxl
+        width: 48%
+    
+    
+    
+    
 
 .modal
     background: rgba(var(--bg-r), .3)
