@@ -1,20 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tektur:wght@400..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Merriweather:wght@400..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap')
 @import "mixin.scss"
 
 :root // Светлая тема
     --transition-duration: 0.3s // Длительность перехода
     --transition-timing-function: ease // Функция перехода
-    --Tektur: 'Tektur', cursive
+    --Alumni-Sans-Pinstripe: "Alumni Sans Pinstripe", sans-serif
+    --Unbounded: "Unbounded", sans-serif
     --Roboto: 'Roboto', sans-serif
-    --bg: 33,32,31
-    --c-two: 4,139,194
+    --bg: 25,25,35
+    
+    --c-two: 255,193,7
     --bg-r: 150, 150, 150
     --text: 255, 255, 255
 :root.dark
         --bg: 200, 200, 200
         --bg-r: 33,32,31
         --text: 33,32,31
+        --c-two: 4,139,194
 .breackpoint
     position: fixed
     top: 50px
@@ -142,7 +146,7 @@ html
     @include md
         font-size: 10px
 body
-    font-family: var(--Tektur)
+    font-family: var(--Alumni-Sans-Pinstripe)
 
     &::-webkit-scrollbar 
         width: 5px               
@@ -159,6 +163,7 @@ body
 
     color: rgb(var(--text))
     background: rgb(var(--bg)) 
+    
 
     transition: background 1s ease, color  1s ease
 .content
@@ -180,12 +185,20 @@ body
         width: 100%
 .header
     border-bottom: 1px solid rgb(var(--bg-r))
+    position: relative
+    &::before
+        position: absolute
+        content: ''
+        background: url('../images/background.jpg') center 20% no-repeat
+        inset: 0
+        z-index: -1
+        opacity: 0.3
     &__top
-        background: rgb(var(--bg))
         color: rgb(var(--text))
         padding: 0 15px
         height: 50px
         &__scroll
+            
             height: 50px
         &__wrap
             display: flex
@@ -254,11 +267,13 @@ body
         padding: 0 5%
         box-sizing: border-box
         overflow: hidden
-    
+        position: relative
+        text-shadow: 0 0 2px rgb(var(--bg))
     &__info
         align-self: center
         & .title
             font-size: 2.5rem
+            font-family: var(--Unbounded)
             &.name
                 font-size: 4.5rem
                 color: rgb(var(--c-two))
@@ -319,10 +334,11 @@ body
                 text-align: center
                 color: rgb(var(--text))
                 transition: 0.1s ease
-                font-size: 1.4rem
+                font-size: 1.8rem
+                text-shadow: 0 0 1px rgb(var(--text))
                 &:hover
                     color: rgba(var(--text), .8) 
-                    text-shadow: 0 0 1px rgb(var(--text))
+                    text-shadow: 0 0 4px rgb(var(--text))
             &.site-resume
                 padding: 0
                 display: flex
@@ -467,116 +483,117 @@ body
         @include lg
             display: block 
 
-.darkMode
-    width: 30px
-    height: 30px
-    box-sizing: border-box
-    padding: 12px
-    background: none
-    border: none
-    display: flex
-    justify-content: center
-    align-items: center
-    position: relative
-    & .sun 
-        width: 50%
-        height: 50%
-        position: absolute
-        pointer-events: none
-        opacity: 0
-        transform: scale(0.6) rotate(0deg)
-        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+// .darkMode
+    // width: 30px
+    // height: 30px
+    // box-sizing: border-box
+    // padding: 12px
+    // background: none
+    // border: none
+    // display: flex
+    // justify-content: center
+    // align-items: center
+    // position: relative
+    // & .sun 
+    //     width: 50%
+    //     height: 50%
+    //     position: absolute
+    //     pointer-events: none
+    //     opacity: 0
+    //     transform: scale(0.6) rotate(0deg)
+    //     transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
 
-        /*  white transparent for Safari  */
-        background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg)) 50%, rgb(var(--text)) 50%)
-
-
-        &:before 
-            content: ""
-            position: absolute
-            display: block
-            width: 100%
-            height: 100%
-            background: radial-gradient(circle, rgb(var(--text)) 30%, rgb(var(--bg)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--text)) 50%)
-            transform: rotate(45deg)
+    //     /*  white transparent for Safari  */
+    //     background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg)) 50%, rgb(var(--text)) 50%)
 
 
-        &.visible
-            pointer-events: auto
-            opacity: 1
-            transform: scale(1) rotate(180deg)
-            transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-    & .moon
-        width: 50%
-        height: 50%
-        pointer-events: none
-        position: absolute
-        left: 0%
-        top: 18.75%
-        background-color: rgb(var(--bg))
-        border-radius: 50%
-        box-shadow: 6px 3px 0px 0px rgb(var(--text))
-        opacity: 0
-        transform: scale(0.3) rotate(65deg)
-        transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+    //     &:before 
+    //         content: ""
+    //         position: absolute
+    //         display: block
+    //         width: 100%
+    //         height: 100%
+    //         background: radial-gradient(circle, rgb(var(--text)) 30%, rgb(var(--bg)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--text)) 50%)
+    //         transform: rotate(45deg)
 
 
-        &.visible
-            pointer-events: auto
-            opacity: 1
-            transform: scale(1) rotate(0deg)
-            transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
-            & .star
-                opacity: 0.8
-            & .star.small
-                opacity: 0.7
-                transform: scale(0.45) rotate(35deg)
-    & .star
-        position: absolute
-        top: 0%
-        left: -15%
-        display: block
-        width: 0px
-        height: 0px
-        border-right: 7px solid rgba(0, 0, 0, 0)
-        border-bottom: 5px solid rgb(var(--text))
-        border-left: 7px solid rgba(0, 0, 0, 0)
-        transform: scale(0.55) rotate(35deg)
-        opacity: 0
-        transition: all 0.2s ease-in 0.4s
-        &.small 
-            transform: scale(0.35) rotate(35deg)
-            position: relative
-            top: 40%
-            left: 15%
-            opacity: 0
-            transition: all 0.2s ease-in 0.45s
+    //     &.visible
+    //         pointer-events: auto
+    //         opacity: 1
+    //         transform: scale(1) rotate(180deg)
+    //         transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+    // & .moon
+    //     width: 50%
+    //     height: 50%
+    //     pointer-events: none
+    //     position: absolute
+    //     left: 0%
+    //     top: 18.75%
+    //     background-color: rgb(var(--bg))
+    //     border-radius: 50%
+    //     box-shadow: 6px 3px 0px 0px rgb(var(--text))
+    //     opacity: 0
+    //     transform: scale(0.3) rotate(65deg)
+    //     transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
 
-        &:before
-            border-bottom: 5px solid  rgb(var(--text))
-            border-left: 3px solid rgba(0,0,0,0)
-            border-right: 3px solid rgba(0,0,0,0)
-            position: absolute
-            height: 0
-            width: 0
-            top: -3px
-            left: -5px
-            display: block
-            content: ""
-            transform: rotate(-35deg)
-        &:after
-            border-bottom: 5px solid rgb(var(--text))
-            border-right: 7px solid rgba(0,0,0,0)
-            border-left: 7px solid  rgba(0,0,0,0)
-            position: absolute
-            display: block
-            color: red
-            top: 0px
-            left: -7px
-            width: 0px
-            height: 0px
-            transform: rotate(-70deg)
-            content: ""
+
+    //     &.visible
+    //         pointer-events: auto
+    //         opacity: 1
+    //         transform: scale(1) rotate(0deg)
+    //         transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+    //         & .star
+    //             opacity: 0.8
+    //         & .star.small
+    //             opacity: 0.7
+    //             transform: scale(0.45) rotate(35deg)
+    // & .star
+    //     position: absolute
+    //     top: 0%
+    //     left: -15%
+    //     display: block
+    //     width: 0px
+    //     height: 0px
+    //     border-right: 7px solid rgba(0, 0, 0, 0)
+    //     border-bottom: 5px solid rgb(var(--text))
+    //     border-left: 7px solid rgba(0, 0, 0, 0)
+    //     transform: scale(0.55) rotate(35deg)
+    //     opacity: 0
+    //     transition: all 0.2s ease-in 0.4s
+    //     &.small 
+    //         transform: scale(0.35) rotate(35deg)
+    //         position: relative
+    //         top: 40%
+    //         left: 15%
+    //         opacity: 0
+    //         transition: all 0.2s ease-in 0.45s
+
+    //     &:before
+    //         border-bottom: 5px solid  rgb(var(--text))
+    //         border-left: 3px solid rgba(0,0,0,0)
+    //         border-right: 3px solid rgba(0,0,0,0)
+    //         position: absolute
+    //         height: 0
+    //         width: 0
+    //         top: -3px
+    //         left: -5px
+    //         display: block
+    //         content: ""
+    //         transform: rotate(-35deg)
+    //     &:after
+    //         border-bottom: 5px solid rgb(var(--text))
+    //         border-right: 7px solid rgba(0,0,0,0)
+    //         border-left: 7px solid  rgba(0,0,0,0)
+    //         position: absolute
+    //         display: block
+    //         color: red
+    //         top: 0px
+    //         left: -7px
+    //         width: 0px
+    //         height: 0px
+    //         transform: rotate(-70deg)
+    //         content: ""
+
 .main
     display: flex
     flex-wrap: wrap
@@ -614,7 +631,7 @@ section
         font-size: 2rem
         padding: 0 0 5px 3% 
         border-bottom: 2px solid rgb(var(--c-two))
-        font-family: Tektur
+        font-family: var(--Alumni-Sans-Pinstripe)
         margin-bottom: 1rem
 .skills
     width: 100%
@@ -871,7 +888,7 @@ section
         text-align: center
         text-transform: uppercase
         font-weight: bold
-        font-family: var(--Tektur)
+        font-family: var(--Merriweather)
         flex-grow: 1
     &__left
         display: flex
@@ -943,13 +960,14 @@ section
 
 .header-fixed
     position: fixed
+    background: rgb(var(--bg))
     right: 0
     left: 0
     top: 0
     z-index: 100
     border-bottom: 1px solid rgb(var(--text))
     animation: 0.5s header forwards
-    transition: 1s ease
+    transition: 1s ease, background-color 0s
 @keyframes header
     0%
         top: -100%

@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap')
+@import 'mixin.scss'
+:root
+    --Alumni-Sans-Pinstripe: "Alumni Sans Pinstripe", sans-serif
+    --Unbounded: "Unbounded", sans-serif
+    --Roboto: 'Roboto', sans-serif
+    --bg: 25, 25, 35
+
+:root.light
+    --bg: 242, 238, 231
+    --bg-r: 25,25,35
+    --text: 25,25,35
+    --c-two: 29, 113, 157
+    --bg-img: url('../images/background6.jpg')
+:root.dark
+    --bg: 25,25,35
+    --c-two: 255,193,7
+    --bg-r: 200, 200, 200
+    --text: 255, 255, 255
+    --bg-img: url('../images/background7.jpg')
+html
+    font-size: 10px
+    
+body
+    background: rgb(var(--bg))
+    color: rgb(var(--text))
+    width: 1140px
+    font-size: 1.6rem
+    margin: 0 auto
+    padding: 0
+    display: grid
+    grid-template-rows: 50px auto auto 1fr
+    transition: 0.2s ease
+    &::after
+        content: ''
+        background: var(--bg-img) no-repeat center center
+        z-index: -10
+        position: fixed
+        width: 100vw
+        height: 100vh
+        inset: 0
+        opacity: 0.6
+    @include xxl
+        grid-template-columns: 20% 80%
+        grid-template-areas: 'profile header' 'profile main' 'contacts main' 'skills main' 'footer footer'
+    @include xl
+        grid-template-columns: 20% 80%
+        grid-template-areas: 'profile header' 'profile main' 'skills main' 'footer footer'
+    @include lg
+        grid-template-columns: 20% 60% 20%
+        grid-template-areas: '. profile header' '. profile .' 'main main main' 'footer footer footer'
+    @include md
+        grid-template-columns: 20% 60% 20%
+        grid-template-areas: '. profile header' '. profile .' 'main main main' 'footer footer footer'
+    @include sm
+        grid-template-areas: 'profile header header' 'profile main main' 'footer footer footer'
+    @include xs
+        grid-template-areas: 'profile header header' 'profile main main' 'footer footer footer'
+    @include xxs
+        grid-template-areas: 'profile header header' 'profile main main' 'footer footer footer'
+header
+    grid-area: header
+.info
+    // background: rgba(0, 200, 0, .1)
+    grid-area: main
+footer
+    background: #00a
+    grid-area: footer
+.contacts
+    grid-area: contacts
+    &__list
+        padding: 0
+        font-size: 1.2rem
+        list-style: none
+.about
+    &__skills
+        &__title
+            text-transform: uppercase
+            text-decoration: underline rgb(var(--c-two)) 3px
+            &-sub
+                color: rgb(var(--c-two))
+                font-weight: 500
+                &::after
+                    content:' \2013 '
+                    font-weight: 100
+                    color: rgb(var(--text))
+    &__hard-skills
+        &__title-sub
+                color: rgb(var(--c-two))
+                text-decoration: underline
+                text-underline-offset: 2px
+        &__list
+            list-style: none
+            padding-left: 2%
+            &-sub
+                padding-left: 7%
+    &__soft-skills
+        &__list
+            // background: #a00
+            list-style: circle
+            padding-left: 9%
+.profile
+    grid-area: profile
+    &__wrap
+        // position: relative
+        // box-sizing: border-box
+        // margin-top: 10px
+        // margin-left: 5%
+        // margin-right: 5%
+        // margin-bottom: 10px
+        // padding: 5%
+        // border: 1px solid #000
+        // border-radius: 10px
+        // z-index: 1
+        // overflow: hidden
+        // &::after
+        //     position: absolute
+        //     inset: -10px
+        //     z-index: -1
+        //     content: ''
+        //     background: rgb(var(--bg-r))
+        //     opacity: 0.5
+        //     filter: blur(5px)
+        //     transition: 0.2s ease
+    
+    &__avatar
+        height: 150px
+        width: 150px
+        background: #444
+        border: 1px solid #444
+        border-radius: 50%
+        display: block
+        margin: 20px auto 0
+    &__position
+        text-align: center
+        font-size: 2rem
+        color: rgb(var(--c-two))
+        & span
+            display: block
+    &__lvl
+        display: block
+    &__city 
+        margin-top: 10px 
+        margin-bottom: 0px 
+        font-size: 1.4rem
+    &__price
+        display: block
+
+.skills
+    background: #c0c
+    grid-area: skills
+    margin: 0
+    padding-left: 5%
+    padding-right: 5%
+    text-transform: uppercase
+.nav
+    height: 100%
+    font-family: var(--Alumni-Sans-Pinstripe)
+    font-weight: 700
+    &__bar
+        display: none
+    &__list
+        list-style: none
+        padding: 0
+        margin: 0
+        display: flex
+        align-items: center
+        justify-content: end
+        width: 100%
+    &__item
+        margin: 0 1%
+        
+    &__link
+        text-decoration: none
+        color: rgb(var(--text))
+        transition: 0.1s ease
+        &:hover
+            color: rgba(var(--text), .7)
+.lightMode
+    border: 1px solid #000
+    background: rgba(var(--text), .1)
+    color: rgb(var(--c-two))
+    width: 30px
+    height: 30px
+    border-radius: 2px
+    &.active
+        transform: scale(0.9)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        border-color: rgba(var(--c-two), 0.4)
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+        &.show
+           animation: 3s ease light 
+            
+@keyframes light
+    0%
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    10% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    10.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        text-shadow: none
+        box-shadow: none
+    10.2% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    20%
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    20.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    20.6% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    30% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    30.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    30.5% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    30.6% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    45% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    45.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    50% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    55% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    55.1% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    57% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    57.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    60% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    60.1% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    65% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    65.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    75% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    75.1% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    77% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none
+    77.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    85% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    85.1% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none  
+    86% 
+        color: rgba(var(--c-two), .1)
+        border-color: rgba(var(--c-two), .1)
+        text-shadow: none
+        box-shadow: none 
+    86.1% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+    100% 
+        color: rgba(var(--c-two), 1)
+        border-color: rgba(var(--c-two), .4)
+        box-shadow: 0 0 2px rgb(var(--bg)), 0 0 4px rgb(var(--c-two))
+        text-shadow: 0 0 3px rgb(var(--bg)), 0 0 6px rgb(var(--c-two))
+
+.education
+    border: 1px solid #a00
+    padding: 10px
+    box-sizing: border-box
+    border-radius: 10px
+.block
+    position: relative
+    box-sizing: border-box
+    margin-top: 10px
+    margin-left: 5%
+    margin-right: 5%
+    margin-bottom: 10px
+    padding: 5%
+    border: 1px solid #000
+    border-radius: 10px
+    z-index: 1
+    overflow: hidden
+
+    backdrop-filter: blur(5px)
+    background: rgba(var(--bg), .6)
+
+.title
+    color: rgb(var(--c-two))
+// .darkMode
+//     width: 30px
+//     height: 30px
+//     box-sizing: border-box
+//     padding: 12px
+//     background: none
+//     border: none
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     position: relative
+//     & .sun 
+//         width: 50%
+//         height: 50%
+//         position: absolute
+//         pointer-events: none
+//         opacity: 0
+//         transform: scale(0.6) rotate(0deg)
+//         transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+
+//         /*  white transparent for Safari  */
+//         background: radial-gradient(circle, rgba(0, 0, 0, 0), rgb(var(--bg)) 50%, rgb(var(--text)) 50%)
+
+
+//         &:before 
+//             content: ""
+//             position: absolute
+//             display: block
+//             width: 100%
+//             height: 100%
+//             background: radial-gradient(circle, rgb(var(--text)) 30%, rgb(var(--bg)) 31%, rgba(0, 0, 0, 0) 50%, rgb(var(--text)) 50%)
+//             transform: rotate(45deg)
+
+
+//         &.visible
+//             pointer-events: auto
+//             opacity: 1
+//             transform: scale(1) rotate(180deg)
+//             transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+//     & .moon
+//         width: 50%
+//         height: 50%
+//         pointer-events: none
+//         position: absolute
+//         left: 0%
+//         top: 18.75%
+//         background-color: rgb(var(--bg))
+//         border-radius: 50%
+//         box-shadow: 6px 3px 0px 0px rgb(var(--text))
+//         opacity: 0
+//         transform: scale(0.3) rotate(65deg)
+//         transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+
+
+//         &.visible
+//             pointer-events: auto
+//             opacity: 1
+//             transform: scale(1) rotate(0deg)
+//             transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s
+//             & .star
+//                 opacity: 0.8
+//             & .star.small
+//                 opacity: 0.7
+//                 transform: scale(0.45) rotate(35deg)
+//     & .star
+//         position: absolute
+//         top: 0%
+//         left: -15%
+//         display: block
+//         width: 0px
+//         height: 0px
+//         border-right: 7px solid rgba(0, 0, 0, 0)
+//         border-bottom: 5px solid rgb(var(--text))
+//         border-left: 7px solid rgba(0, 0, 0, 0)
+//         transform: scale(0.55) rotate(35deg)
+//         opacity: 0
+//         transition: all 0.2s ease-in 0.4s
+//         &.small 
+//             transform: scale(0.35) rotate(35deg)
+//             position: relative
+//             top: 40%
+//             left: 15%
+//             opacity: 0
+//             transition: all 0.2s ease-in 0.45s
+
+//         &:before
+//             border-bottom: 5px solid  rgb(var(--text))
+//             border-left: 3px solid rgba(0,0,0,0)
+//             border-right: 3px solid rgba(0,0,0,0)
+//             position: absolute
+//             height: 0
+//             width: 0
+//             top: -3px
+//             left: -5px
+//             display: block
+//             content: ""
+//             transform: rotate(-35deg)
+//         &:after
+//             border-bottom: 5px solid rgb(var(--text))
+//             border-right: 7px solid rgba(0,0,0,0)
+//             border-left: 7px solid  rgba(0,0,0,0)
+//             position: absolute
+//             display: block
+//             color: red
+//             top: 0px
+//             left: -7px
+//             width: 0px
+//             height: 0px
+//             transform: rotate(-70deg)
+//             content: ""
