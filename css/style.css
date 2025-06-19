@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --bg: 15, 15, 15;
   --bg-2: 32, 32, 32;
@@ -174,7 +175,8 @@ header .row {
 }
 .mouse__line {
   position: absolute;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3rem 3rem 0 0;
   height: 100%;
   width: 4px;
   top: 0;
@@ -193,7 +195,36 @@ header .row {
     top: 50%;
   }
 }
+.section {
+  font-size: 1.4rem;
+  color: rgb(var(--text));
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.section .title {
+  padding-left: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(var(--primary));
+}
+.section .title::before {
+  content: "•";
+  margin-right: 1rem;
+  color: rgb(var(--primary));
+}
+.section .context {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+.section .context p {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
 .section__hero {
+  overflow: hidden;
   background: rgb(var(--additional));
   position: relative;
   box-sizing: border-box;
@@ -284,11 +315,18 @@ header .row {
     display: none;
   }
 }
-.section__about {
-  padding: 5vh 0 0;
+.section__skills h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(var(--primary));
 }
-.section__about h2 {
-  font-size: 3rem;
+.section__skills li ul {
+  padding-left: 1vw;
+}
+.section__skills li ul li::before {
+  content: "›";
+  color: rgb(var(--primary-2));
+  padding: 0 1vw;
 }
 
 .footer {

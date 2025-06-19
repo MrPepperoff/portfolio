@@ -29,3 +29,160 @@
     transition-duration: 0.5s;
 }
 
+// Базовые миксины для адаптивности
+// ==================================================
+
+// Миксин для mobile-first (базовые стили без медиа-запроса)
+@mixin mobile {
+    @content;
+  }
+  
+  // Миксин для планшетов (перекрывает mobile)
+  @mixin tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  // Миксин для небольших десктопов (перекрывает tablet)
+  @mixin desktop-sm {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  
+  // Миксин для стандартных десктопов (перекрывает desktop-sm)
+  @mixin desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  
+  // Миксин для больших экранов (перекрывает desktop)
+  @mixin desktop-lg {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+  
+  // Миксин для кастомных брейкпоинтов
+  @mixin breakpoint($min-width) {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+  
+  // Миксины для адаптивного скрытия/показа
+  // ==================================================
+  
+  // Скрыть только на mobile
+  @mixin hide-mobile {
+    @include mobile {
+      display: none;
+    }
+    
+    @include tablet {
+      display: block;
+    }
+  }
+  
+  // Скрыть только на tablet
+  @mixin hide-tablet {
+    @include tablet {
+      display: none;
+    }
+  }
+  
+  // Скрыть на desktop
+  @mixin hide-desktop {
+    @include desktop {
+      display: none;
+    }
+  }
+  
+  // Показать только на mobile
+  @mixin show-mobile-only {
+    display: block;
+    
+    @include tablet {
+      display: none;
+    }
+  }
+  
+  // Показать только на tablet
+  @mixin show-tablet-only {
+    display: none;
+    
+    @include tablet {
+      display: block;
+    }
+    
+    @include desktop {
+      display: none;
+    }
+  }
+  
+  // Миксины для адаптивных свойств
+  // ==================================================
+  
+  // Адаптивное свойство с разными значениями для разных экранов
+  @mixin responsive-prop($property, $mobile-value, $tablet-value: null, $desktop-sm-value: null, $desktop-value: null, $desktop-lg-value: null) {
+    #{$property}: $mobile-value;
+    
+    @if $tablet-value {
+      @include tablet {
+        #{$property}: $tablet-value;
+      }
+    }
+    
+    @if $desktop-sm-value {
+      @include desktop-sm {
+        #{$property}: $desktop-sm-value;
+      }
+    }
+    
+    @if $desktop-value {
+      @include desktop {
+        #{$property}: $desktop-value;
+      }
+    }
+    
+    @if $desktop-lg-value {
+      @include desktop-lg {
+        #{$property}: $desktop-lg-value;
+      }
+    }
+  }
+  
+  // Адаптивный размер шрифта
+  @mixin responsive-font($mobile-size, $tablet-size: null, $desktop-size: null) {
+    font-size: $mobile-size;
+    
+    @if $tablet-size {
+      @include tablet {
+        font-size: $tablet-size;
+      }
+    }
+    
+    @if $desktop-size {
+      @include desktop {
+        font-size: $desktop-size;
+      }
+    }
+  }
+  
+  // Пример использования:
+  // .element {
+  //   @include mobile {
+  //     padding: 10px;
+  //   }
+  //   
+  //   @include tablet {
+  //     padding: 20px;
+  //   }
+  //   
+  //   @include responsive-prop(margin-bottom, 10px, 20px, 30px);
+  //   
+  //   @include responsive-font(14px, 16px, 18px);
+  // }
+
