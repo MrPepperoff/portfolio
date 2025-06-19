@@ -1,4 +1,4 @@
-@import "mixin.scss"
+@import "mixin.sass"
 :root
     --bg: 15, 15, 15
     --bg-2: 32, 32, 32
@@ -11,36 +11,33 @@
 .container
     margin: 0 auto
     height: 100%
+    width: 100%
     box-sizing: border-box
-    // border-left: 1px solid #a00
-    // border-right: 1px solid #a00
-    @include xxl
-        width: 1199px
-    @include xl
-        width: 1023px   
-    @include lg
-        width: 767px
-    @include md
-        width: 100%
-    @include sm
-        width: 100%
     @include xs
         width: 100%
-    @include xxs
-        width: 100%
-
+    @include sm
+        width: 540px
+    @include md
+        width: 720px
+    @include lg
+        width: 960px
+    @include xl
+        width: 1140px
+    @include xl
+        width: 1320px    
 html
     font-size: 10px
     font-family: Arial
 body
     background: rgb(var(--bg))
+    color: rgb(var(--text))
     display: flex
     flex-direction: column
     & .wrap
         flex-grow: 1
         min-height: 100vh
 header
-    position: relative
+    position: fixed
     z-index: 100
     width: 100%
     font-size: 1.6rem
@@ -49,49 +46,97 @@ header
     .row
         display: flex
         height: 100%
-    @include lg
-        height: 8rem
+        & .col
+            width: 100%
     @include xs
         height: 6rem
-        padding: 0 1%
+        padding: 0 1%     
+    @include lg
+        height: 8rem
+
     & .logo
         display: flex
+        width: 100%
         align-items: center
         color: rgb(var(--text))
         font-weight: 600
         --text-shadow: var(--primary-2)
-        text-shadow: 1px 0 1px rgb(var(--text-shadow)), 0 1px 1px  rgb(var(--text-shadow)), -1px 0 1px  rgb(var(--text-shadow)), 0 -1px 1px  rgb(var(--text-shadow))
+        // text-shadow: 1px 0 1px rgb(var(--text-shadow)), 0 1px 1px  rgb(var(--text-shadow)), -1px 0 1px  rgb(var(--text-shadow)), 0 -1px 1px  rgb(var(--text-shadow))
         & i
             font-size: 3rem
-            padding: 0 5%
+            padding: 0 0.6rem 0 0
     
     & .nav
-        @include md
-            flex-grow: 0   
+        z-index: 0
+        @include xs
+            text-align: end
+            flex-grow: 0
             padding-right: 5%
+            width: 3rem !important
+        @include md
+            padding-right: 0
+            width: 100% !important
         &__btn
             color: rgb(var(--primary))
             font-size: 3rem
-            @include lg
-                display: none
+            transition: 0.2s ease
+            
+            &_active
+                color: rgb(var(--primary-2))
+            @include xs
+                display: block           
             @include md
-                display: block
+                display: none
+
         &__list
-            display: flex
             justify-content: end
+            transition: all 1s ease, background 0s ease, border 0s ease
+            z-index: -1
+            &_active
+                position: absolute
+                display: flex
+                transform: translateX(0%)
+                right: 0%
+                // z-index: 0
+            @include xs
+                background: rgb(var(--bg-2))
+                flex-direction: column
+                position: fixed
+                top: 6rem
+                border-left: 2px solid rgb(var(--primary))
+                border-bottom: 2px solid rgb(var(--primary))
+                border-radius: 0 0 0 1rem
+                right: 0%
+                transform: translateX(100%)
             @include md
-                display: none
+                display: flex
+                transition: 0s
+                right: 0
+                transform: translateX(0%)
+                position: relative
+                top: 0
+                border: 0
+                border-radius: 0
+                background: transparent
+                flex-direction: row
+
         &__item
-            margin: 0 0.5%
+            // margin: 0 0.5%
+            @include xs
+                padding: 0.5rem 1rem
+            @include md 
+                padding: 0 0.5rem
+            
         &__link
             text-transform: uppercase
-            color: rgb(var(--bg))
+            color: rgb(var(--text))
             transition: 0.1s ease
             font-weight: 600
-            @include lg
-                font-size: 1.2rem
             @include xs
                 font-size: 1.4rem
+            @include md
+                font-size: 1.2rem
+            
 
             &:hover
                 color: rgb(var(--additional))
@@ -131,16 +176,52 @@ header
         top: 2%
     50%
         top: 50%
+.experience-card
+    display: flex
+    padding: 0.7rem
+    &__img
+        width: 100%
+        border-radius: 2rem
+        overflow: hidden
+        &__wrap
+            width: 20%
+            
+    &__context
+        width: 80%
+        padding-left: 1rem
+        & h4
+            font-size: 1.4rem
+            padding: 0 0 0.7rem 1rem
 
+            background: linear-gradient(184deg,rgba(0,0,0,0) 90%, rgb(var(--accent)))
+            border-bottom: 2px solid rgb(var(--accent))
+    &__row
+        display: flex
+        flex-wrap: wrap
+        font-size: 1.4rem
+        & > div
+            width: 50%
+            // background: #0a0
+            & li
+                padding-left: 1rem
+            &:nth-child(1)
+                width: 100%
+                // background: #a00
+            
+                
 .section
+    padding-bottom: 4rem
     &__hero
-        background: rgb(var(--additional))
+        background: linear-gradient(10deg,rgb(0,0,0) -150%, rgb(var(--bg)) 60%, rgb(var(--primary-2)))
         position: relative
         box-sizing: border-box
-        @include lg
-            height: calc(100vh - 8rem)
+        border-bottom: 2px solid rgb(var(--primary))
         @include xs
+            margin-top: 6rem !important
             height: calc(100vh - 6rem)
+        @include lg
+            margin-top: 8rem !important
+            height: calc(100vh - 8rem)
         & .welcome
             font-size: 1.2rem
             & i
@@ -152,12 +233,11 @@ header
             padding: 0 10px
             & > div
                 width: 100%
-                // background: #a00
-                
-                @include xl
-                    position: relative
-                @include lg
+                @include xs
                     position: static
+                @include md
+                    position: relative
+                
                 &:nth-child(1)
                     display: flex
                     flex-direction: column
@@ -168,9 +248,19 @@ header
                     bottom: 0
                     right: 0
                     object-fit: contain
-                    max-height: 70%
                     width: 100%
                     z-index: 0
+                    @include xs
+                        max-height: 70%
+                    @include md
+                        max-height: 100%
+                & p,
+                & h1
+                    & span
+                        @include xs
+                            display: block
+                        @include md
+                            display: inline-block
         & h1
             position: relative
             padding: 0vh 1% 5vh
@@ -179,6 +269,10 @@ header
             font-weight: 700
             color: rgb(var(--text))
             text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff
+            @include xs
+                font-size: 5rem
+            @include lg
+                font-size: 7rem
         & p
             color: rgb(var(--text))
             position: relative
@@ -202,16 +296,328 @@ header
             & span
                 @include xs
                     display: none
-
+    &__contacts
+        border-bottom: 2px solid rgb(var(--primary))
+        & .container
+            
+        & ul
+            display: flex
+            @include xs
+                & li
+                    width: 25%
+                    text-align: center  
+                    & svg
+                        width: 45%
+                        fill: rgb(var(--primary))  
+                    & span
+                        display: none
+            @include sm
+                flex-wrap: wrap
+                & li
+                    width: 50%
+                    & a
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        color: rgb(var(--text))
+                        &:hover
+                            color: rgb(var(--text-shadow))
+                    & svg
+                        width: 20%
+                    & span
+                        display: block
+                        font-size: 1.4rem
+                        font-weight: bold
+            @include md
+                & li
+                    & a
+                        justify-content: start
+                    & svg
+                        width: 10%
+            @include lg
+                & li
+                    width: 25%
+                    padding: 1rem 0
+                    & a
+                        justify-content: start
+                    & svg
+                        width: 10%      
     &__about
-        padding: 5vh 0 0
-        & h2
-            font-size: 3rem
-.footer
-    border-top: 1px solid #a00
-    background: rgb(var(--primary))
-    & input
+        padding: 0 1rem
+        font-size: 1.4rem
+        &__content
+            display: flex
+            & h4
+                border-bottom: 2px solid rgb(var(--accent))
+                margin: 7% 1rem 0 0
+            & > div
+                &:nth-child(1)
+                    width: 20%
+                    & li
+                        margin: 1rem 0 0 1rem
+                        
+                        & p
+                            margin: 0
+                            padding: 0
+                            color: rgb(var(--primary))
+                            & span
+                                display: inline
+                                
+                        & > span
+                            color: rgb(var(--text))
+                            padding-left: 2rem
+                &:nth-child(2)
+                    width: 80%
+                    & li
+                        &::before
+                            content: '✔'
+                            padding: 0 0.5rem 0 1.5rem
 
+        & p
+            padding: 1rem 0 0
+    &__skills
+        & h3
+            font-size: 1.6rem
+            text-align: center
+            font-weight: bold
+            padding: 1rem 0
+        & ul
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            border-top: 2px solid rgba(var(--primary-2), .7)
+            background: linear-gradient(4deg,rgba(0,0,0,0) 40%, rgba(var(--accent), .1))
+            border-radius: 3rem
+            & li
+                display: flex
+                justify-content: center
+                width: 33%
+                
+                & div
+                    margin: 5px auto
+                    width: 170px
+.title
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 2rem
+    border-bottom: 2px solid rgb(var(--primary))
+    padding: 2rem 1rem 0.5rem
+    text-align: end
+    background: linear-gradient(176deg,rgba(0,0,0,0) 90%, rgb(var(--primary)))
+    &-sub
+        font-weight: bold
+        font-size: 1.6rem
+        display: inline-block
+        text-transform: uppercase
+        border-bottom: 2px solid rgb(var(--primary-2))
+.portfolio__content
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding-top: 1rem
+.card
+    @include xs
+        width: 100%
+    @include lg
+        width: 50%
+    @include xl
+        width: 33%
+    @include xxl
+        width: 25%
+    &__wrap
+        padding: 5px
+        box-sizing: border-box
+        margin: 0 1% 2%
+        border: 1px solid rgb(var(--text))
+        border-radius: 5px
+        overflow: hidden
+        background: rgb(var(--bg-2))
+    &__title
+        font-size: 1.4rem
+        padding: 0.5rem 0 1rem
+    &__project
+        color: rgb(var(--accent))
+        font-weight: bold
+        font-size: 1.2rem
+    &__training
+        color: rgb(var(--primary-2))
+    &__img
+        object-fit: contain
+        @include xs
+            height: 100%
+            width: auto
+        @include breakpoint($min-width: 439px)
+            height: auto
+            width: 100%
+        @include xxl
+            height: 100%
+            width: auto
+            
+        &__wrap
+            background: rgb(var(--primary-2))
+            border: 1px solid rgb(var(--text))
+            border-radius: 3px
+            overflow: hidden
+            height: 200px
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: start
+            position: relative
+
+    &__link
+        display: inline-block
+        color: rgb(var(--bg))
+        font-weight: bold
+        background: rgb(var(--primary))
+        padding: 0.4rem 1rem
+        border: 1px solid rgb(var(--bg-2))
+        border-radius: 3px
+        margin: 5px 0
+        &_null
+            opacity: 0.3
+        &__img__wrap
+            height: 300px
+.modal
+    background: rgba(var(--bg-r), .3)
+    position: fixed
+    inset: 0
+    z-index: 1200
+    display: none
+    &_active
+        display: block
+    &__close
+        position: absolute
+        top: 5px
+        right: 10px
+        font-size: 2rem
+        z-index: 101
+    &__content
+        position: absolute
+        inset: 2rem
+        background: rgb(var(--bg))
+        border-radius: 5px
+    &__row
+        display: flex
+        flex-wrap: nowrap
+        height: 100%
+        align-items: center
+        padding: 3rem
+        box-sizing: border-box
+        // @include 
+    &__col
+        flex-grow: 1
+    &__img
+        position: relative
+        height: 100%
+        width: 100%
+        object-fit: cover
+        &::after
+            content: '\f030'
+            font-family: 'Font Awesome 6 Free'
+            font-weight: 900
+            position: absolute
+            inset: 0
+            color: rgba(var(--bg), .7)
+            background: rgb(var(--bg-r))
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 7rem
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+    &__title
+        color: rgb(var(--c-two))
+        text-shadow: 1px 1px 1px rgba(var(--text), .2)
+        text-align: center
+        text-transform: uppercase
+        font-weight: bold
+        font-family: var(--Tektur)
+        flex-grow: 1
+    &__left
+        display: flex
+        flex-direction: column
+        padding: 10px 
+        box-sizing: border-box
+        width: 60%
+        height: 100%
+        & iframe
+            height: 100%
+            width: 100%
+    &__right
+        // background: #0a0
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        height: 100%
+        width: 40%
+        padding: 10px
+        overflow: auto
+        &::-webkit-scrollbar 
+            width: 5px
+        &::-webkit-scrollbar-track // дорожка
+            background: rgba(var(--bg-r), .2)
+
+        &::-webkit-scrollbar-thumb // полоска
+            background-color: rgba(var(--bg-r), 1)   
+            border-radius: 20px      
+            border: 3px solid transparent 
+        &-header
+            display: flex
+            align-items: center
+    &__link
+        background: rgb(var(--c-two))
+        color: rgb(var(--text))
+        padding: 5px 10px
+        box-sizing: border-box
+        transition: 0.2s ease
+        border-radius: 2px
+        border: 1px solid rgb(var(--text))
+        overflow: hidden
+        text-align: center
+        user-select: none
+        &:hover
+            background: rgba(var(--c-two) , .6)
+        &_disabled
+            background: rgba(var(--text), .3)
+            &:hover
+                background: rgba(var(--text), .5)
+                color: rgba(var(--bg), .5)
+                cursor: not-allowed
+    &__text
+        flex-grow: 4
+        margin: 10px 0
+    &__skill
+        flex-grow: 1
+        margin: 10px 0
+.education
+    &__card
+        display: flex
+        margin-top: 1rem
+        & > div
+            width: 80%
+        & img
+            width: 20%
+        & svg
+            background: rgba(var(--text), .1)
+            width: 20%
+            padding: 1% 5%
+        & h4,
+        & p
+            padding: 0 1rem
+        & h4
+            background: linear-gradient(184deg,rgba(0,0,0,0) 90%, rgb(var(--accent)))
+            border-bottom: 2px solid rgb(var(--accent))
+            padding: 1rem
+            font-size: 1.6rem
+
+.footer
+    border-top: 2px solid rgb(var(--accent))
+    background: rgb(var(--bg-2))
     & input,
     & textarea,
     & button
@@ -237,5 +643,66 @@ header
                     color: rgb(var(--bg))
                     transition: 0.1s ease
                     &:hover
-                        color: rgb(var(--additional))
+                        color: rgb(var(--bg-2))
         
+.chart
+    display: flex
+    & canvas
+        width: 100%
+        max-width: 50%
+
+.pie
+    --p: 20
+    --b: 20px
+    --w: 170px
+    --c: #337AB7  
+    --f: #eee
+    
+    width: var(--w)
+    aspect-ratio: 1
+    position: relative
+    display: inline-grid
+    margin: 5px auto
+    place-content: center
+    font-size: 1rem
+    font-weight: bold
+    font-family: sans-serif
+    text-align: center
+    & i
+        padding-bottom: 1rem
+        font-size: 2.5rem
+.pie:before,
+.pie:after
+    content: ""
+    position: absolute
+    border-radius: 50%
+
+.pie:before 
+    inset: 0
+    background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat, conic-gradient(var(--c) calc(var(--p) * 1%), var(--f) 0)
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)))
+
+.pie:after
+    inset: calc(50% - var(--b) / 2)
+    background: var(--c)
+    transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w) / 2))
+
+.no-round:before 
+    background-size:0 0,auto
+
+.no-round:after 
+    content:none
+
+/* Анимация */
+@property --p
+    syntax: '<number>'
+    inherits: true
+    initial-value: 0
+
+.pieanimate 
+    animation: p 1s .5s both
+
+// @keyframes p 
+//     from{
+//         --p:0
+//     }

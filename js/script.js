@@ -27,12 +27,12 @@
                     break;
         }
     }
-    //  TODO вирнуть код обратно
+    //  TODO вернуть код обратно
 
-    button.addEventListener("click", () => {
-    sun.classList.toggle("visible")
-    moon.classList.toggle("visible")
-    })
+    // button.addEventListener("click", () => {
+    // sun.classList.toggle("visible")
+    // moon.classList.toggle("visible")
+    // })
 
 // линяя прогресса
 
@@ -48,9 +48,19 @@
     const contents = 
     [
         {
+            id: 5,
+            imgSmall: 'site/5.png',
+            title: 'Amazing Cuba - сайт экскурсии по Кубе',
+            project:'Коммерческий',
+            link: 'https://amazing-cuba.com/',
+            skills: null,
+            text: 'Коммерческий проект'
+        },
+        {
             id: 1,
-            imgSmall:'site1.jpg',
+            imgSmall:'site/1.png',
             title:'Портфолио дизайнера',
+            project:'Учебный',
             link: 'https://mrpepperoff.github.io/patent_Web/',
             skills: [
                 {awesome: 'fa-brands fa-html5', name: 'html'},
@@ -60,8 +70,9 @@
         },
         {
             id: 2,
-            imgSmall:'site2.jpg',
+            imgSmall:'site/2.png',
             title: "Магазин женской одежды",
+            project:'Учебный',
             link: 'https://mrpepperoff.github.io/Divisima/',
             skills: [
                 {awesome: 'fa-brands fa-html5', name: 'html'},
@@ -73,20 +84,22 @@
         },
         {
             id: 3,
-            imgSmall:'site3.jpg',
+            imgSmall:'site/3.png',
             title: 'Магазин спорт товаров',
+            project:'Учебный',
             link: 'https://mrpepperoff.github.io/bicycle/',
             skills: null,
             text: null
         },
-        {
-            id: 4,
-            imgSmall:'site4.jpg',
-            title: 'Decor Elegant',
-            link: 'https://decor-elegant.netlify.app/',
-            skills: null,
-            text: 'Этот сайт реализуется как свой пет-проект. Возможно в будущем будет работать. <br> К сожелению я не нашел хост для Back-end. <br> В этом проекте используются фреймворки: <br><br> front-end - "React 18" <br> back-end - "Laravel 10" <br><br> Конект осуществляется через Axios <br>В стадии реализации Админка на Laravel через ".blade" <br> Присутствует тема (light/dark), и мультиязычность (русский/англиский)'
-        },
+        // {
+        //     id: 4,
+        //     imgSmall:'site/4.jpg',
+        //     title: 'Decor Elegant',
+        //     link: 'https://decor-elegant.netlify.app/',
+        //     skills: null,
+        //     text: 'Этот сайт реализуется как свой пет-проект. Возможно в будущем будет работать. <br> К сожелению я не нашел хост для Back-end. <br> В этом проекте используются фреймворки: <br><br> front-end - "React 18" <br> back-end - "Laravel 10" <br><br> Конект осуществляется через Axios <br>В стадии реализации Админка на Laravel через ".blade" <br> Присутствует тема (light/dark), и мультиязычность (русский/англиский)'
+        // },
+        
         // {
         //     id: 5,
         //     imgSmall: null,
@@ -97,21 +110,25 @@
         // },
     ]
     const portfolio = document.querySelector('.portfolio__content');
+    console.log(portfolio);
     contents.forEach(content => {
         portfolio.innerHTML += 
                 `<div class="card">
-                    <div class="card__img__wrap">
-                    ${(content.imgSmall)?
-                        `<img src="images/${content.imgSmall}" alt="site ${content.id}" class="card__img">`
-                        :
-                        `<img src="images/no-photo.jpg" alt="site ${content.id}" class="card__img">`
-                    }
-                        
-                    
+                    <div class='card__wrap'>
+                        <div class="card__img__wrap">
+                            ${(content.imgSmall)?
+                                `<img src="images/${content.imgSmall}" alt="site ${content.id}" class="card__img">`
+                                :
+                                `<img src="images/no-photo.jpg" alt="site ${content.id}" class="card__img">`
+                            }
+                        </div>
+                        <h4 class="card__title">${content.title}</h4>
+                        <p class="card__project ${(content.project == 'Учебный')? 'card__training' : ''}">${content.project}</p>
+                        <div>
+                            <a href="${(content.link)? content.link :''}" class="card__link ${(content.link)? '' :'card__link_null'}">Перейти</a>
+                            <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button>
+                        </div>
                     </div>
-                    <h4>${content.title}</h4>   
-                    <a href="${(content.link)? content.link :''}" class="card__link ${(content.link)? '' :'card__link_null'}">Перейти</a>
-                    <button type="button" class="card__link" onclick="onModal(${content.id})">Подробнее</button>
                 </div>`
     });
 
@@ -167,21 +184,21 @@
 
 // header для пракрутки 
 
-const header = document.querySelector('#header-scroll');
-window.addEventListener('scroll', function(){
-    (window.scrollY >= 100)?
+// const header = document.querySelector('#header-scroll');
+// window.addEventListener('scroll', function(){
+//     (window.scrollY >= 100)?
 
-        header.classList.add('header-fixed')
-    :
-        header.classList.remove('header-fixed')
-    ;
-});
+//         header.classList.add('header-fixed')
+//     :
+//         header.classList.remove('header-fixed')
+//     ;
+// });
 
 // Кнопка nav burger
 
 const burger = document.querySelector('#nav-burger');
 const menu = document.querySelector('#menu');
-const menuLinks = menu.querySelectorAll('a');
+// const menuLinks = menu.querySelectorAll('a');
 
 function toggleMenu() {
     burger.classList.toggle('open');
